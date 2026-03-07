@@ -15,7 +15,14 @@ export default {
           mid: '#4A4A4A',
           light: '#F8F9FA',
           border: '#E0E0E0',
-        }
+        },
+        surface: {
+          1: '#FFFFFF',
+          2: '#F7F6F3',
+        },
+        charcoal: '#111111',
+        'mid-gray': '#666666',
+        'border-light': '#E5E4E0',
       },
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],

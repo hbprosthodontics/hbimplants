@@ -33,13 +33,13 @@ const localBusiness = {
   description="Learn about dental implants, veneers, dentures, and prosthodontic care from the experts at Huntington Beach Prosthodontics. Evidence-based patient education."
   schema={localBusiness}
 >
-  <section class="bg-brand-navy text-white py-16 md:py-20">
+  <section class="bg-surface-2 py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">
           Patient Education Blog
         </h1>
-        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        <p class="text-mid-gray text-lg max-w-2xl mx-auto">
           Expert insight on dental implants, full-arch restorations, veneers, and prosthodontic care — written by specialists, for patients.
         </p>
       </div>
@@ -57,7 +57,7 @@ const localBusiness = {
           {sortedPosts.map((post) => (
             <a href={`/blog/${post.slug}`} class="card hover:shadow-lg hover:border-brand-blue transition-all duration-200 group">
               {post.data.featuredImage && (
-                <div class="aspect-video bg-brand-light rounded-lg overflow-hidden mb-4">
+                <div class="aspect-video bg-surface-2 rounded-lg overflow-hidden mb-4">
                   <img
                     src={post.data.featuredImage}
                     alt={post.data.featuredImageAlt || post.data.title}

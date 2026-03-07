@@ -6,38 +6,38 @@ const address = '16141 Bolsa Chica St., Suite C';
 const googleReviewLink = 'https://g.page/r/[GOOGLE_REVIEW_LINK]/review';
 ---
 
-<footer class="bg-brand-navy text-white">
+<footer class="bg-white border-t border-border-light">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- NAP Block -->
       <div class="lg:col-span-1">
-        <div class="font-serif text-xl font-bold mb-1">Huntington Beach</div>
+        <div class="font-serif text-xl font-bold mb-1 text-charcoal">Huntington Beach</div>
         <div class="font-serif text-base font-semibold text-brand-gold mb-4">Prosthodontics</div>
-        <address class="not-italic text-gray-300 text-sm space-y-2">
+        <address class="not-italic text-mid-gray text-sm space-y-2">
           <p>{address}</p>
           <p>Huntington Beach, CA 92649</p>
           <p>
-            <a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-brand-gold transition-colors font-medium">
+            <a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors font-medium">
               {phone}
             </a>
           </p>
           <p>
-            <a href={`mailto:${email}`} class="hover:text-brand-gold transition-colors">
+            <a href={`mailto:${email}`} class="hover:text-charcoal transition-colors">
               {email}
             </a>
           </p>
-          <div class="text-gray-400 text-xs space-y-0.5 mt-1">
+          <div class="text-mid-gray text-xs space-y-0.5 mt-1">
             <p>Mon / Wed / Fri: 9am – 5pm</p>
             <p>Sat: 10am – 2pm</p>
             <p>Tue / Thu: By Appointment</p>
           </div>
         </address>
-        <div class="mt-4 space-y-2">
+        <div class="mt-4">
           <a
             href={googleReviewLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-brand-gold text-sm font-medium hover:text-white transition-colors"
+            class="inline-flex items-center gap-2 text-brand-gold text-sm font-medium hover:text-charcoal transition-colors"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -49,52 +49,52 @@ const googleReviewLink = 'https://g.page/r/[GOOGLE_REVIEW_LINK]/review';
 
       <!-- Treatment Pages -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-4 text-white">Treatment Pages</h3>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="/dental-implants" class="hover:text-brand-gold transition-colors">Dental Implants</a></li>
-          <li><a href="/all-on-x" class="hover:text-brand-gold transition-colors">All-on-X / Full Arch</a></li>
-          <li><a href="/veneers" class="hover:text-brand-gold transition-colors">Porcelain Veneers</a></li>
-          <li><a href="/dentures" class="hover:text-brand-gold transition-colors">Dentures</a></li>
-          <li><a href="/implant-restorations" class="hover:text-brand-gold transition-colors">Implant Restorations</a></li>
-          <li><a href="/cosmetic-dentistry" class="hover:text-brand-gold transition-colors">Cosmetic Dentistry</a></li>
-          <li><a href="/restorative-dentistry" class="hover:text-brand-gold transition-colors">Restorative Dentistry</a></li>
-          <li><a href="/general-dentistry" class="hover:text-brand-gold transition-colors">General Dentistry</a></li>
-          <li><a href="/clear-aligners" class="hover:text-brand-gold transition-colors">Clear Aligners</a></li>
+        <h3 class="font-serif text-base font-semibold mb-4 text-charcoal">Treatment Pages</h3>
+        <ul class="space-y-2 text-sm text-mid-gray">
+          <li><a href="/dental-implants" class="hover:text-charcoal transition-colors">Dental Implants</a></li>
+          <li><a href="/all-on-x" class="hover:text-charcoal transition-colors">All-on-X / Full Arch</a></li>
+          <li><a href="/veneers" class="hover:text-charcoal transition-colors">Porcelain Veneers</a></li>
+          <li><a href="/dentures" class="hover:text-charcoal transition-colors">Dentures</a></li>
+          <li><a href="/implant-restorations" class="hover:text-charcoal transition-colors">Implant Restorations</a></li>
+          <li><a href="/cosmetic-dentistry" class="hover:text-charcoal transition-colors">Cosmetic Dentistry</a></li>
+          <li><a href="/restorative-dentistry" class="hover:text-charcoal transition-colors">Restorative Dentistry</a></li>
+          <li><a href="/general-dentistry" class="hover:text-charcoal transition-colors">General Dentistry</a></li>
+          <li><a href="/clear-aligners" class="hover:text-charcoal transition-colors">Clear Aligners</a></li>
         </ul>
       </div>
 
       <!-- About & Resources -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-4 text-white">About & Resources</h3>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="/about" class="hover:text-brand-gold transition-colors">About Our Practice</a></li>
-          <li><a href="/blog" class="hover:text-brand-gold transition-colors">Patient Education Blog</a></li>
-          <li><a href="/gallery" class="hover:text-brand-gold transition-colors">Before & After Gallery</a></li>
-          <li><a href="/dental-implants/consultation" class="hover:text-brand-gold transition-colors">Free Implant Consultation</a></li>
-          <li><a href="/referral" class="hover:text-brand-gold transition-colors">Referral Program</a></li>
+        <h3 class="font-serif text-base font-semibold mb-4 text-charcoal">About & Resources</h3>
+        <ul class="space-y-2 text-sm text-mid-gray">
+          <li><a href="/about" class="hover:text-charcoal transition-colors">About Our Practice</a></li>
+          <li><a href="/blog" class="hover:text-charcoal transition-colors">Patient Education Blog</a></li>
+          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
+          <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Implant Consultation</a></li>
+          <li><a href="/referral" class="hover:text-charcoal transition-colors">Referral Program</a></li>
         </ul>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-4 text-white">Quick Links</h3>
-        <ul class="space-y-2 text-sm text-gray-300">
+        <h3 class="font-serif text-base font-semibold mb-4 text-charcoal">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-mid-gray">
           <li>
-            <a href="/schedule" class="hover:text-brand-gold transition-colors font-medium text-brand-gold">
-              → Schedule Appointment
+            <a href="/schedule" class="font-medium text-charcoal hover:text-brand-navy transition-colors">
+              → Book Appointment
             </a>
           </li>
-          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-brand-gold transition-colors">Call Us: {phone}</a></li>
-          <li><a href="/dental-implants/single-tooth" class="hover:text-brand-gold transition-colors">Single Tooth Implant</a></li>
-          <li><a href="/all-on-x/all-on-4" class="hover:text-brand-gold transition-colors">All-on-4 Implants</a></li>
-          <li><a href="/implant-restorations/snap-on" class="hover:text-brand-gold transition-colors">Snap-on Dentures</a></li>
-          <li><a href="/veneers/smile-makeover" class="hover:text-brand-gold transition-colors">Smile Makeover</a></li>
+          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors">Call Us: {phone}</a></li>
+          <li><a href="/dental-implants/single-tooth" class="hover:text-charcoal transition-colors">Single Tooth Implant</a></li>
+          <li><a href="/all-on-x/all-on-4" class="hover:text-charcoal transition-colors">All-on-4 Implants</a></li>
+          <li><a href="/implant-restorations/snap-on" class="hover:text-charcoal transition-colors">Snap-on Dentures</a></li>
+          <li><a href="/veneers/smile-makeover" class="hover:text-charcoal transition-colors">Smile Makeover</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-brand-blue">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+    <div class="mt-12 pt-8 border-t border-border-light">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-mid-gray">
         <p>© {currentYear} Huntington Beach Prosthodontics. All rights reserved.</p>
         <p class="text-center md:text-right">
           Huntington Beach Prosthodontics is a dental specialty practice. Results may vary.

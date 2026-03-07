@@ -5,7 +5,7 @@ interface Props {
   primaryCTA?: string;
   primaryHref?: string;
   phone?: string;
-  variant?: 'navy' | 'light' | 'white';
+  variant?: 'dark' | 'light' | 'white';
 }
 
 const {
@@ -14,25 +14,31 @@ const {
   primaryCTA = 'Schedule Your Consultation',
   primaryHref = '/schedule',
   phone = '(714) 846-1386',
-  variant = 'navy',
+  variant = 'light',
 } = Astro.props;
 
 const bgClass = {
-  navy: 'bg-brand-navy text-white',
-  light: 'bg-brand-light text-brand-navy',
-  white: 'bg-white text-brand-navy border border-neutral-border',
+  dark: 'bg-charcoal text-white',
+  light: 'bg-surface-2 text-charcoal',
+  white: 'bg-white text-charcoal border border-border-light',
 }[variant];
 
 const headingClass = {
-  navy: 'text-white',
-  light: 'text-brand-navy',
-  white: 'text-brand-navy',
+  dark: 'text-white',
+  light: 'text-charcoal',
+  white: 'text-charcoal',
 }[variant];
 
 const subClass = {
-  navy: 'text-gray-300',
-  light: 'text-neutral-mid',
-  white: 'text-neutral-mid',
+  dark: 'text-neutral-400',
+  light: 'text-mid-gray',
+  white: 'text-mid-gray',
+}[variant];
+
+const phoneClass = {
+  dark: 'text-neutral-400 hover:text-white',
+  light: 'text-mid-gray hover:text-charcoal',
+  white: 'text-mid-gray hover:text-charcoal',
 }[variant];
 ---
 
@@ -44,12 +50,12 @@ const subClass = {
     {subheading}
   </p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-    <a href={primaryHref} class="btn-gold text-base px-8 py-4 font-semibold">
+    <a href={primaryHref} class={`${variant === 'dark' ? 'btn-secondary border-white text-white hover:bg-white hover:text-charcoal' : 'btn-primary'} text-base px-8 py-4 font-semibold`}>
       {primaryCTA}
     </a>
     <a
       href={`tel:${phone.replace(/\D/g, '')}`}
-      class={`font-semibold text-base transition-colors ${variant === 'navy' ? 'text-brand-gold hover:text-white' : 'text-brand-blue hover:text-brand-navy'}`}
+      class={`font-medium text-base transition-colors ${phoneClass}`}
     >
       Or Call: {phone}
     </a>
