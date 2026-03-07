@@ -346,6 +346,31 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Gallery Teaser -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">Real Patient Results</div>
+        <h2 class="section-heading">See What's Possible</h2>
+        <p class="text-mid-gray mt-3 max-w-xl mx-auto">Every smile is unique. Browse our patient gallery to see the results we deliver.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        {[
+          { src: '/images/gallery/35c233_4d53b085a2b74aba85fb77c285d3e4d2~mv2.avif', alt: 'Patient smile restoration result' },
+          { src: '/images/gallery/edc2a9_8263132f76fb43e0aa24b5ddb546dde5~mv2.avif', alt: 'Full smile makeover result' },
+          { src: '/images/gallery/edc2a9_bf872454f2f4482a8b3ebd4a4e1cf8b1~mv2.avif', alt: 'Cosmetic dentistry patient result' },
+        ].map((img) => (
+          <a href="/gallery" class="block overflow-hidden rounded-xl aspect-[4/3] bg-surface-2">
+            <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+          </a>
+        ))}
+      </div>
+      <div class="text-center">
+        <a href="/gallery" class="btn-primary">View Full Gallery &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
