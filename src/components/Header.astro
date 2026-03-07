@@ -1,7 +1,7 @@
 ---
 const phone = '(714) 846-1386';
 const navLinks = [
-  { label: 'Meet the Team', href: '/about', avatar: '/images/dr-favian-cheong.png' },
+  { label: 'About', href: '/about', avatar: '/images/dr-favian-cheong.png' },
   {
     label: 'Dental Implants',
     href: '/dental-implants',
@@ -47,7 +47,7 @@ const navLinks = [
           <div class="relative group">
             <a
               href={link.href}
-              class="nav-link text-sm py-2 flex items-center gap-1"
+              class={`nav-link text-sm py-1.5 flex items-center gap-1.5 ${link.avatar ? 'border border-charcoal/20 rounded-full px-3 hover:border-charcoal/40' : ''}`}
             >
               {link.avatar && (
                 <img src={link.avatar} alt="" class="w-6 h-6 rounded-full object-cover object-top ring-2 ring-white" />
