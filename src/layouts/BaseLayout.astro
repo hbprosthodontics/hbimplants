@@ -26,6 +26,27 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
 const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
 
 const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+// Auto-generate BreadcrumbList from URL path
+const pathSegments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const breadcrumbSchema = pathSegments.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://hbimplants.com',
+    },
+    ...pathSegments.map((seg, i) => ({
+      '@type': 'ListItem',
+      'position': i + 2,
+      'name': seg.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      'item': `https://hbimplants.com/${pathSegments.slice(0, i + 1).join('/')}`,
+    })),
+  ],
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -70,6 +91,9 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     {schemaArray.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
 
     <!-- Google Analytics 4 -->
     {ga4Id && (

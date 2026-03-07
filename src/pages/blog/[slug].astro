@@ -16,20 +16,32 @@ const { Content } = await post.render();
 
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
   'headline': post.data.title,
   'description': post.data.description,
   'datePublished': post.data.publishDate.toISOString(),
   'dateModified': (post.data.updatedDate || post.data.publishDate).toISOString(),
+  'mainEntityOfPage': {
+    '@type': 'WebPage',
+    '@id': `https://hbimplants.com/blog/${post.slug}`,
+  },
+  'url': `https://hbimplants.com/blog/${post.slug}`,
   'author': {
     '@type': 'Organization',
     'name': post.data.author,
+    'url': 'https://hbimplants.com',
   },
   'publisher': {
     '@type': 'Organization',
     'name': 'Huntington Beach Prosthodontics',
     'url': 'https://hbimplants.com',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': 'https://hbimplants.com/images/og-default.jpg',
+    },
   },
+  ...(post.data.featuredImage ? { 'image': `https://hbimplants.com${post.data.featuredImage}` } : {}),
+  'keywords': post.data.targetKeyword,
 };
 
 const localBusiness = {
