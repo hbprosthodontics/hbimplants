@@ -103,6 +103,9 @@ Require additional .env variables — see `.env.example`:
 
 Run with: `node scripts/<script>.js --help` (most accept --help flags or display usage on error)
 
+## Git Workflow
+This Claude Code environment requires pushes to go to `claude/<task>-<sessionId>` branches — direct push to `main` returns 403. The repo has **no branch protection rules on GitHub**, so PRs can be merged immediately via the GitHub web UI or auto-merged after pushing. Every merge to `main` triggers an automatic Cloudflare Pages deploy.
+
 ## GitHub Actions Deploy
 `.github/workflows/deploy.yml` — triggers on push to `main`.
 Required GitHub Secrets:
