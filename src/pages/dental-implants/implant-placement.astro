@@ -15,7 +15,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Dental Implant Placement Huntington Beach | Surgical Procedure Guide"
+  title="Dental Implant Placement Huntington Beach, CA"
   description="Learn about dental implant placement surgery at Huntington Beach Prosthodontics. What to expect, recovery, and results from our specialist prosthodontist."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >

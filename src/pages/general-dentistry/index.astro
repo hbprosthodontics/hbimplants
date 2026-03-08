@@ -12,7 +12,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="General Dentistry Huntington Beach | Cleanings & Preventive Care at a Prosthodontist"
+  title="General Dentistry Huntington Beach | Prosthodontist"
   description="General dentistry in Huntington Beach including professional cleanings, exams, and X-rays at a prosthodontic specialist practice. Comprehensive care under one roof."
   schema={[localBusiness, faqSchema]}
 >

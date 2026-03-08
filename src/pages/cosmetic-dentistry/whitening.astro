@@ -13,7 +13,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Teeth Whitening Huntington Beach | Professional In-Office Whitening HB"
+  title="Teeth Whitening Huntington Beach | Professional In-Office"
   description="Professional teeth whitening in Huntington Beach, CA. In-office and take-home options for dramatically whiter teeth. Ask about whitening during your consultation."
   schema={[localBusiness, faqSchema]}
 >

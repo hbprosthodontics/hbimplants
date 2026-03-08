@@ -13,7 +13,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Restorative Dentistry Huntington Beach | Crowns, Bridges & Full Mouth Rehab"
+  title="Restorative Dentistry Huntington Beach | Crowns & Bridges"
   description="Restorative dentistry in Huntington Beach by a prosthodontist. Crowns, bridges, and complex full mouth rehabilitation with specialist-level precision."
   schema={[localBusiness, faqSchema]}
 >

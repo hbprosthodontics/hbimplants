@@ -8,6 +8,9 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
+  articleAuthor?: string;
+  articleDate?: string;
   schema?: object | object[];
   noindex?: boolean;
 }
@@ -17,6 +20,9 @@ const {
   description,
   canonical,
   ogImage = '/images/og-default.jpg',
+  ogType = 'website',
+  articleAuthor,
+  articleDate,
   schema,
   noindex = false,
 } = Astro.props;
@@ -61,13 +67,15 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     <link rel="canonical" href={canonicalURL} />
 
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {articleAuthor && <meta name="author" content={articleAuthor} />}
+    {articleDate && <meta name="date" content={articleDate} />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Huntington Beach Prosthodontics" />
 
     <!-- Twitter Card -->

@@ -16,7 +16,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Smile Makeover Huntington Beach | Cosmetic Dentist & Prosthodontist HB"
+  title="Smile Makeover Huntington Beach | Prosthodontist"
   description="Smile makeover in Huntington Beach combining veneers, whitening, implants, and more. Custom cosmetic treatment plans from Dr. Favian Cheong. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >

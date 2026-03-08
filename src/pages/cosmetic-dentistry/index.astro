@@ -15,7 +15,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Cosmetic Dentist Huntington Beach | Prosthodontist-Level Smile Design"
+  title="Cosmetic Dentist Huntington Beach | Prosthodontist"
   description="Cosmetic dentistry in Huntington Beach from a board-certified prosthodontist. Veneers, whitening, bonding, and complete smile makeovers. Call (714) 846-1386."
   schema={[localBusiness, faqSchema]}
 >

@@ -16,7 +16,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="All-on-4 Huntington Beach | Full Arch Dental Implants & Teeth in a Day"
+  title="All-on-4 Huntington Beach | Full-Arch Dental Implants"
   description="All-on-4 dental implants in Huntington Beach, CA. Replace an entire arch of teeth with just 4 implants in one day. Board-certified prosthodontist. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >

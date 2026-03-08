@@ -14,7 +14,7 @@ When patients ask me how long dental implants last, I tell them the honest answe
 
 The titanium implant post — the screw-shaped fixture that integrates with your jawbone — is designed to be a permanent solution. The titanium alloy used in implants is biocompatible, meaning the body accepts it and bone actively grows around it through a process called osseointegration. Once integrated, the implant becomes part of your skeletal structure.
 
-Long-term clinical data supports this. Studies tracking implant survival rates at 10 years report success rates of 94–97%. Studies extending to 20 years show implant survival rates of 85–92%. The oldest documented dental implants — placed in the 1960s by Dr. Per-Ingvar Brånemark, who pioneered the technique — remained functional for over 40 years in some patients.
+Long-term clinical data supports this. Studies tracking implant survival rates at 10 years report success rates of 94–97%. Studies extending to 20 years show implant survival rates of 85–92%, as documented in long-term reviews published in the [International Journal of Oral & Maxillofacial Implants](https://www.quintessence-publishing.com/ijomi/en). The oldest documented dental implants — placed in the 1960s by Dr. Per-Ingvar Brånemark, who pioneered the technique — remained functional for over 40 years in some patients.
 
 A well-placed, well-integrated implant in a patient with good bone health and good oral hygiene has a realistic expectation of lasting the patient's lifetime. This is what the "lifetime solution" claim is based on — and it's generally accurate.
 
@@ -38,11 +38,11 @@ Implants require adequate bone density and volume to integrate and remain stable
 
 ### 2. Oral Hygiene Maintenance
 
-Peri-implantitis — bacterial infection around an implant — is the leading cause of late implant failure. Unlike teeth, implants do not have a periodontal ligament with immune cell access, making them somewhat more vulnerable to bacterial damage once infection establishes itself. Regular professional cleanings (every 3–6 months, depending on your risk profile), daily brushing, and consistent flossing around the implant keep bacterial levels controlled and peri-implant tissue healthy.
+Peri-implantitis — bacterial infection around an implant — is the leading cause of late implant failure. Unlike teeth, implants do not have a periodontal ligament with immune cell access, making them somewhat more vulnerable to bacterial damage once infection establishes itself. The [American Academy of Periodontology](https://www.perio.org/consumer/peri-implant-diseases) recommends regular professional cleanings (every 3–6 months, depending on your risk profile), daily brushing, and consistent flossing around the implant to keep bacterial levels controlled and peri-implant tissue healthy.
 
 ### 3. Smoking
 
-Smoking impairs blood flow to the jawbone and suppresses immune function, both of which are critical during the healing and osseointegration phase. Studies consistently show that smokers have implant failure rates 2–3 times higher than non-smokers. Patients who smoke are advised to quit before implant placement — ideally for at least 3 months beforehand and permanently afterward.
+Smoking impairs blood flow to the jawbone and suppresses immune function, both of which are critical during the healing and osseointegration phase. Studies consistently show that smokers have implant failure rates 2–3 times higher than non-smokers, a finding the [American Association of Oral and Maxillofacial Surgeons (AAOMS)](https://www.aaoms.org/dental-implants) notes as a primary patient selection criterion. Patients who smoke are advised to quit before implant placement — ideally for at least 3 months beforehand and permanently afterward.
 
 ### 4. Bite Forces and Parafunctional Habits
 

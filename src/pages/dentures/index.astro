@@ -16,7 +16,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Dentures Huntington Beach | Full & Partial Dentures HB, CA Prosthodontist"
+  title="Dentures Huntington Beach | Full & Partial Dentures"
   description="Modern full and partial dentures in Huntington Beach, CA. Comfortable, natural-looking dentures from a board-certified prosthodontist. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >

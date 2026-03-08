@@ -20,14 +20,12 @@ const localBusiness = {
   'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
   'priceRange': '$$$$',
   'medicalSpecialty': 'Prosthodontics',
-  // sameAs links help LLMs and Google build the practice's entity graph.
-  // Replace placeholder URLs with your actual verified profile URLs.
-  'sameAs': [
-    'https://www.google.com/maps?cid=YOUR_GOOGLE_CID',    // Google Business Profile
-    'https://www.yelp.com/biz/huntington-beach-prosthodontics',
-    'https://www.healthgrades.com/dentists/huntington-beach-prosthodontics',
-    'https://www.zocdoc.com/practice/huntington-beach-prosthodontics',
-  ],
+  // TODO: Add real verified profile URLs to sameAs once confirmed live:
+  // 'sameAs': [
+  //   'https://www.google.com/maps?cid=<YOUR_REAL_CID>',
+  //   'https://www.yelp.com/biz/<your-real-slug>',
+  //   'https://www.healthgrades.com/dentists/<your-real-slug>',
+  // ],
 };
 
 const faqs = [
@@ -59,7 +57,7 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="Prosthodontist Huntington Beach | Dental Implants & Smile Restoration"
+  title="Prosthodontist Huntington Beach | Dental Implants & Veneers"
   description="Huntington Beach Prosthodontics offers dental implants, All-on-X, veneers, and full smile restorations. Board-certified prosthodontist serving HB, CA. Call today."
   schema={localBusiness}
 >
@@ -356,9 +354,9 @@ const faqs = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {[
-          { src: '/images/gallery/edc2a9_63f959b1683a47f9b5fb4916473d5811~mv2.avif', alt: 'Patient smile restoration result' },
-          { src: '/images/gallery/edc2a9_bf872454f2f4482a8b3ebd4a4e1cf8b1~mv2.avif', alt: 'Full smile makeover result' },
-          { src: '/images/gallery/edc2a9_f4b39cbd01d24b449cba3be2c75552f4~mv2.avif', alt: 'Cosmetic dentistry patient result' },
+          { src: '/images/gallery/edc2a9_63f959b1683a47f9b5fb4916473d5811~mv2.avif', alt: 'Before and after dental implant restoration at Huntington Beach Prosthodontics' },
+          { src: '/images/gallery/edc2a9_bf872454f2f4482a8b3ebd4a4e1cf8b1~mv2.avif', alt: 'Porcelain veneer smile makeover showing natural tooth color and symmetry' },
+          { src: '/images/gallery/edc2a9_f4b39cbd01d24b449cba3be2c75552f4~mv2.avif', alt: 'Full mouth reconstruction result with implant-supported crowns and bridges' },
         ].map((img) => (
           <a href="/gallery" class="block overflow-hidden rounded-xl aspect-[4/3] bg-surface-2">
             <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />

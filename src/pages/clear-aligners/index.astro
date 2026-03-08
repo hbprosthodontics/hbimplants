@@ -13,7 +13,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Clear Aligners Huntington Beach | Invisalign-Style Aligners by a Prosthodontist"
+  title="Clear Aligners Huntington Beach | Prosthodontist"
   description="Clear aligner treatment in Huntington Beach planned by a prosthodontist. Ideal for patients combining orthodontic alignment with veneers, crowns, or implant preparation."
   schema={[localBusiness, faqSchema]}
 >

@@ -14,7 +14,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Implant Restorations Huntington Beach | Crowns, Bridges & Implant Dentures"
+  title="Implant Restorations Huntington Beach | Crowns & Bridges"
   description="Implant restorations in Huntington Beach include crowns, bridges, and dentures anchored to implants. Maximum stability and natural results. Call (714) 846-1386."
   schema={[localBusiness, faqSchema]}
 >

@@ -14,7 +14,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Free Dental Implant Consultation Huntington Beach | HB Prosthodontics"
+  title="Dental Implant Consultation Huntington Beach, CA"
   description="Schedule your free dental implant consultation in Huntington Beach. Get a personalized implant plan from Dr. Favian Cheong, board-certified prosthodontist."
   schema={[localBusiness, faqSchema]}
 >

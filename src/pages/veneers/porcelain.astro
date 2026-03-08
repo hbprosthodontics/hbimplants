@@ -13,7 +13,7 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Porcelain Veneers in Huntington Beach | Specialist Cosmetic Dentist"
+  title="Porcelain Veneers Huntington Beach | Cosmetic Dentist"
   description="Ultra-thin porcelain veneers crafted to transform your smile at Huntington Beach Prosthodontics. 2-visit process, 10-20 year lifespan. Specialist-placed veneers."
   schema={[localBusiness, faqSchema]}
 >
