@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'How does an implant bridge differ from a conventional bridge?', answer: 'A conventional dental bridge requires crowning the adjacent healthy teeth on either side of the gap to serve as anchors. This permanently damages two or more healthy teeth. An implant-supported bridge uses 2 implants as anchors — the adjacent healthy teeth are completely untouched. Implant bridges also preserve jawbone and have a longer lifespan than tooth-supported bridges.' },
   { question: 'How many implants do I need for a bridge?', answer: 'A 3-unit bridge (replacing one missing tooth) requires 2 implants — one on each end. A 4-unit bridge (replacing 2 adjacent missing teeth) also typically uses 2 implants. For longer spans (3+ adjacent missing teeth), 3 or more implants may be needed depending on bone quality and bite forces.' },
@@ -40,6 +40,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
       </p>
       <p class="text-neutral-mid leading-relaxed mb-6">
         An implant-supported bridge eliminates all of these downsides. Adjacent teeth remain completely intact. The implant posts stimulate bone beneath the span. And because the bridge is anchored to implants rather than teeth, its longevity is not affected by any future changes to adjacent teeth. For more on implant options, see our <a href="/dental-implants" class="text-brand-blue hover:underline">dental implants overview</a> and <a href="/restorative-dentistry/bridges" class="text-brand-blue hover:underline">conventional bridge alternatives</a>.
+      </p>
+      <h2 class="section-subheading mt-10 mb-4">Cost of Implant-Supported Bridges in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        An implant-supported 3-unit bridge (2 implants + 1 bridge) typically ranges from <strong>$5,500–$9,500</strong> in the Huntington Beach area — higher than a conventional tooth-supported bridge, but significantly better in long-term outcomes and preservation of healthy adjacent teeth. Longer spans (4+ units) are priced accordingly.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Some insurance plans contribute toward the implant and/or the bridge prosthetic. Flexible financing is available. See our <a href="/financing" class="text-brand-blue hover:underline">financing and insurance page</a> for options.
       </p>
       <a href="/schedule" class="btn-primary">Schedule Your Implant Bridge Evaluation</a>
     </div>

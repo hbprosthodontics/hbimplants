@@ -82,4 +82,4 @@ If you're considering dental implants in Huntington Beach or have questions abou
 
 ---
 
-*Dr. Favian Cheong is a board-certified prosthodontist at Huntington Beach Prosthodontics. [Schedule a consultation](/schedule) to discuss dental implants and whether they're right for you.*
+*Dr. Favian Cheong is a certified prosthodontic specialist at Huntington Beach Prosthodontics. [Schedule a consultation](/schedule) to discuss dental implants and whether they're right for you.*

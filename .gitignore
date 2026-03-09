@@ -6,3 +6,4 @@ dist/
 *.log
 .playwright-mcp/
 /images/
+google-service-account.json

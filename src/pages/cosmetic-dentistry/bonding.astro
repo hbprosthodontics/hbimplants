@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'How long does dental bonding last?', answer: 'Dental bonding typically lasts 5–10 years with proper care. Composite resin is more porous than porcelain and more susceptible to staining from coffee, tea, and red wine. Avoiding these habits and maintaining good oral hygiene extends bonding longevity. Eventually, bonding can be touched up or replaced at the chair without significant preparation.' },
   { question: 'When is bonding better than veneers?', answer: 'Bonding is preferred when: the correction is minor (a small chip, a subtle gap), the patient wants the most conservative and affordable option, or the correction is needed quickly (bonding is same-day). Veneers are superior for: multiple teeth with significant color or shape concerns, patients who want a longer-lasting result, or situations requiring precise shade control. We help you choose the right approach for your specific situation.' },

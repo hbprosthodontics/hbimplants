@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What is an implant crown?', answer: 'An implant crown is the visible tooth replacement that screws or cements onto the top of a dental implant abutment. It replaces the anatomical crown of the natural tooth — the part visible above the gumline. The implant post replaces the root; the crown replaces everything above.' },
   { question: 'How is an implant crown attached?', answer: 'Implant crowns are attached either with a screw (screw-retained) or dental cement (cement-retained). Screw-retained crowns are retrievable without damaging the restoration — an advantage for future maintenance. Cement-retained crowns often achieve slightly better aesthetics. Dr. Favian Cheong selects the attachment method based on the implant position, aesthetic zone, and your specific anatomy.' },

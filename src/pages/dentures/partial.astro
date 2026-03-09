@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'Are partial dentures better than bridges?', answer: 'Neither is universally better — the right choice depends on your specific situation. A fixed bridge (conventional or implant-supported) is generally preferred when it is feasible, because it does not require removal, is more stable, and does not put clasping pressure on adjacent teeth. A partial denture is appropriate when multiple teeth are missing in different areas of the arch, when a bridge is not feasible due to lack of suitable anchor teeth, or when budget is the primary constraint.' },
   { question: 'How do partial dentures attach?', answer: 'The most common partial denture uses metal clasps (most often cobalt-chrome) that wrap around adjacent teeth for retention. Precision attachment partials use internal attachments within crowns on the anchor teeth — more esthetic and more stable, but requiring crown fabrication. Flexible nylon partials (like Valplast) use tooth-colored acrylic clasps that are esthetic and comfortable but less rigid.' },
@@ -41,6 +41,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
       </p>
       <p class="text-neutral-mid leading-relaxed mb-6">
         For patients with isolated missing teeth (1–3 teeth in a row), <a href="/dental-implants" class="text-brand-blue hover:underline">dental implants</a> or <a href="/restorative-dentistry/bridges" class="text-brand-blue hover:underline">implant-supported bridges</a> are generally superior solutions because they don't require removal and don't rely on adjacent teeth for support. Partial dentures excel when multiple teeth are missing across different areas of the arch, making a fixed bridge impractical.
+      </p>
+      <h2 class="section-subheading mt-10 mb-4">Cost of Partial Dentures in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        Partial dentures at Huntington Beach Prosthodontics range from <strong>$1,000–$2,500</strong>, depending on the number of missing teeth, the framework material (cast cobalt-chrome vs. flexible nylon), and whether precision attachments are used. Cast metal framework partials are the most durable option; flexible partials offer better esthetics in visible areas but are less rigid over time.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Many dental insurance plans cover a portion of partial denture costs. If implants are a viable option, we will provide an honest comparison of long-term costs and outcomes at your consultation. Flexible financing is available. See our <a href="/financing" class="text-brand-blue hover:underline">financing and insurance page</a>.
       </p>
       <a href="/schedule" class="btn-primary">Schedule Your Partial Denture Evaluation</a>
     </div>

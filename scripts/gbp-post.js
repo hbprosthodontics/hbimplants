@@ -18,6 +18,7 @@
 
 import 'dotenv/config';
 import { google } from 'googleapis';
+import { getLocationName, getAccessToken as getAccessTokenViaLib } from './lib/gbp-auth.js';
 
 const CTA_TYPES = ['LEARN_MORE', 'CALL', 'SIGN_UP', 'ORDER', 'BUY', 'GET_OFFER', 'BOOK'];
 const DEFAULT_CTA_URL = 'https://hbimplants.com/schedule';
@@ -45,16 +46,9 @@ function getOAuthClient() {
 }
 
 async function createPost(text, ctaType, ctaUrl) {
-  const { GBP_ACCOUNT_ID, GBP_LOCATION_ID } = process.env;
-  if (!GBP_ACCOUNT_ID || !GBP_LOCATION_ID) {
-    console.error('Error: GBP_ACCOUNT_ID and GBP_LOCATION_ID must be set in .env');
-    process.exit(1);
-  }
-
   const auth = getOAuthClient();
   const mybusiness = google.mybusinessaccountmanagement({ version: 'v1', auth });
 
-  // Build post body
   const postBody = {
     languageCode: 'en-US',
     summary: text,
@@ -65,7 +59,7 @@ async function createPost(text, ctaType, ctaUrl) {
     topicType: 'STANDARD',
   };
 
-  const locationName = `accounts/${GBP_ACCOUNT_ID}/locations/${GBP_LOCATION_ID}`;
+  const locationName = getLocationName();
 
   // Note: The actual posts API endpoint uses mybusinesspostings v4.9
   // Using direct fetch as the googleapis client may not include this API

@@ -3,24 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
-  'priceRange': '$$$$',
-  'medicalSpecialty': 'Prosthodontics',
-};
+import { localBusinessSchema as localBusiness } from '../../config/site';
 
 const procedureSchema = {
   '@context': 'https://schema.org',
@@ -72,7 +55,7 @@ const faqSchema = {
 
 <BaseLayout
   title="Dental Implants Huntington Beach | Prosthodontist"
-  description="Dental implants in Huntington Beach from a board-certified prosthodontist. Permanent tooth replacement with natural results. Free consultation. Call (714) 846-1386."
+  description="Dental implants in Huntington Beach from a certified prosthodontic specialist. Permanent tooth replacement with natural results. Free consultation. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <!-- Hero -->
@@ -85,7 +68,7 @@ const faqSchema = {
           <span class="text-brand-teal">The Permanent Solution to Tooth Loss</span>
         </h1>
         <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          As a board-certified prosthodontist, Dr. Favian Cheong specializes in the complete dental implant process — from evaluation and surgical coordination to custom crown design and long-term maintenance. If you're missing one tooth or several, dental implants in Huntington Beach are the closest thing dentistry has to growing a natural tooth back.
+          As a certified prosthodontic specialist, Dr. Favian Cheong specializes in the complete dental implant process — from evaluation and surgical coordination to custom crown design and long-term maintenance. If you're missing one tooth or several, dental implants in Huntington Beach are the closest thing dentistry has to growing a natural tooth back.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
@@ -107,7 +90,7 @@ const faqSchema = {
           The result is a tooth replacement that looks, feels, and functions like a natural tooth. You brush it like a natural tooth. You bite with it like a natural tooth. You don't remove it at night or apply adhesives. And because it replaces the root — not just the crown — it stimulates the jawbone and prevents the bone loss that accelerates with dentures or bridges over time.
         </p>
         <p class="text-neutral-mid leading-relaxed mb-6">
-          Dental implants have a 40-year clinical track record. Modern titanium implants achieve survival rates above 95% at 10 years. When you choose implant treatment at Huntington Beach Prosthodontics, you're choosing a specialist — not a generalist who does implants occasionally — but a board-certified prosthodontist who has placed and restored hundreds of implants. That specialization matters, both for initial outcomes and long-term success.
+          Dental implants have a 40-year clinical track record. Modern titanium implants achieve survival rates above 95% at 10 years. When you choose implant treatment at Huntington Beach Prosthodontics, you're choosing a specialist — not a generalist who does implants occasionally — but a certified prosthodontic specialist who has placed and restored hundreds of implants. That specialization matters, both for initial outcomes and long-term success.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {[

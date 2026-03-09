@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import { localBusinessSchema as localBusiness } from '../../config/site';
+
+const city = 'Westminster';
+const distance = '7 miles';
+const driveTime = '12 minutes';
+
+const faqs = [
+  {
+    question: 'Do you serve patients from Westminster?',
+    answer: 'Yes. Patients from Westminster regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 7 miles and 12 minutes from Westminster. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+  },
+  {
+    question: 'What procedures do Westminster patients most commonly come to you for?',
+    answer: 'Dental implants and All-on-4 full-arch restorations are our most requested procedures from patients across Orange County. We also see patients from Westminster for porcelain veneers, smile makeovers, implant-supported dentures, and complex restorative cases that require a prosthodontist.',
+  },
+  {
+    question: 'Why would I travel to Huntington Beach instead of seeing a dentist in Westminster?',
+    answer: 'Prosthodontics is a dental specialty requiring three additional years of residency training beyond dental school. Dr. Favian Cheong completed his specialty training at UCSF. For complex procedures — implants, full-arch reconstruction, veneers, or cases involving multiple teeth — a prosthodontist brings a level of planning, materials knowledge, and technical precision that a general dentist typically cannot match. Most of our out-of-area patients tell us the difference in outcome quality made the drive entirely worthwhile.',
+  },
+  {
+    question: 'How do I schedule a consultation from Westminster?',
+    answer: 'Call us at (714) 846-1386 or use our online appointment request form. We\'ll confirm your appointment by email or phone. The initial consultation includes a comprehensive exam and 3D imaging where appropriate.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Prosthodontist Near Westminster, CA | Dental Implants & Veneers | Dr. Favian Cheong"
+  description="Serving patients from Westminster, CA. Certified prosthodontist Dr. Favian Cheong offers dental implants, All-on-4, veneers & smile restoration. 7 miles from Westminster."
+  schema={[localBusiness, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-navy py-16 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="text-brand-gold text-sm font-semibold uppercase tracking-wide mb-4">Serving Westminster, CA</div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Prosthodontist Near Westminster, CA — Specialist Implant &amp; Cosmetic Dentistry
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Westminster is one of Orange County's most populous cities, and residents here deserve access to the highest level of dental specialist care — without traveling to Los Angeles or farther. Huntington Beach Prosthodontics is just {distance} from Westminster, about {driveTime} by surface streets. Dr. Favian Cheong, a certified prosthodontic specialist, offers the full spectrum of implant, cosmetic, and restorative dentistry that general dentists routinely refer their most complex cases to.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
+          <a href="tel:7148461386" class="text-white/90 font-medium text-base py-4 hover:text-white transition-colors text-center">(714) 846-1386</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Prosthodontist -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Specialist Training</div>
+          <h2 class="section-heading mb-6">Why Westminster patients choose a prosthodontist</h2>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Westminster's large, diverse population includes many patients with complex dental needs — missing teeth, significant bone loss, worn dentition, or cosmetic goals that go beyond what a standard dental visit can address. A prosthodontist is the appropriate specialist for these cases.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Prosthodontics is an ADA-recognized dental specialty. Getting to that designation requires completing dental school and then an additional three-year residency focused entirely on restoring and replacing teeth — implants, full-arch prosthetics, veneers, bite rehabilitation, and complex smile reconstruction. Dr. Favian Cheong completed that residency at UCSF and the VA San Francisco Medical Center.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            General dentists are excellent primary-care providers. But when your case involves multiple missing teeth, implant planning in compromised bone, a history of failed treatment, or a full-arch restoration — the three years of specialty training a prosthodontist brings produces meaningfully better outcomes.
+          </p>
+          <a href="/why-a-prosthodontist" class="btn-primary text-base px-6 py-3">Why Choose a Prosthodontist</a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: 'Three Extra Years of Specialty Training', desc: 'A prosthodontist completes a focused residency in restoring and replacing teeth — far beyond the scope of general dental training.' },
+            { title: 'ADA-Recognized Dental Specialist', desc: 'Prosthodontics is one of only nine dental specialties formally recognized by the American Dental Association.' },
+            { title: 'Complex Case Expertise', desc: 'Implants with bone loss, full-arch reconstruction, failed prior treatment, and complete smile design are where a prosthodontist\'s training adds the most value.' },
+            { title: 'Materials & Precision', desc: 'Prosthodontists receive intensive training in dental materials science — understanding which materials last, which look best, and which perform best for each clinical situation.' },
+          ].map(item => (
+            <div class="card p-6">
+              <h3 class="font-semibold text-brand-navy mb-2">{item.title}</h3>
+              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface-2 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">What We Offer</div>
+        <h2 class="section-heading mb-4">Services for Westminster patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Every procedure listed below is performed at the specialist level — planned with precision, executed with expertise, and designed to last.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Dental Implants', desc: 'Permanent tooth replacement that looks, feels, and functions like natural teeth. The gold standard for addressing missing teeth.', href: '/dental-implants' },
+          { title: 'All-on-4 / All-on-6', desc: 'Replace an entire arch of missing or failing teeth with a fixed prosthesis supported by four or six implants.', href: '/all-on-x/all-on-4' },
+          { title: 'Single Tooth Implants', desc: 'Restore a single missing tooth without affecting adjacent teeth — a more conservative and longer-lasting solution than a bridge.', href: '/dental-implants/single-tooth' },
+          { title: 'Porcelain Veneers', desc: 'Thin porcelain restorations that correct discoloration, chips, gaps, and shape irregularities with lifelike results.', href: '/veneers/porcelain' },
+          { title: 'Smile Makeovers', desc: 'A personalized combination of cosmetic and restorative procedures planned together to achieve a comprehensive smile transformation.', href: '/veneers/smile-makeover' },
+          { title: 'Implant-Supported Dentures', desc: 'Removable or fixed dentures anchored by implants — no more slipping, improved chewing force, and preserved bone.', href: '/implant-restorations/snap-on' },
+          { title: 'Full Mouth Reconstruction', desc: 'When the entire dentition needs attention — combining implants, crowns, veneers, and prosthetics into one comprehensive treatment plan.', href: '/all-on-x/full-mouth-reconstruction' },
+          { title: 'Bone Grafting', desc: 'Restoring lost jaw bone to create an adequate foundation for dental implants, particularly in patients with long-term tooth loss.', href: '/dental-implants/bone-grafting' },
+        ].map(service => (
+          <a href={service.href} class="card p-6 hover:shadow-md transition-shadow group">
+            <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+            <p class="text-neutral-mid text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-brand-blue text-sm font-medium">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Patient Trust</div>
+        <h2 class="section-heading mb-4">4.9 stars — 73 Google reviews</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Patients across Orange County — including Westminster, Fountain Valley, Garden Grove, and beyond — consistently rate their experience with Dr. Cheong and his team at the highest level.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center">
+          <div class="text-4xl font-bold text-brand-gold mb-2">4.9</div>
+          <div class="flex justify-center mb-3">
+            {Array(5).fill(null).map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            ))}
+          </div>
+          <div class="text-neutral-mid text-sm">73 Verified Google Reviews</div>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Favian Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">DDS, MS — Certified Prosthodontic Specialist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">UCLA DDS. UCSF specialty residency. ADA-recognized prosthodontic specialist. Serving Orange County patients with specialist-level care.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Janelle Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">General Dentist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">Comprehensive general dentistry care alongside specialist prosthodontic services — a full-service practice for patients of all needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Here -->
+  <section class="bg-brand-light py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
+          <h2 class="section-heading mb-6">From Westminster to Huntington Beach — {driveTime}</h2>
+          <p class="text-neutral-mid leading-relaxed mb-4">
+            From Westminster, head south on Bolsa Chica Street toward Huntington Beach. The drive is approximately {distance} and takes around {driveTime} under normal conditions. Our office at 16141 Bolsa Chica St., Suite C is in a professional medical complex with convenient parking and easy access from the street.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            Office hours: Monday, Wednesday, and Friday 9am–5pm; Saturday 10am–2pm. Tuesday and Thursday by appointment.
+          </p>
+          <a
+            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-6 py-3"
+          >
+            Get Directions on Google Maps
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-neutral-border">
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
+          <address class="not-italic text-neutral-mid leading-relaxed mb-6">
+            16141 Bolsa Chica St., Suite C<br />
+            Huntington Beach, CA 92649
+          </address>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
+          <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
+          <div class="mt-6 pt-6 border-t border-neutral-border">
+            <h3 class="font-serif text-lg font-semibold text-brand-navy mb-3">Hours</h3>
+            <ul class="text-neutral-mid text-sm space-y-1">
+              <li>Mon, Wed, Fri: 9am – 5pm</li>
+              <li>Tue, Thu: By Appointment</li>
+              <li>Sat: 10am – 2pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading={`Common Questions from ${city} Patients`} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Westminster patients: your specialist consultation is free"
+        subheading="Dr. Favian Cheong personally reviews every new patient case — no rush, no hard sell. Walk away with a clear picture of your options and what treatment would actually cost."
+      />
+    </div>
+  </section>
+
+</BaseLayout>

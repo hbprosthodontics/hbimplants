@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import { localBusinessSchema as localBusiness } from '../../config/site';
+
+const city = 'Long Beach';
+const distance = '15 miles';
+const driveTime = '22 minutes';
+
+const faqs = [
+  {
+    question: 'Do you serve patients from Long Beach?',
+    answer: 'Yes. Patients from Long Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 15 miles and 22 minutes from Long Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+  },
+  {
+    question: 'What procedures do Long Beach patients most commonly come to you for?',
+    answer: 'Dental implants and All-on-4 full-arch restorations are our most requested procedures from patients across Southern California. We also see patients from Long Beach for porcelain veneers, smile makeovers, implant-supported dentures, and complex restorative cases that require a prosthodontist.',
+  },
+  {
+    question: 'Why would I travel to Huntington Beach instead of seeing a dentist in Long Beach?',
+    answer: 'Prosthodontics is a dental specialty requiring three additional years of residency training beyond dental school. Dr. Favian Cheong completed his specialty training at UCSF. For complex procedures — implants, full-arch reconstruction, veneers, or cases involving multiple teeth — a prosthodontist brings a level of planning, materials knowledge, and technical precision that a general dentist typically cannot match. Most of our out-of-area patients tell us the difference in outcome quality made the drive entirely worthwhile.',
+  },
+  {
+    question: 'How do I schedule a consultation from Long Beach?',
+    answer: 'Call us at (714) 846-1386 or use our online appointment request form. We\'ll confirm your appointment by email or phone. The initial consultation includes a comprehensive exam and 3D imaging where appropriate.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Prosthodontist Near Long Beach, CA | Dental Implants & Veneers | Dr. Favian Cheong"
+  description="Serving patients from Long Beach, CA. Certified prosthodontist Dr. Favian Cheong offers dental implants, All-on-4, veneers & smile restoration. 15 miles from Long Beach."
+  schema={[localBusiness, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-navy py-16 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="text-brand-gold text-sm font-semibold uppercase tracking-wide mb-4">Serving Long Beach, CA</div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Prosthodontist Near Long Beach, CA — Specialist Implant &amp; Cosmetic Dentistry
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Long Beach is one of the largest cities in Southern California, with a diverse urban population and significant demand for specialist dental care. For patients seeking dental implants, full-arch reconstruction, cosmetic veneers, or complex restorative work, the commute to Huntington Beach Prosthodontics — just {distance} south on PCH, about {driveTime} — puts them in front of a certified prosthodontic specialist whose training and outcomes consistently exceed what generalist dentists can offer.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
+          <a href="tel:7148461386" class="text-white/90 font-medium text-base py-4 hover:text-white transition-colors text-center">(714) 846-1386</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Prosthodontist -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Specialist Training</div>
+          <h2 class="section-heading mb-6">Why Long Beach patients make the drive</h2>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Long Beach has no shortage of dental offices. What it lacks — like most cities — is easy access to a certified prosthodontic specialist. Prosthodontics is one of the rarest dental specialties. Nationally, there are more oral surgeons, orthodontists, and periodontists than prosthodontists. Finding one with the right credentials, university training pedigree, and clinical depth requires looking beyond your immediate zip code.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Dr. Favian Cheong's path to prosthodontics included undergraduate work at UC Irvine, a DDS from UCLA, and a three-year specialty residency at UCSF — earning specialist certification as one of nine ADA-recognized dental specialties. He sees cases from across Southern California because the combination of that training and a 4.9-star patient reputation is uncommon at any distance.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            Long Beach patients tell us consistently: once you've had specialist-level prosthodontic care for a complex case, the idea of going back to a generalist for the same type of work doesn't make sense. The planning depth, the material selection, the precision of fit — it is a qualitatively different experience.
+          </p>
+          <a href="/about" class="btn-primary text-base px-6 py-3">Meet Dr. Favian Cheong</a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: 'Three Extra Years of Specialty Residency', desc: 'Beyond dental school, a prosthodontist completes a three-year ADA-accredited residency exclusively in restoring and replacing teeth — the most demanding restorative training available.' },
+            { title: 'Expert in Complex Cases', desc: 'Multiple missing teeth, bone loss, full-arch reconstruction, and prior implant failure — cases that sit outside the scope of general dentistry and demand specialist expertise.' },
+            { title: 'UCLA & UCSF Credentials', desc: 'Two of the nation\'s leading dental institutions are represented in Dr. Cheong\'s training — a pedigree that matters in outcomes-oriented specialist care.' },
+            { title: 'ADA-Recognized Specialist', desc: 'Prosthodontics is one of nine dental specialties formally recognized by the American Dental Association. Specialist status requires completing a CODA-accredited 3-year residency beyond dental school.' },
+          ].map(item => (
+            <div class="card p-6">
+              <h3 class="font-semibold text-brand-navy mb-2">{item.title}</h3>
+              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface-2 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">What We Offer</div>
+        <h2 class="section-heading mb-4">Services for Long Beach patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          From single implants to complete full-arch cases — every treatment is performed at the specialist level, with specialist materials and specialist outcomes.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Dental Implants', desc: 'Replace one or more missing teeth with titanium implants and custom ceramic crowns — a permanent solution with no impact on neighboring teeth.', href: '/dental-implants' },
+          { title: 'All-on-4 / All-on-6', desc: 'The most comprehensive implant solution — replace an entire arch of teeth with a fixed bridge supported by four or six implants.', href: '/all-on-x/all-on-4' },
+          { title: 'Single Tooth Implants', desc: 'Precise, single-tooth replacement that preserves adjacent teeth and restores function and aesthetics to the individual site.', href: '/dental-implants/single-tooth' },
+          { title: 'Porcelain Veneers', desc: 'Specialist-designed veneers crafted to exact shade, shape, and surface texture specifications — cosmetic dentistry with a prosthodontic standard of precision.', href: '/veneers/porcelain' },
+          { title: 'Smile Makeovers', desc: 'A comprehensive transformation — combining whatever combination of procedures your goals require, planned as a unified case from day one.', href: '/veneers/smile-makeover' },
+          { title: 'Implant-Supported Dentures', desc: 'Dentures anchored to implants for true stability — a life-changing upgrade from conventional dentures that shift and require adhesive.', href: '/implant-restorations/snap-on' },
+          { title: 'Full Mouth Reconstruction', desc: 'Total rehabilitation of a failing or fully edentulous mouth — combining implants, crowns, prosthetics, and grafting into one coordinated treatment plan.', href: '/all-on-x/full-mouth-reconstruction' },
+          { title: 'Bone Grafting', desc: 'Restoring adequate bone volume for implant placement in patients who\'ve experienced bone loss following extractions or long-term tooth absence.', href: '/dental-implants/bone-grafting' },
+        ].map(service => (
+          <a href={service.href} class="card p-6 hover:shadow-md transition-shadow group">
+            <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+            <p class="text-neutral-mid text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-brand-blue text-sm font-medium">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Trusted By Patients Across SoCal</div>
+        <h2 class="section-heading mb-4">4.9 stars — 73 Google reviews</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Patients travel from Long Beach, Los Angeles, and across Orange County to see Dr. Cheong. The reviews reflect a consistent pattern: specialist care that genuinely delivers.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center">
+          <div class="text-4xl font-bold text-brand-gold mb-2">4.9</div>
+          <div class="flex justify-center mb-3">
+            {Array(5).fill(null).map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            ))}
+          </div>
+          <div class="text-neutral-mid text-sm">73 Google Reviews</div>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Favian Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">DDS, MS — Certified Prosthodontic Specialist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">UCLA DDS. UCSF Prosthodontic Residency. ADA-recognized prosthodontic specialist. Specialist care for patients from Long Beach and across Southern California.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Janelle Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">General Dentist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">General dentistry services available alongside specialist care — making Huntington Beach Prosthodontics a complete dental home for patients of all needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Here -->
+  <section class="bg-brand-light py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
+          <h2 class="section-heading mb-6">From Long Beach to Huntington Beach — {driveTime}</h2>
+          <p class="text-neutral-mid leading-relaxed mb-4">
+            From Long Beach, the most direct route is Pacific Coast Highway (PCH) south through Seal Beach and into Huntington Beach. The drive is approximately {distance} and typically takes around {driveTime}. Our office at 16141 Bolsa Chica St., Suite C is well-marked with parking available on site. For patients traveling during peak hours, the 405 south to Bolsa Chica Street is an efficient alternative.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            Office hours: Monday, Wednesday, and Friday 9am–5pm; Saturday 10am–2pm. Tuesday and Thursday appointments are available by arrangement.
+          </p>
+          <a
+            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-6 py-3"
+          >
+            Get Directions on Google Maps
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-neutral-border">
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
+          <address class="not-italic text-neutral-mid leading-relaxed mb-6">
+            16141 Bolsa Chica St., Suite C<br />
+            Huntington Beach, CA 92649
+          </address>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
+          <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
+          <div class="mt-6 pt-6 border-t border-neutral-border">
+            <h3 class="font-serif text-lg font-semibold text-brand-navy mb-3">Hours</h3>
+            <ul class="text-neutral-mid text-sm space-y-1">
+              <li>Mon, Wed, Fri: 9am – 5pm</li>
+              <li>Tue, Thu: By Appointment</li>
+              <li>Sat: 10am – 2pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading={`Common Questions from ${city} Patients`} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Long Beach patients: your free consultation is 22 minutes away"
+        subheading="Dr. Favian Cheong sees patients from Long Beach and across Southern California. Start with a complimentary exam and get an honest, expert assessment of your options."
+      />
+    </div>
+  </section>
+
+</BaseLayout>

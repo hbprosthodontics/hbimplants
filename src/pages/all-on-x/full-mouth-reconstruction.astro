@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = { '@context': 'https://schema.org', '@type': 'MedicalProcedure', 'name': 'Full Mouth Reconstruction', 'description': 'Full mouth reconstruction rebuilds all teeth in both the upper and lower jaws using a coordinated combination of implants, crowns, bridges, and other prosthodontic procedures.', 'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Mouth', 'followup': 'As recommended by your prosthodontist' };
 const faqs = [
   { question: 'What is full mouth reconstruction?', answer: 'Full mouth reconstruction (also called full mouth rehabilitation) is a comprehensive dental treatment plan that rebuilds all or most of the teeth in both jaws. Unlike a smile makeover that focuses on aesthetics, full mouth reconstruction addresses functional issues — bite alignment, worn teeth, bone loss, and tooth loss — alongside aesthetics. It typically combines multiple procedures: implants, crowns, bridges, veneers, bone grafting, and sometimes orthodontics.' },
@@ -16,7 +16,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="Full Mouth Reconstruction Huntington Beach, CA"
-  description="Full mouth reconstruction in Huntington Beach restores every tooth using implants, crowns, and advanced prosthodontic techniques. Board-certified specialist care."
+  description="Full mouth reconstruction in Huntington Beach restores every tooth using implants, crowns, and advanced prosthodontic techniques. Certified prosthodontic specialist care."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-20">
@@ -28,7 +28,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
           <span class="text-brand-teal">Complete Dental Restoration by a Specialist</span>
         </h1>
         <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          Full mouth reconstruction rebuilds every tooth in both jaws — addressing function, aesthetics, and long-term health through a coordinated, sequenced treatment plan designed by Dr. Favian Cheong, board-certified prosthodontist.
+          Full mouth reconstruction rebuilds every tooth in both jaws — addressing function, aesthetics, and long-term health through a coordinated, sequenced treatment plan designed by Dr. Favian Cheong, certified prosthodontic specialist.
         </p>
         <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Schedule Your Reconstruction Consultation</a>
       </div>

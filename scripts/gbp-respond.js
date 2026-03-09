@@ -11,6 +11,7 @@
  */
 
 import 'dotenv/config';
+import { getAccessToken, getLocationName, gbpFetch } from './lib/gbp-auth.js';
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -22,41 +23,11 @@ function parseArgs() {
   return opts;
 }
 
-async function getAccessToken() {
-  const { GBP_CLIENT_ID, GBP_CLIENT_SECRET, GBP_REFRESH_TOKEN } = process.env;
-  if (!GBP_CLIENT_ID || !GBP_CLIENT_SECRET || !GBP_REFRESH_TOKEN) {
-    console.error('Error: GBP_CLIENT_ID, GBP_CLIENT_SECRET, and GBP_REFRESH_TOKEN must be set in .env');
-    process.exit(1);
-  }
-  const res = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      client_id: GBP_CLIENT_ID,
-      client_secret: GBP_CLIENT_SECRET,
-      refresh_token: GBP_REFRESH_TOKEN,
-      grant_type: 'refresh_token',
-    }),
-  });
-  const data = await res.json();
-  if (!data.access_token) throw new Error('Failed to get access token: ' + JSON.stringify(data));
-  return data.access_token;
-}
-
 async function replyToReview(accessToken, reviewId, replyText) {
-  const { GBP_ACCOUNT_ID, GBP_LOCATION_ID } = process.env;
-  if (!GBP_ACCOUNT_ID || !GBP_LOCATION_ID) {
-    console.error('Error: GBP_ACCOUNT_ID and GBP_LOCATION_ID must be set in .env');
-    process.exit(1);
-  }
-
-  const url = `https://mybusiness.googleapis.com/v4/accounts/${GBP_ACCOUNT_ID}/locations/${GBP_LOCATION_ID}/reviews/${reviewId}/reply`;
-  const res = await fetch(url, {
+  const locationName = getLocationName();
+  const url = `https://mybusiness.googleapis.com/v4/${locationName}/reviews/${reviewId}/reply`;
+  const res = await gbpFetch(url, accessToken, {
     method: 'PUT',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({ comment: replyText }),
   });
 

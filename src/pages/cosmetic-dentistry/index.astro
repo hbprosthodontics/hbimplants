@@ -3,9 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
-  { question: 'What is the difference between cosmetic dentistry and prosthodontics?', answer: '"Cosmetic dentistry" is not a recognized dental specialty — any licensed dentist can call themselves a cosmetic dentist. Prosthodontics is the ADA-recognized specialty that focuses on the restoration and replacement of teeth. Prosthodontists complete 3 additional years of training after dental school, which includes comprehensive cosmetic training. At Huntington Beach Prosthodontics, cosmetic procedures are performed by a board-certified specialist with a higher level of training than most "cosmetic dentists."' },
+  { question: 'What is the difference between cosmetic dentistry and prosthodontics?', answer: '"Cosmetic dentistry" is not a recognized dental specialty — any licensed dentist can call themselves a cosmetic dentist. Prosthodontics is the ADA-recognized specialty that focuses on the restoration and replacement of teeth. Prosthodontists complete 3 additional years of training after dental school, which includes comprehensive cosmetic training. At Huntington Beach Prosthodontics, cosmetic procedures are performed by an ADA-recognized prosthodontic specialist with a higher level of training than most "cosmetic dentists."' },
   { question: 'What cosmetic dental procedures do you offer?', answer: 'We offer the full spectrum of cosmetic dentistry including porcelain veneers, teeth whitening (in-office and take-home), dental bonding, gum contouring, smile makeovers (combining multiple procedures), and cosmetic implant crowns. Many patients combine procedures for a complete transformation that addresses both aesthetics and function.' },
   { question: 'Does dental insurance cover cosmetic procedures?', answer: 'Most dental insurance plans do not cover elective cosmetic procedures like veneers and whitening. However, some restorative procedures with cosmetic benefits (like implants, crowns, and bonding for chips from injury) may be partially covered. We verify your benefits and maximize what coverage is available before beginning treatment.' },
   { question: 'How do I know which cosmetic procedure is right for me?', answer: 'The right procedure depends on the specific concerns you want to address, the condition of your existing teeth, your bite, and your goals. Veneers are ideal for multiple teeth with color, shape, or minor alignment issues. Whitening works best for surface and intrinsic staining on otherwise healthy, well-shaped teeth. Bonding is best for minor chips and gaps. Implants are needed for missing teeth. Your consultation with Dr. Favian Cheong will clarify which approach delivers the result you want.' },
@@ -16,7 +16,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="Cosmetic Dentist Huntington Beach | Prosthodontist"
-  description="Cosmetic dentistry in Huntington Beach from a board-certified prosthodontist. Veneers, whitening, bonding, and complete smile makeovers. Call (714) 846-1386."
+  description="Cosmetic dentistry in Huntington Beach from a certified prosthodontic specialist. Veneers, whitening, bonding, and complete smile makeovers. Call (714) 846-1386."
   schema={[localBusiness, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-24">
@@ -27,7 +27,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
           <span class="text-brand-teal">Smile Enhancement at the Specialist Level</span>
         </h1>
         <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          At Huntington Beach Prosthodontics, cosmetic dentistry is not a side service — it's part of our specialist DNA. Every cosmetic procedure is planned and delivered by Dr. Favian Cheong, board-certified prosthodontist, with the precision that only specialty training provides.
+          At Huntington Beach Prosthodontics, cosmetic dentistry is not a side service — it's part of our specialist DNA. Every cosmetic procedure is planned and delivered by Dr. Favian Cheong, certified prosthodontic specialist, with the precision that only specialty training provides.
         </p>
         <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Schedule Cosmetic Consultation</a>
       </div>

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'How does a dental bridge work?', answer: 'A dental bridge spans the gap where a tooth is missing by anchoring to the teeth on either side (called abutment teeth). The bridge consists of two crowns on the abutment teeth and one or more artificial teeth (pontics) suspended in between. The abutment teeth must be prepared (reshaped) to receive crowns, and the entire bridge is cemented as one unit. The result is a fixed, non-removable restoration that fills the gap and restores chewing function.' },
   { question: 'What are the downsides of a traditional dental bridge?', answer: 'The primary downside is the permanent alteration of healthy adjacent teeth. To support the bridge, the teeth on either side of the gap must be ground down (prepared) regardless of their current health. This removes healthy tooth structure that cannot be restored. Additionally, conventional bridges do not prevent the bone loss that occurs beneath a missing tooth — the jawbone gradually resorbs in the gap area. Bridges also fail at three points rather than one (both anchor crowns and the bridge itself). For most patients with healthy adjacent teeth and sufficient bone, a dental implant is a superior long-term solution.' },
@@ -44,6 +44,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
       </p>
       <p class="text-neutral-mid leading-relaxed mb-6">
         If you are undecided between a bridge and an implant, we provide objective guidance based on your specific clinical situation. For patients with healthy adjacent teeth, we will honestly discuss the advantages of an <a href="/implant-restorations/bridges" class="text-brand-blue hover:underline">implant-supported bridge</a> over a conventional bridge. For patients whose adjacent teeth are already compromised or planned for crowns, a conventional bridge may be the more practical and cost-effective choice.
+      </p>
+      <h2 class="section-subheading mt-10 mb-4">Cost of Dental Bridges in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        A conventional 3-unit dental bridge (2 crowns + 1 pontic) typically ranges from <strong>$2,500–$5,000</strong> in the Huntington Beach area, depending on material selection and case complexity. This is generally less expensive than an implant-supported bridge upfront, though the long-term cost difference narrows when accounting for bridge replacement over 10–15 years versus implant longevity of 20+ years.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Dental bridges are frequently covered in part by insurance, particularly when deemed medically necessary. We verify your benefits before treatment. Flexible financing is available for any remaining balance. See our <a href="/financing" class="text-brand-blue hover:underline">financing and insurance page</a>.
       </p>
       <a href="/schedule" class="btn-primary">Schedule Your Bridge Evaluation</a>
     </div>
