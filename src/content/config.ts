@@ -8,7 +8,7 @@ const blog = defineCollection({
     publishDate: z.date(),
     updatedDate: z.date().optional(),
     targetKeyword: z.string(),
-    category: z.enum(['dental-implants', 'all-on-x', 'veneers', 'dentures', 'cosmetic', 'general', 'prosthodontics']),
+    category: z.enum(['dental-implants', 'all-on-x', 'dentures', 'cosmetic', 'prosthodontics']),
     author: z.string().default('Huntington Beach Prosthodontics'),
     draft: z.boolean().default(false),
     featuredImage: z.string().optional(),
