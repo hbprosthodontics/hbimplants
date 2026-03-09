@@ -6,7 +6,7 @@ import { localBusinessSchema, site } from '../config/site';
 
 // Fetch real Google reviews at build time
 const PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
-const PLACE_ID = import.meta.env.PLACE_ID;
+const PLACE_ID = import.meta.env.GOOGLE_PLACE_ID;
 
 const fallbackTestimonials = [
   { quote: 'Dr. Cheong transformed my smile completely. I can\'t thank him enough for the exceptional care I received! Highly recommend!', name: 'Lindsey U.', meta: 'Huntington Beach' },
