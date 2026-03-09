@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What are clear aligners and how do they work?', answer: 'Clear aligners are a series of custom-fabricated, removable plastic trays that gradually move teeth into the desired position. Each tray is worn for approximately 1–2 weeks before progressing to the next in the series. The total number of trays depends on the complexity of the movement required — ranging from 6–10 trays for minor corrections to 30+ for comprehensive realignment. Clear aligners are nearly invisible when worn and can be removed for eating, brushing, and special occasions.' },
   { question: 'Why have clear aligners planned by a prosthodontist?', answer: 'Prosthodontists approach orthodontic movement with a restorative endpoint in mind. When clear aligners are part of a broader treatment plan that includes crowns, veneers, or implants, the tooth positions achieved through alignment must be specifically planned to accommodate the restorative work. A prosthodontist can sequence treatment so that alignment creates the ideal foundation for final restorations — achieving results that neither orthodontics nor restorative work alone could accomplish. For patients whose primary goal is cosmetic, clear aligners can also reduce or eliminate the amount of tooth reduction needed for veneers.' },
@@ -66,6 +66,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
           ))}
         </div>
 
+        <h2 class="section-subheading mt-10 mb-4">Cost of Clear Aligners in Huntington Beach</h2>
+        <p class="text-neutral-mid leading-relaxed mb-4">
+          Clear aligner treatment at Huntington Beach Prosthodontics ranges from <strong>$3,500–$7,000</strong> depending on case complexity — the total number of trays required and the extent of tooth movement needed. Minor corrections (6–12 trays) fall toward the lower end; comprehensive realignment cases requiring 30+ trays fall at the higher end.
+        </p>
+        <p class="text-neutral-mid leading-relaxed mb-6">
+          Many PPO dental plans include an orthodontic benefit (commonly $1,000–$2,000 lifetime) that applies to clear aligner treatment. Flexible monthly financing is available for any remaining balance. Complete cost information is provided at your consultation after digital treatment simulation. See our <a href="/financing" class="text-brand-blue hover:underline">financing options</a>.
+        </p>
         <a href="/schedule" class="btn-primary">Schedule Your Clear Aligner Consultation</a>
       </div>
     </div>

@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import { localBusinessSchema as localBusiness } from '../../config/site';
+
+const city = 'Newport Beach';
+const distance = '7 miles';
+const driveTime = '13 minutes';
+
+const faqs = [
+  {
+    question: 'Do you serve patients from Newport Beach?',
+    answer: 'Yes. Patients from Newport Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 7 miles and 13 minutes from Newport Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+  },
+  {
+    question: 'What procedures do Newport Beach patients most commonly come to you for?',
+    answer: 'Newport Beach patients frequently seek high-aesthetic cosmetic work — porcelain veneers, smile makeovers, and full-arch restorations where appearance is as important as function. We also provide dental implants, All-on-4, and complex restorative cases requiring specialist prosthodontic expertise.',
+  },
+  {
+    question: 'Why would I travel to Huntington Beach instead of seeing a dentist in Newport Beach?',
+    answer: 'Prosthodontics is a dental specialty requiring three additional years of residency training beyond dental school. Dr. Favian Cheong completed his specialty training at UCSF. For complex procedures — implants, full-arch reconstruction, veneers, or cases involving multiple teeth — a prosthodontist brings a level of planning, materials knowledge, and technical precision that a general dentist typically cannot match. Most of our out-of-area patients tell us the difference in outcome quality made the drive entirely worthwhile.',
+  },
+  {
+    question: 'How do I schedule a consultation from Newport Beach?',
+    answer: 'Call us at (714) 846-1386 or use our online appointment request form. We\'ll confirm your appointment by email or phone. The initial consultation includes a comprehensive exam and 3D imaging where appropriate.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Prosthodontist Near Newport Beach, CA | Dental Implants & Veneers | Dr. Favian Cheong"
+  description="Serving patients from Newport Beach, CA. Certified prosthodontist Dr. Favian Cheong offers dental implants, All-on-4, porcelain veneers & smile restoration. 7 miles from Newport Beach."
+  schema={[localBusiness, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-navy py-16 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="text-brand-gold text-sm font-semibold uppercase tracking-wide mb-4">Serving Newport Beach, CA</div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Prosthodontist Near Newport Beach, CA — Specialist Implant &amp; Cosmetic Dentistry
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Newport Beach residents have high standards — in their homes, in their lifestyle, and in the quality of care they accept for their health. Cosmetic dentistry is no exception. Huntington Beach Prosthodontics is just {distance} north of Newport Beach, about {driveTime} along Pacific Coast Highway. Dr. Favian Cheong, a certified prosthodontic specialist, delivers the kind of precise, aesthetically superior cosmetic and implant dentistry that discerning Newport Beach patients expect from the best specialist in the region.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
+          <a href="tel:7148461386" class="text-white/90 font-medium text-base py-4 hover:text-white transition-colors text-center">(714) 846-1386</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Prosthodontist -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Specialist Cosmetic Care</div>
+          <h2 class="section-heading mb-6">Why Newport Beach patients choose a prosthodontist for veneers and implants</h2>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Newport Beach cosmetic dentistry patients often arrive at our door after an unsatisfying experience with a general dentist who offered veneers, crowns, or implants that looked clinical rather than natural. The margin between good dental work and exceptional dental work is entirely in the planning, material selection, and level of training applied to the case.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Prosthodontists are the only dental specialists whose entire residency training is focused on exactly these problems: achieving natural-looking, precisely fitted, functionally sound restorations. Shade selection, gingival aesthetics, occlusal planning, and prosthetic design are not elective topics in a prosthodontic residency — they are the core curriculum.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            Dr. Cheong's training at UCSF — one of the most demanding prosthodontic residency programs in the country — gives Newport Beach patients access to a level of cosmetic and implant precision that goes significantly beyond what a cosmetically-focused general dentist can offer.
+          </p>
+          <a href="/veneers" class="btn-primary text-base px-6 py-3">Explore Veneers & Cosmetic Options</a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: 'Cosmetic Precision at the Specialist Level', desc: 'Veneers, crowns, and cosmetic restorations designed by a prosthodontist integrate with your bite, gum line, and facial proportions — not just the individual teeth.' },
+            { title: 'Shade & Aesthetics Expertise', desc: 'Prosthodontists train extensively in ceramic materials science — understanding how light interacts with porcelain to achieve truly natural-looking results.' },
+            { title: 'Implant Planning Depth', desc: 'Implants placed and restored by a prosthodontist account for the long-term aesthetic outcome — angulation, gum architecture, and crown proportions that hold up for years.' },
+            { title: 'One Specialist for the Whole Plan', desc: 'Rather than coordinating between a cosmetic dentist, an implant dentist, and a surgeon with no shared vision, a prosthodontist oversees the complete plan from start to finish.' },
+          ].map(item => (
+            <div class="card p-6">
+              <h3 class="font-semibold text-brand-navy mb-2">{item.title}</h3>
+              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface-2 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Treatments Available</div>
+        <h2 class="section-heading mb-4">Services for Newport Beach patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          From aesthetic veneers to full-arch implant reconstructions — every treatment is planned and delivered at the standard Newport Beach patients expect from a true specialist.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Porcelain Veneers', desc: 'Custom-designed veneers that achieve a natural, luminous result. Prosthodontic-level shade selection, preparation, and fit — cosmetic dentistry done properly.', href: '/veneers/porcelain' },
+          { title: 'Smile Makeovers', desc: 'A complete cosmetic plan tailored to your face, bite, and goals — combining veneers, whitening, bonding, crowns, and implants as a unified aesthetic vision.', href: '/veneers/smile-makeover' },
+          { title: 'Dental Implants', desc: 'Permanent tooth replacement planned and restored by a prosthodontist — for an outcome that looks and functions like a natural tooth over the long term.', href: '/dental-implants' },
+          { title: 'All-on-4 / All-on-6', desc: 'Full-arch tooth replacement — replace all your upper or lower teeth with a fixed, non-removable prosthesis on as few as four implants.', href: '/all-on-x/all-on-4' },
+          { title: 'Single Tooth Implants', desc: 'Replace a single missing tooth with a result that is aesthetically indistinguishable from a natural tooth and preserves adjacent tooth structure.', href: '/dental-implants/single-tooth' },
+          { title: 'Implant-Supported Dentures', desc: 'Implant-retained dentures that are stable, comfortable, and aesthetically superior to conventional removable dentures.', href: '/implant-restorations/snap-on' },
+          { title: 'Full Mouth Reconstruction', desc: 'Total rehabilitation of a worn, damaged, or failing dentition — combining the procedures needed for a complete functional and aesthetic restoration.', href: '/all-on-x/full-mouth-reconstruction' },
+          { title: 'Bone Grafting', desc: 'Rebuilding the bone structure needed for implant placement, with the precision and planning a prosthodontist brings to every surgical phase.', href: '/dental-implants/bone-grafting' },
+        ].map(service => (
+          <a href={service.href} class="card p-6 hover:shadow-md transition-shadow group">
+            <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+            <p class="text-neutral-mid text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-brand-blue text-sm font-medium">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">What Patients Say</div>
+        <h2 class="section-heading mb-4">4.9 stars — 73 Google reviews</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Newport Beach patients who are accustomed to premium service consistently describe their experience at Huntington Beach Prosthodontics as the best dental care they have received — period.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center">
+          <div class="text-4xl font-bold text-brand-gold mb-2">4.9</div>
+          <div class="flex justify-center mb-3">
+            {Array(5).fill(null).map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            ))}
+          </div>
+          <div class="text-neutral-mid text-sm">73 Google Reviews</div>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Favian Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">DDS, MS — Certified Prosthodontic Specialist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">UCLA DDS. UCSF Prosthodontic Residency. ADA-recognized prosthodontic specialist. Precision cosmetic and implant dentistry at the specialist level.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Janelle Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">General Dentist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">General dentistry services available alongside specialist prosthodontic care — making this a complete dental practice for Newport Beach families.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Here -->
+  <section class="bg-brand-light py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
+          <h2 class="section-heading mb-6">From Newport Beach to Huntington Beach — {driveTime}</h2>
+          <p class="text-neutral-mid leading-relaxed mb-4">
+            From Newport Beach, head north on Pacific Coast Highway (PCH). The drive to our office at 16141 Bolsa Chica St., Suite C is approximately {distance} and takes about {driveTime} under typical conditions. The route along PCH is one of the most straightforward in Orange County — no freeway required. We have on-site parking and easy street access from Bolsa Chica Street.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            We are open Monday, Wednesday, and Friday 9am–5pm and Saturday 10am–2pm. Contact us for Tuesday or Thursday availability.
+          </p>
+          <a
+            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-6 py-3"
+          >
+            Get Directions on Google Maps
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-neutral-border">
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
+          <address class="not-italic text-neutral-mid leading-relaxed mb-6">
+            16141 Bolsa Chica St., Suite C<br />
+            Huntington Beach, CA 92649
+          </address>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
+          <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
+          <div class="mt-6 pt-6 border-t border-neutral-border">
+            <h3 class="font-serif text-lg font-semibold text-brand-navy mb-3">Hours</h3>
+            <ul class="text-neutral-mid text-sm space-y-1">
+              <li>Mon, Wed, Fri: 9am – 5pm</li>
+              <li>Tue, Thu: By Appointment</li>
+              <li>Sat: 10am – 2pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading={`Common Questions from ${city} Patients`} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Newport Beach patients: experience the prosthodontic difference"
+        subheading="Dr. Favian Cheong delivers cosmetic and implant dentistry at a specialist level that discerning patients immediately recognize. Your free consultation starts here."
+      />
+    </div>
+  </section>
+
+</BaseLayout>

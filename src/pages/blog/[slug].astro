@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import CTABlock from '../../components/CTABlock.astro';
+import { localBusinessSchema as localBusiness, site } from '../../config/site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -33,44 +34,25 @@ const articleSchema = {
   'dateModified': (post.data.updatedDate || post.data.publishDate).toISOString(),
   'mainEntityOfPage': {
     '@type': 'WebPage',
-    '@id': `https://hbimplants.com/blog/${post.slug}`,
+    '@id': `${site.url}/blog/${post.slug}`,
   },
-  'url': `https://hbimplants.com/blog/${post.slug}`,
+  'url': `${site.url}/blog/${post.slug}`,
   'author': {
     '@type': 'Organization',
     'name': post.data.author,
-    'url': 'https://hbimplants.com',
+    'url': site.url,
   },
   'publisher': {
     '@type': 'Organization',
-    'name': 'Huntington Beach Prosthodontics',
-    'url': 'https://hbimplants.com',
+    'name': site.name,
+    'url': site.url,
     'logo': {
       '@type': 'ImageObject',
-      'url': 'https://hbimplants.com/images/og-default.jpg',
+      'url': `${site.url}/images/branding/og-default.jpg`,
     },
   },
-  ...(post.data.featuredImage ? { 'image': `https://hbimplants.com${post.data.featuredImage}` } : {}),
+  ...(post.data.featuredImage ? { 'image': `${site.url}${post.data.featuredImage}` } : {}),
   'keywords': post.data.targetKeyword,
-};
-
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
-  'priceRange': '$$$$',
-  'medicalSpecialty': 'Prosthodontics',
 };
 
 const schemas = [localBusiness, articleSchema, ...(faqSchema ? [faqSchema] : [])];

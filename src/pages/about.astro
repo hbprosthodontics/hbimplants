@@ -5,8 +5,8 @@ import FAQBlock from '../components/FAQBlock.astro';
 
 const faqs = [
   {
-    question: 'Is Dr. Favian Cheong board-certified?',
-    answer: 'Yes. Dr. Favian Cheong is a board-certified prosthodontist who completed a CODA-accredited three-year prosthodontic residency at UCSF and the VA San Francisco Medical Center. Prosthodontics is one of nine dental specialties officially recognized by the American Dental Association.',
+    question: 'Is Dr. Favian Cheong a certified prosthodontic specialist?',
+    answer: 'Yes. Dr. Favian Cheong completed a CODA-accredited three-year prosthodontic specialty residency at UCSF and the VA San Francisco Medical Center — earning specialist certification in prosthodontics, one of nine dental specialties formally recognized by the American Dental Association.',
   },
   {
     question: 'What is the difference between a prosthodontist and a general dentist?',
@@ -30,25 +30,7 @@ const faqs = [
   },
 ];
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'email': 'hbprosth@gmail.com',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
-  'priceRange': '$$$$',
-  'medicalSpecialty': 'Prosthodontics',
-};
+import { localBusinessSchema as localBusiness } from '../config/site';
 
 const physicians = [
   {
@@ -93,11 +75,11 @@ const physicians = [
             <span class="text-brand-gold">Two UCLA-trained doctors.</span>
           </h1>
           <p class="text-white/80 text-lg leading-relaxed mb-8">
-            Dr. Favian Cheong is a board-certified prosthodontist — one of nine ADA-recognized dental specialists — who completed his residency at UCSF. Dr. Janelle Cheong provides comprehensive general dental care. Together, they offer specialist-level and preventive care under one roof.
+            Dr. Favian Cheong is a certified prosthodontic specialist — one of nine ADA-recognized dental specialists — who completed his residency at UCSF. Dr. Janelle Cheong provides comprehensive general dental care. Together, they offer specialist-level and preventive care under one roof.
           </p>
           <div class="flex flex-wrap gap-6">
             {[
-              { label: 'Board-Certified', sub: 'Prosthodontist' },
+              { label: 'Certified Specialist', sub: 'Prosthodontist' },
               { label: 'UCLA + UCSF', sub: 'Trained' },
               { label: 'ADA Recognized', sub: 'Specialty' },
             ].map((stat) => (
@@ -111,7 +93,7 @@ const physicians = [
         <div class="hidden lg:block">
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
-              <img src="/images/dr-favian-cheong.png" alt="Dr. Favian Cheong" class="rounded-2xl w-full aspect-[3/4] object-cover object-top" />
+              <img src="/images/team/dr-favian-cheong.webp" alt="Dr. Favian Cheong" class="rounded-2xl w-full aspect-[3/4] object-cover object-top" />
               <div class="bg-white/10 rounded-xl p-4 border border-white/20">
                 <div class="font-semibold text-white text-sm">Dr. Favian Cheong</div>
                 <div class="text-brand-gold text-xs font-medium">Prosthodontist</div>
@@ -122,7 +104,7 @@ const physicians = [
                 <div class="font-semibold text-white text-sm">Dr. Janelle Cheong</div>
                 <div class="text-white/60 text-xs">General Dentist</div>
               </div>
-              <img src="/images/dr-janelle-cheong.png" alt="Dr. Janelle Cheong" class="rounded-2xl w-full aspect-[3/4] object-cover object-top" />
+              <img src="/images/team/dr-janelle-cheong.webp" alt="Dr. Janelle Cheong" class="rounded-2xl w-full aspect-[3/4] object-cover object-top" />
             </div>
           </div>
         </div>
@@ -136,14 +118,14 @@ const physicians = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
           <img
-            src="/images/dr-favian-cheong.png"
+            src="/images/team/dr-favian-cheong.webp"
             alt="Dr. Favian Cheong, Prosthodontist at Huntington Beach Prosthodontics"
             class="rounded-2xl w-full aspect-[4/5] object-cover object-top"
           />
         </div>
 
         <div>
-          <div class="inline-block bg-brand-light text-brand-blue text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-4">Board-Certified Prosthodontist</div>
+          <div class="inline-block bg-brand-light text-brand-blue text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-4">Certified Prosthodontic Specialist</div>
           <h2 class="section-heading mb-6">Dr. Favian Cheong</h2>
 
           <p class="text-neutral-mid leading-relaxed mb-4 text-lg">
@@ -221,7 +203,7 @@ const physicians = [
 
         <div class="order-1 lg:order-2">
           <img
-            src="/images/dr-janelle-cheong.png"
+            src="/images/team/dr-janelle-cheong.webp"
             alt="Dr. Janelle Cheong, DDS at Huntington Beach Prosthodontics"
             class="rounded-2xl w-full aspect-[4/5] object-cover object-top"
           />
@@ -244,7 +226,7 @@ const physicians = [
         {[
           {
             title: 'Specialist Expertise',
-            desc: 'Dr. Favian Cheong is a board-certified prosthodontist with three additional years of post-doctoral training focused exclusively on restoring and replacing teeth at the highest level.',
+            desc: 'Dr. Favian Cheong is a certified prosthodontic specialist with three additional years of post-doctoral training focused exclusively on restoring and replacing teeth at the highest level.',
           },
           {
             title: 'Technology-First Approach',

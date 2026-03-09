@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = { '@context': 'https://schema.org', '@type': 'MedicalProcedure', 'name': 'All-on-4 / All-on-X Full Arch Dental Implants', 'description': 'All-on-4 and All-on-X implant procedures replace an entire arch of teeth using 4–6 strategically placed dental implants supporting a fixed, permanent prosthesis.', 'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Mouth', 'followup': 'As recommended by your prosthodontist' };
 const faqs = [
   { question: 'What is All-on-4 and how is it different from regular implants?', answer: 'All-on-4 (also called All-on-X) is a full-arch implant procedure where 4–6 implants support an entire arch of teeth — upper, lower, or both. Unlike individual implants that replace one tooth each, All-on-4 uses 4 strategically placed implants as anchors for a fixed prosthesis holding all your teeth. The posterior implants are angled (typically 30–45 degrees) to take advantage of denser bone and avoid sinus cavities, often eliminating the need for bone grafting.' },
@@ -17,7 +17,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="All-on-4 Huntington Beach | Full-Arch Dental Implants"
-  description="All-on-4 dental implants in Huntington Beach, CA. Replace an entire arch of teeth with just 4 implants in one day. Board-certified prosthodontist. Call (714) 846-1386."
+  description="All-on-4 dental implants in Huntington Beach, CA. Replace an entire arch of teeth with just 4 implants in one day. Certified prosthodontic specialist. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-24">

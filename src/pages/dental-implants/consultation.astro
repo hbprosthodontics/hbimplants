@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What happens at my dental implant consultation?', answer: 'Your consultation includes a review of your medical and dental history, an oral examination, a 3D CBCT scan of your jaw (if not done recently), and a detailed discussion of your tooth replacement options. Dr. Favian Cheong will explain your candidacy, any preparatory steps like bone grafting, the full treatment timeline, and the expected investment. You will leave with a clear written treatment plan.' },
   { question: 'Is the implant consultation free?', answer: 'Yes — initial consultations at Huntington Beach Prosthodontics are complimentary for implant patients. The 3D CBCT scan may have a separate fee depending on your insurance coverage. We confirm any fees with you before the appointment.' },
@@ -15,7 +15,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="Dental Implant Consultation Huntington Beach, CA"
-  description="Schedule your free dental implant consultation in Huntington Beach. Get a personalized implant plan from Dr. Favian Cheong, board-certified prosthodontist."
+  description="Schedule your free dental implant consultation in Huntington Beach. Get a personalized implant plan from Dr. Favian Cheong, certified prosthodontic specialist."
   schema={[localBusiness, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-20">
@@ -26,7 +26,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
           <span class="text-brand-teal">in Huntington Beach, CA</span>
         </h1>
         <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          Get a comprehensive, no-obligation evaluation from Dr. Favian Cheong, board-certified prosthodontist. You'll leave with a clear treatment plan, timeline, and investment summary — no pressure, no guesswork.
+          Get a comprehensive, no-obligation evaluation from Dr. Favian Cheong, certified prosthodontic specialist. You'll leave with a clear treatment plan, timeline, and investment summary — no pressure, no guesswork.
         </p>
         <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Book Free Consultation</a>
       </div>

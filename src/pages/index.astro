@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABlock from '../components/CTABlock.astro';
 import FAQBlock from '../components/FAQBlock.astro';
+import { localBusinessSchema, site } from '../config/site';
 
 // Fetch real Google reviews at build time
 const PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
@@ -38,22 +39,7 @@ try {
 }
 
 const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
-  'priceRange': '$$$$',
-  'medicalSpecialty': 'Prosthodontics',
+  ...localBusinessSchema,
   'aggregateRating': {
     '@type': 'AggregateRating',
     'ratingValue': googleRating,
@@ -61,14 +47,6 @@ const localBusiness = {
     'bestRating': 5,
     'worstRating': 1,
   },
-  // sameAs links help LLMs and Google build the practice's entity graph.
-  // Replace placeholder URLs with your actual verified profile URLs.
-  'sameAs': [
-    'https://g.page/r/CU4itT3RNhmQEBM',                    // Google Business Profile
-    'https://www.yelp.com/biz/huntington-beach-prosthodontics',
-    'https://www.healthgrades.com/dentists/huntington-beach-prosthodontics',
-    'https://www.zocdoc.com/practice/huntington-beach-prosthodontics',
-  ],
 };
 
 const faqs = [
@@ -81,7 +59,7 @@ const faqs = [
     answer: 'We offer the full spectrum of prosthodontic care including dental implants, All-on-4 and All-on-X full arch implants, porcelain veneers, smile makeovers, dentures, implant-supported dentures, snap-on dentures, implant crowns and bridges, cosmetic dentistry, restorative dentistry, and clear aligners. Every treatment plan is customized to your goals, anatomy, and budget.',
   },
   {
-    question: 'How do I know if I\'m a candidate for dental implants?',
+    question: "How do I know if I'm a candidate for dental implants?",
     answer: 'Most adults with one or more missing teeth are candidates for dental implants. The key factors are sufficient bone volume in the jaw, healthy gums, and no uncontrolled systemic conditions. During your complimentary consultation, we perform a thorough examination including 3D imaging to evaluate your bone density and determine the optimal implant plan. Even patients with bone loss may qualify after bone grafting.',
   },
   {
@@ -109,12 +87,22 @@ const faqs = [
     answer: 'We are conveniently located at 16141 Bolsa Chica St., Suite C in Huntington Beach, California, serving patients from Huntington Beach, Fountain Valley, Costa Mesa, Newport Beach, Seal Beach, and surrounding communities. Please call us or use our online appointment form to schedule your visit.',
   },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
 ---
 
 <BaseLayout
   title="Prosthodontist Huntington Beach | Dental Implants & Veneers"
-  description="Huntington Beach Prosthodontics offers dental implants, All-on-X, veneers, and full smile restorations. Board-certified prosthodontist serving HB, CA. Call today."
-  schema={localBusiness}
+  description="Huntington Beach Prosthodontics offers dental implants, All-on-X, veneers, and full smile restorations. Certified prosthodontist serving HB, CA. Call today."
+  schema={[localBusiness, faqSchema]}
 >
   <!-- Hero -->
   <section class="bg-white pt-10 pb-12 md:py-24 overflow-hidden">
@@ -126,7 +114,7 @@ const faqs = [
           <!-- Badge -->
           <div class="inline-flex items-center gap-1.5 border border-border-light text-mid-gray text-[10px] md:text-xs font-medium px-3 py-1 md:px-4 md:py-1.5 rounded-full mb-5 whitespace-nowrap">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-teal inline-block flex-shrink-0"></span>
-            Board-Certified Prosthodontist · Huntington Beach, CA
+            Certified Prosthodontic Specialist · Huntington Beach, CA
           </div>
 
           <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight text-charcoal mb-5">
@@ -134,7 +122,7 @@ const faqs = [
             <span class="text-brand-teal">Reclaim Your Confidence.</span>
           </h1>
           <p class="text-sm md:text-xl text-mid-gray mb-6 leading-relaxed">
-            Specialist-level implants, veneers, and full smile restorations — performed by a board-certified prosthodontist, not a generalist.
+            Specialist-level implants, veneers, and full smile restorations — performed by a certified prosthodontic specialist, not a generalist.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -171,7 +159,7 @@ const faqs = [
         <div class="relative hidden lg:block">
           <div class="rounded-2xl overflow-hidden h-[520px]">
             <img
-              src="/images/beach_abstract_clean_20260306_200239_01.png"
+              src="/images/heroes/hero-abstract-clean.webp"
               alt="Aerial view of ocean waves at Huntington Beach"
               class="w-full h-full object-cover"
             />
@@ -295,7 +283,7 @@ const faqs = [
           </p>
           <div class="border-t border-border-light mt-8 mb-8">
             {[
-              { title: 'Board-Certified Specialist', desc: '3 additional years of residency training dedicated entirely to complex tooth restoration.' },
+              { title: 'Specialist-Trained Prosthodontist', desc: '3 additional years of residency training dedicated entirely to complex tooth restoration.' },
               { title: 'Comprehensive Treatment Planning', desc: 'Latest 3D cone-beam imaging for precise diagnosis and implant placement.' },
               { title: 'All Restorations Coordinated In-House', desc: 'From surgical placement to final crown — one specialist oversees everything.' },
               { title: 'Complex Case Expertise', desc: 'Full-arch reconstruction, bone grafting, and multi-implant cases are our specialty.' },
@@ -431,7 +419,7 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative rounded-2xl overflow-hidden">
         <img
-          src="/images/beach_abstract_20260306_195512_03.png"
+          src="/images/heroes/hero-abstract-main.webp"
           alt=""
           class="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
@@ -439,7 +427,7 @@ const faqs = [
         <div class="relative py-12 md:py-16 px-8 md:px-16 text-center">
           <h2 class="font-serif text-2xl md:text-3xl font-bold mb-4 text-charcoal">Ready to Restore Your Smile?</h2>
           <p class="max-w-2xl mx-auto mb-8 leading-relaxed text-charcoal/70">
-            Schedule a consultation with Dr. Favian Cheong, your board-certified prosthodontist in Huntington Beach. We'll create a personalized treatment plan just for you.
+            Schedule a consultation with Dr. Favian Cheong, your certified prosthodontic specialist in Huntington Beach. We'll create a personalized treatment plan just for you.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="/schedule" class="btn-primary text-base px-8 py-4 font-semibold">

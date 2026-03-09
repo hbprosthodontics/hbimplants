@@ -110,4 +110,4 @@ If you are facing this decision and would like an expert evaluation, I encourage
 
 ---
 
-*Dr. Favian Cheong is a board-certified prosthodontist at Huntington Beach Prosthodontics, specializing in dental implants, dentures, and full-arch rehabilitation. Schedule a consultation to discuss your specific situation.*
+*Dr. Favian Cheong is a certified prosthodontic specialist at Huntington Beach Prosthodontics, specializing in dental implants, dentures, and full-arch rehabilitation. Schedule a consultation to discuss your specific situation.*

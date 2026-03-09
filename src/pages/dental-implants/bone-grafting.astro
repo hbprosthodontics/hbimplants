@@ -3,13 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = {
-  '@context': 'https://schema.org', '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics',
-};
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = {
   '@context': 'https://schema.org', '@type': 'MedicalProcedure',
   'name': 'Dental Bone Graft for Implants',
@@ -86,6 +80,26 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
         </p>
         <p class="text-neutral-mid leading-relaxed mb-6">
           Healing is monitored with periodic X-rays. We use 3D CBCT imaging to confirm that sufficient bone has grown before scheduling your <a href="/dental-implants/implant-placement" class="text-brand-blue hover:underline">implant placement surgery</a>. Don't let someone else's assessment that you "can't have implants" be the final word — schedule a consultation with our prosthodontist for a definitive evaluation.
+        </p>
+        <h2 class="section-subheading mt-10 mb-4">Cost of Bone Grafting in Huntington Beach</h2>
+        <p class="text-neutral-mid leading-relaxed mb-4">
+          Bone graft costs depend on the graft type and volume required. Approximate ranges in the Huntington Beach area:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {[
+            { type: 'Socket Preservation', cost: '$400–$900 per site' },
+            { type: 'Ridge Augmentation (minor)', cost: '$1,500–$3,000' },
+            { type: 'Sinus Lift (lateral)', cost: '$2,500–$5,000 per side' },
+            { type: 'Block Graft (major)', cost: '$3,000–$6,000+' },
+          ].map(item => (
+            <div class="flex justify-between items-center p-3 bg-surface-2 rounded-lg border border-border-light">
+              <span class="text-neutral-mid text-sm font-medium">{item.type}</span>
+              <span class="text-brand-navy font-semibold text-sm">{item.cost}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-neutral-mid leading-relaxed mb-6">
+          These costs are in addition to the implant fee. Some insurance plans contribute toward bone grafting when it is clinically necessary for implant placement. Flexible financing is available. See our <a href="/financing" class="text-brand-blue hover:underline">financing page</a> for options.
         </p>
         <a href="/dental-implants/consultation" class="btn-primary">Schedule Your Implant & Bone Assessment</a>
       </div>

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What is an implant restoration?', answer: 'An implant restoration is the prosthetic component (crown, bridge, or denture) that is attached to a dental implant post to replace the visible portion of a missing tooth. The implant post (inserted into bone) serves as the root; the restoration is the tooth itself. The quality and design of the restoration is just as important as the implant placement — a poorly designed crown on a well-placed implant still produces a poor outcome.' },
   { question: 'Can I use my existing implants and get a new restoration at Huntington Beach Prosthodontics?', answer: 'Yes. If you have existing implants that were placed elsewhere and need a new crown, bridge, or denture, we can evaluate your implants and fabricate a new restoration to fit them. We work with all major implant systems and can identify your implant brand from X-rays and components to ensure a compatible restoration.' },

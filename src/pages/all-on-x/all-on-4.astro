@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = { '@context': 'https://schema.org', '@type': 'MedicalProcedure', 'name': 'All-on-4 Dental Implants', 'description': 'All-on-4 dental implants use 4 strategically angled implants to support a full arch of permanent teeth, often completed in a single surgical day.', 'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Mouth', 'followup': 'As recommended by your prosthodontist' };
 const faqs = [
   { question: 'Why are 2 of the 4 implants placed at an angle?', answer: 'The two posterior (back) implants in All-on-4 are placed at a 30–45 degree angle. This angulation serves two critical purposes: it allows the implants to engage denser anterior (front) bone that is typically better preserved after tooth loss, and it avoids the maxillary sinus in the upper jaw and the inferior alveolar nerve in the lower jaw. The angled placement also distributes bite forces more evenly across the arch and often eliminates the need for bone grafting.' },
@@ -16,7 +16,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="All-on-4 Dental Implants Huntington Beach | Prosthodontist"
-  description="All-on-4 dental implants in Huntington Beach replace an entire arch with 4 implants and a same-day prosthesis. Board-certified prosthodontist. Free consultation."
+  description="All-on-4 dental implants in Huntington Beach replace an entire arch with 4 implants and a same-day prosthesis. Certified prosthodontic specialist. Free consultation."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-20">

@@ -42,24 +42,7 @@ const imageGallery = {
   },
 };
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-  'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
-  'priceRange': '$$$$',
-  'medicalSpecialty': 'Prosthodontics',
-};
+import { localBusinessSchema as localBusiness } from '../config/site';
 ---
 
 <BaseLayout

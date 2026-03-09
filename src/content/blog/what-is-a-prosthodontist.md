@@ -15,8 +15,8 @@ faqs:
     answer: "Consider a prosthodontist when your treatment involves multiple missing teeth, dental implants, full-arch restoration, All-on-4 or All-on-X procedures, complex veneers or smile makeovers, worn or failing dentition, or full-mouth reconstruction. For routine cleanings, fillings, or simple restorations, your general dentist is the right choice."
   - question: "Is a prosthodontist more expensive than a general dentist?"
     answer: "Specialist fees are often modestly higher than general dentistry fees, but the difference is usually smaller than patients expect — and the expertise in complex cases typically justifies it. For straightforward procedures, cost differences are minimal."
-  - question: "How do I find a board-certified prosthodontist in Huntington Beach?"
-    answer: "Board-certified prosthodontists have passed a rigorous multi-part examination after completing their specialty residency. You can verify board certification through the American Board of Prosthodontics (abp.org). Dr. Favian Cheong at Huntington Beach Prosthodontics is a board-certified prosthodontist."
+  - question: "How do I find a certified prosthodontic specialist in Huntington Beach?"
+    answer: "Look for a prosthodontist who has completed a CODA-accredited specialty residency — the requirement for ADA recognition as a prosthodontic specialist. Dr. Favian Cheong at Huntington Beach Prosthodontics is a certified prosthodontic specialist trained at UCSF."
 ---
 
 A prosthodontist is a type of dental specialist — and one of the least understood. When I tell people at a dinner party what I do, the usual response is either a blank look or "is that like an orthodontist?" It's not, and the distinction matters in ways that directly affect patient outcomes.
@@ -99,13 +99,11 @@ I was a general dentist first, and a good one. But I kept encountering patients 
 
 I chose prosthodontics because I wanted to be able to help those patients at the highest level. The additional three years of training changed how I see every case — the way I evaluate a bite, the way I plan implant positions in relation to the final crown, the way I design a veneer to work with the surrounding teeth and the patient's face. That lens doesn't go away when treating simpler cases either; it just means the precision is there when you need it.
 
-## How to Verify Board Certification
+## How to Verify Specialist Credentials
 
-Completing a prosthodontic residency makes someone a prosthodontist. Being *board-certified* means they've taken an additional voluntary step: passing the rigorous multi-part examination administered by the American Board of Prosthodontics.
+Completing a CODA-accredited prosthodontic residency is what makes someone an ADA-recognized prosthodontic specialist. You can verify specialist credentials through the American Board of Prosthodontics at **abp.org** or ask your dentist directly about their residency training and program.
 
-You can verify prosthodontist board certification at **abp.org**.
-
-I am a board-certified prosthodontist. If you're evaluating any dental specialist, I'd encourage you to ask.
+I completed my prosthodontic specialty residency at UCSF and the VA San Francisco Medical Center — one of the most rigorous programs in the country. If you're evaluating any dental specialist, ask about where they trained.
 
 ## Is It Worth Seeing a Prosthodontist?
 
@@ -130,5 +128,5 @@ Both complete dental school. A prosthodontist then adds three years of full-time
 **When should I see a prosthodontist?**
 When your case involves multiple missing teeth, dental implants, All-on-4 or All-on-X, complex veneers or smile makeovers, worn dentition, or full-mouth reconstruction.
 
-**How do I verify board certification?**
-Through the American Board of Prosthodontics at abp.org. Dr. Favian Cheong at Huntington Beach Prosthodontics is board-certified.
+**How do I verify specialist credentials?**
+Ask about the prosthodontist's residency training program and CODA accreditation. Dr. Favian Cheong at Huntington Beach Prosthodontics completed his specialty residency at UCSF, an ADA-recognized prosthodontic program.

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'How long does professional teeth whitening last?', answer: 'In-office whitening results typically last 6 months to 2 years depending on your diet and habits. Coffee, tea, red wine, and tobacco are the primary culprits for staining. Take-home trays can be used for touch-up treatments, extending your results indefinitely with minimal effort.' },
   { question: 'Is professional whitening better than over-the-counter whitening?', answer: 'Yes, significantly. Professional whitening uses higher-concentration peroxide gels that penetrate deeper into enamel and produce faster, more dramatic results. Custom-fitted trays ensure the gel contacts every tooth surface evenly without irritating gums. Over-the-counter strips are one-size-fits-all and use lower concentrations — they produce modest results at best.' },
@@ -54,6 +54,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
         </div>
       </div>
       <p class="text-neutral-mid leading-relaxed mb-6">Many patients combine both: in-office whitening for a quick jump-start followed by take-home trays for ongoing maintenance. Whitening is frequently the first step in a <a href="/veneers/smile-makeover" class="text-brand-blue hover:underline">smile makeover</a>, establishing the baseline shade for any <a href="/veneers" class="text-brand-blue hover:underline">veneers</a> or restorations to be matched to. If you're exploring <a href="/cosmetic-dentistry" class="text-brand-blue hover:underline">cosmetic dentistry</a> options, whitening is usually the least invasive place to start.</p>
+      <h2 class="section-subheading mt-10 mb-4">Cost of Professional Teeth Whitening in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        Professional whitening at Huntington Beach Prosthodontics typically ranges from <strong>$300–$700</strong> — in-office treatments at the higher end, take-home custom tray systems at the lower end. Over-the-counter whitening products cost less but use lower-concentration gel that produces significantly less dramatic results and cannot be customized to your enamel thickness and sensitivity level.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Whitening is rarely covered by dental insurance, as it is considered cosmetic. It is, however, one of the most cost-effective cosmetic dental treatments available. If you're planning veneers or other restorations, whitening is typically completed first so restorations can be shade-matched to your brightened natural teeth.
+      </p>
       <a href="/schedule" class="btn-primary">Ask About Whitening at Your Consultation</a>
     </div>
   </section>

@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import { localBusinessSchema as localBusiness } from '../../config/site';
+
+const city = 'Garden Grove';
+const distance = '10 miles';
+const driveTime = '16 minutes';
+
+const faqs = [
+  {
+    question: 'Do you serve patients from Garden Grove?',
+    answer: 'Yes. Patients from Garden Grove regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 10 miles and 16 minutes from Garden Grove. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+  },
+  {
+    question: 'What procedures do Garden Grove patients most commonly come to you for?',
+    answer: 'Dental implants and All-on-4 full-arch restorations are our most requested procedures from patients across Orange County. We also see patients from Garden Grove for porcelain veneers, smile makeovers, implant-supported dentures, and complex restorative cases that require a prosthodontist.',
+  },
+  {
+    question: 'Why would I travel to Huntington Beach instead of seeing a dentist in Garden Grove?',
+    answer: 'Prosthodontics is a dental specialty requiring three additional years of residency training beyond dental school. Dr. Favian Cheong completed his specialty training at UCSF. For complex procedures — implants, full-arch reconstruction, veneers, or cases involving multiple teeth — a prosthodontist brings a level of planning, materials knowledge, and technical precision that a general dentist typically cannot match. Most of our out-of-area patients tell us the difference in outcome quality made the drive entirely worthwhile.',
+  },
+  {
+    question: 'How do I schedule a consultation from Garden Grove?',
+    answer: 'Call us at (714) 846-1386 or use our online appointment request form. We\'ll confirm your appointment by email or phone. The initial consultation includes a comprehensive exam and 3D imaging where appropriate.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Prosthodontist Near Garden Grove, CA | Dental Implants & Veneers | Dr. Favian Cheong"
+  description="Serving patients from Garden Grove, CA. Certified prosthodontist Dr. Favian Cheong offers dental implants, All-on-4, veneers & smile restoration. 10 miles from Garden Grove."
+  schema={[localBusiness, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-navy py-16 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="text-brand-gold text-sm font-semibold uppercase tracking-wide mb-4">Serving Garden Grove, CA</div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Prosthodontist Near Garden Grove, CA — Specialist Implant &amp; Cosmetic Dentistry
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Garden Grove is a vibrant, ethnically diverse city at the heart of Orange County. Residents here have access to many dental offices — but specialist prosthodontic care is a different level of treatment. Huntington Beach Prosthodontics is {distance} from Garden Grove, about {driveTime} south. Dr. Favian Cheong, a specialist-trained prosthodontist trained at UCLA and UCSF, provides the kind of implant and cosmetic expertise that most dental offices in the area routinely refer complex cases to.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
+          <a href="tel:7148461386" class="text-white/90 font-medium text-base py-4 hover:text-white transition-colors text-center">(714) 846-1386</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Prosthodontist -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Specialist Training</div>
+          <h2 class="section-heading mb-6">Why Garden Grove patients choose a prosthodontist</h2>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Many Garden Grove patients come to us after years of patchwork dental care — crowns that don't fit right, implants that failed, dentures that never felt stable, or cosmetic work that didn't look natural. These are not failures of dentistry — they are cases that needed specialist-level prosthodontic planning from the start.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            A prosthodontist spends three years after dental school in a residency focused exclusively on restoring and replacing teeth. That training covers every variable that affects a successful outcome: bone quality, bite mechanics, material selection, prosthetic design, and the relationship between implants and the structures that support them.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            Dr. Favian Cheong completed his specialist training at UCSF and the VA San Francisco Medical Center — earning specialist certification in prosthodontics, one of nine dental specialties formally recognized by the American Dental Association.
+          </p>
+          <a href="/why-a-prosthodontist" class="btn-primary text-base px-6 py-3">Why Choose a Prosthodontist</a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: 'Beyond General Dentistry', desc: 'General dentists are trained broadly. Prosthodontists train for years in a single specialty — restoring and replacing teeth at the highest level.' },
+            { title: 'Complex Cases Welcome', desc: 'Bone loss, implant failure, full-arch reconstruction, multiple missing teeth — these are the cases prosthodontists are specifically trained to handle.' },
+            { title: 'Planning-First Approach', desc: 'Every treatment begins with comprehensive planning — imaging, bite analysis, materials consultation — before a single procedure is scheduled.' },
+            { title: 'Long-Term Results', desc: 'Prosthodontic work is designed to last. The precision applied at every stage reduces complication rates and extends the life of restorations significantly.' },
+          ].map(item => (
+            <div class="card p-6">
+              <h3 class="font-semibold text-brand-navy mb-2">{item.title}</h3>
+              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface-2 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Treatments Available</div>
+        <h2 class="section-heading mb-4">Services for Garden Grove patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          A full range of specialist implant, restorative, and cosmetic services — each planned and performed with prosthodontic precision.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Dental Implants', desc: 'Titanium implants topped with lifelike crowns to replace one or more missing teeth permanently and without compromising adjacent teeth.', href: '/dental-implants' },
+          { title: 'All-on-4 / All-on-6', desc: 'A complete arch of fixed, non-removable teeth on four or six implants — the most transformative implant procedure available.', href: '/all-on-x/all-on-4' },
+          { title: 'Single Tooth Implants', desc: 'Replace a single missing tooth with a result that is indistinguishable from the natural tooth it replaces — in function and appearance.', href: '/dental-implants/single-tooth' },
+          { title: 'Porcelain Veneers', desc: 'Precisely crafted veneers that change the appearance of teeth without removing more structure than necessary. Cosmetic dentistry at the specialist level.', href: '/veneers/porcelain' },
+          { title: 'Smile Makeovers', desc: 'A full smile redesign combining the procedures needed to achieve your specific goals — coordinated as a single, logical plan rather than separate treatments.', href: '/veneers/smile-makeover' },
+          { title: 'Implant-Supported Dentures', desc: 'Dentures held in place by implants — no adhesive, no slipping, dramatically improved stability, and better chewing function.', href: '/implant-restorations/snap-on' },
+          { title: 'Full Mouth Reconstruction', desc: 'For patients with widespread damage, tooth loss, or a failing dentition — a comprehensive restoration of form, function, and aesthetics.', href: '/all-on-x/full-mouth-reconstruction' },
+          { title: 'Bone Grafting', desc: 'Rebuilding jaw bone lost to tooth extraction or long-term edentulism — a prerequisite for implant placement in many cases.', href: '/dental-implants/bone-grafting' },
+        ].map(service => (
+          <a href={service.href} class="card p-6 hover:shadow-md transition-shadow group">
+            <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+            <p class="text-neutral-mid text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-brand-blue text-sm font-medium">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Our Reputation</div>
+        <h2 class="section-heading mb-4">4.9 stars — 73 Google reviews</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Patients from across Orange County — including many from Garden Grove — consistently describe outcomes that exceeded their expectations and care that felt unlike any dental experience they'd had.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center">
+          <div class="text-4xl font-bold text-brand-gold mb-2">4.9</div>
+          <div class="flex justify-center mb-3">
+            {Array(5).fill(null).map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            ))}
+          </div>
+          <div class="text-neutral-mid text-sm">73 Verified Google Reviews</div>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Favian Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">DDS, MS — Certified Prosthodontic Specialist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">Trained at UC Irvine, UCLA, and UCSF. ADA-recognized prosthodontic specialist. Specialist care for Orange County patients.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Janelle Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">General Dentist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">Providing comprehensive general dental care alongside Dr. Favian Cheong's specialist services — a practice for the whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Here -->
+  <section class="bg-brand-light py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
+          <h2 class="section-heading mb-6">From Garden Grove to Huntington Beach — {driveTime}</h2>
+          <p class="text-neutral-mid leading-relaxed mb-4">
+            From Garden Grove, take Bolsa Avenue or Magnolia Street south toward Huntington Beach. The drive is approximately {distance} and takes around {driveTime} under normal traffic conditions. Our office at 16141 Bolsa Chica St., Suite C has easy street access and available parking on site.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            We are open Monday, Wednesday, and Friday 9am–5pm, and Saturday 10am–2pm. Appointments on Tuesday and Thursday are available by arrangement.
+          </p>
+          <a
+            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-6 py-3"
+          >
+            Get Directions on Google Maps
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-neutral-border">
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
+          <address class="not-italic text-neutral-mid leading-relaxed mb-6">
+            16141 Bolsa Chica St., Suite C<br />
+            Huntington Beach, CA 92649
+          </address>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
+          <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
+          <div class="mt-6 pt-6 border-t border-neutral-border">
+            <h3 class="font-serif text-lg font-semibold text-brand-navy mb-3">Hours</h3>
+            <ul class="text-neutral-mid text-sm space-y-1">
+              <li>Mon, Wed, Fri: 9am – 5pm</li>
+              <li>Tue, Thu: By Appointment</li>
+              <li>Sat: 10am – 2pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading={`Common Questions from ${city} Patients`} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Garden Grove patients: the right specialist is 16 minutes away"
+        subheading="Book a complimentary consultation with Dr. Favian Cheong. Honest assessment, clear treatment options, and no obligation — just expert prosthodontic guidance."
+      />
+    </div>
+  </section>
+
+</BaseLayout>

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What porcelain material is best for veneers?', answer: 'IPS e.max (lithium disilicate) is the current gold standard for veneer material. It offers superior strength (up to 400 MPa), excellent translucency mimicking natural enamel, and outstanding aesthetics. Feldspathic porcelain offers slightly better aesthetics for very thin veneers but is more fragile. For patients with heavy bites, zirconia-reinforced porcelain provides additional strength. Dr. Favian Cheong selects material based on your specific teeth, bite, and aesthetic goals.' },
   { question: 'How thin are porcelain veneers?', answer: 'Modern porcelain veneers range from 0.3mm (minimal-prep or "no-prep" veneers) to 1.0mm for cases requiring significant color change. The average veneer is 0.5–0.7mm — thinner than a contact lens. This minimal thickness preserves maximum tooth structure while still achieving dramatic aesthetic improvement. The amount of tooth preparation required depends on the material used and how much correction is needed.' },
@@ -42,6 +42,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
       </p>
       <p class="text-neutral-mid leading-relaxed mb-6">
         Dr. Favian Cheong works closely with a select group of top-tier dental laboratories that specialize in cosmetic work. The combination of prosthodontist-level design and master ceramist artistry produces veneers that hold up aesthetically for 10–20 years. Explore our <a href="/veneers" class="text-brand-blue hover:underline">complete veneer overview</a> or <a href="/veneers/smile-makeover" class="text-brand-blue hover:underline">smile makeover page</a> for the full picture of what's possible.
+      </p>
+      <h2 class="section-subheading mt-10 mb-4">Cost of Porcelain Veneers in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        Porcelain veneers in the Huntington Beach area typically range from <strong>$1,200–$2,500 per veneer</strong>, depending on material selection (e.max vs. zirconia), laboratory quality, and the complexity of shade matching and preparation design. A full smile transformation covering 6–10 upper teeth is the most common scope.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Most dental insurance plans do not cover veneers. Flexible financing is available. Dr. Favian Cheong provides a complete treatment plan with itemized costs before you commit to any treatment. See our <a href="/financing" class="text-brand-blue hover:underline">financing options</a>.
       </p>
       <a href="/schedule" class="btn-primary">Schedule Your Veneer Consultation</a>
     </div>

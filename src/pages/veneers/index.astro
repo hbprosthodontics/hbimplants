@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = { '@context': 'https://schema.org', '@type': 'MedicalProcedure', 'name': 'Porcelain Veneers', 'description': 'Porcelain veneers are ultra-thin ceramic shells bonded to the front surface of teeth to improve color, shape, size, and alignment for a transformed smile.', 'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Mouth', 'followup': 'As recommended by your prosthodontist' };
 const faqs = [
   { question: 'How long do porcelain veneers last?', answer: 'High-quality porcelain veneers placed by a prosthodontist typically last 10–20 years. Longevity depends on material quality, bonding technique, your bite, and how well you care for them. Avoiding habits like nail biting, opening packages with your teeth, and wearing a night guard if you grind significantly extends their lifespan. At replacement time, new veneers are fabricated and bonded the same way as the originals.' },
@@ -17,7 +17,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="Porcelain Veneers Huntington Beach | Cosmetic Dentist HB, CA"
-  description="Porcelain veneers in Huntington Beach from a board-certified prosthodontist. Transform your smile in 2 visits. Natural, durable, beautiful results. Call (714) 846-1386."
+  description="Porcelain veneers in Huntington Beach from a certified prosthodontic specialist. Transform your smile in 2 visits. Natural, durable, beautiful results. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-24">

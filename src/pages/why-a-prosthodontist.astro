@@ -21,26 +21,12 @@ const faqs = [
     answer: 'Your general dentist is an excellent first contact for routine care, and many general dentists provide solid implant and restorative services. The question is whether your case is routine. If you have multiple missing teeth, significant bone loss, a history of implant failure, or want full-arch reconstruction — a prosthodontist\'s three extra years of specialist training in exactly these cases adds meaningful value to your outcome.',
   },
   {
-    question: 'Is Dr. Cheong board-certified?',
-    answer: 'Yes. Dr. Favian Cheong is a board-certified prosthodontist who completed his specialty residency at UCSF and the VA San Francisco Medical Center — one of the most rigorous prosthodontic programs in the country. Board certification requires passing written and clinical examinations demonstrating specialist-level competency.',
+    question: 'Is Dr. Cheong a certified prosthodontic specialist?',
+    answer: 'Yes. Dr. Favian Cheong completed his specialty residency at UCSF and the VA San Francisco Medical Center — one of the most rigorous prosthodontic programs in the country — earning specialist certification in prosthodontics, one of nine dental specialties formally recognized by the American Dental Association.',
   },
 ];
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  'name': 'Huntington Beach Prosthodontics',
-  'url': 'https://hbimplants.com',
-  'telephone': '(714) 846-1386',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '16141 Bolsa Chica St., Suite C',
-    'addressLocality': 'Huntington Beach',
-    'addressRegion': 'CA',
-    'postalCode': '92649',
-    'addressCountry': 'US',
-  },
-};
+import { localBusinessSchema as localBusiness } from '../config/site';
 ---
 
 <BaseLayout
@@ -69,13 +55,13 @@ const localBusiness = {
         </div>
         <div class="relative">
           <img
-            src="/images/dr-favian-cheong.png"
-            alt="Dr. Favian Cheong, Board-Certified Prosthodontist"
+            src="/images/team/dr-favian-cheong.webp"
+            alt="Dr. Favian Cheong, Certified Prosthodontic Specialist"
             class="rounded-2xl w-full max-w-md mx-auto lg:mx-0 object-cover object-top aspect-[4/5]"
           />
           <div class="absolute bottom-4 left-4 right-4 bg-white/95 rounded-xl p-4 shadow-lg backdrop-blur-sm">
             <div class="font-semibold text-brand-navy">Dr. Favian Cheong</div>
-            <div class="text-sm text-brand-blue font-medium">Board-Certified Prosthodontist</div>
+            <div class="text-sm text-brand-blue font-medium">Certified Prosthodontic Specialist</div>
             <div class="text-xs text-neutral-mid mt-1">UCLA DDS · UCSF Prosthodontic Residency</div>
           </div>
         </div>
@@ -246,9 +232,9 @@ const localBusiness = {
             },
             {
               step: '04',
-              title: 'Board Certification',
-              sub: 'American Board of Prosthodontics',
-              detail: 'Board certification requires passing written and clinical examinations beyond residency completion — demonstrating specialist-level competency.',
+              title: 'ADA-Recognized Specialist',
+              sub: 'Prosthodontics Specialty',
+              detail: 'Prosthodontics is one of nine dental specialties formally recognized by the American Dental Association. Specialist status requires completing a CODA-accredited 3-year residency beyond dental school.',
             },
           ].map((item) => (
             <div class="bg-white rounded-xl p-6 border border-neutral-border">
@@ -265,7 +251,7 @@ const localBusiness = {
             "My background in psychology helps me understand the functional, psychological, and social importance of a healthy, confident smile. Whether your needs are minor or major, your treatment will be performed with precision and care at the highest level."
           </p>
           <div class="font-semibold text-brand-navy">Dr. Favian Cheong</div>
-          <div class="text-brand-blue text-sm">Board-Certified Prosthodontist</div>
+          <div class="text-brand-blue text-sm">Certified Prosthodontic Specialist</div>
         </div>
       </div>
     </div>

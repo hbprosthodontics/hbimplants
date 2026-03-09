@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = { '@context': 'https://schema.org', '@type': 'MedicalProcedure', 'name': 'Full Arch Dental Implants', 'description': 'Full arch dental implants replace all teeth in the upper or lower jaw with a fixed implant-supported prosthesis anchored by multiple dental implants.', 'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Mouth', 'followup': 'As recommended by your prosthodontist' };
 const faqs = [
   { question: 'What is a full arch dental implant restoration?', answer: 'A full arch restoration replaces all the teeth in your upper jaw, lower jaw, or both with a fixed implant-supported prosthesis. The prosthesis is permanently attached to 4–6 implants and is not removable by the patient. It restores complete chewing function, natural aesthetics, and bone preservation — unlike conventional full dentures.' },
@@ -46,6 +46,16 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
         </p>
         <p class="text-neutral-mid leading-relaxed mb-6">
           The specific implant protocol — whether <a href="/all-on-x/all-on-4" class="text-brand-blue hover:underline">All-on-4</a>, <a href="/all-on-x/all-on-6" class="text-brand-blue hover:underline">All-on-6</a>, or a different configuration — is determined by 3D bone analysis and treatment planning at Huntington Beach Prosthodontics. In most cases, same-day temporary teeth are provided, meaning you leave your surgical appointment with a complete set of teeth already in place.
+        </p>
+        <h2 class="section-subheading mt-10 mb-4">Cost of Full Arch Implants in Huntington Beach</h2>
+        <p class="text-neutral-mid leading-relaxed mb-4">
+          Full arch implant restorations range from <strong>$20,000–$35,000 per arch</strong> in the Huntington Beach / Orange County area. The cost depends on the specific implant protocol (All-on-4 vs. All-on-6), the prosthetic material (acrylic-on-metal hybrid vs. monolithic zirconia), whether extractions are included, and whether bone grafting is required.
+        </p>
+        <p class="text-neutral-mid leading-relaxed mb-4">
+          While significant, this investment is often compared favorably to the 20-year cost of conventional dentures — which require relining, replacement, and adhesive — and to the cumulative cost of treating and eventually losing failing dentition tooth by tooth. Most patients find the quality-of-life improvement substantial.
+        </p>
+        <p class="text-neutral-mid leading-relaxed mb-6">
+          Financing is available, including options with low monthly payments. See our <a href="/financing" class="text-brand-blue hover:underline">financing page</a> for CareCredit and other payment plan details. For a specific cost estimate, a consultation with 3D imaging is required.
         </p>
         <a href="/all-on-x" class="text-brand-blue hover:underline font-semibold">← Back to All-on-X Overview</a>
       </div>

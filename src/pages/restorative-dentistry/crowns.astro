@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 
-const localBusiness = { '@context': 'https://schema.org', '@type': 'Dentist', 'name': 'Huntington Beach Prosthodontics', 'url': 'https://hbimplants.com', 'telephone': '(714) 846-1386', 'address': { '@type': 'PostalAddress', 'streetAddress': '16141 Bolsa Chica St., Suite C', 'addressLocality': 'Huntington Beach', 'addressRegion': 'CA', 'postalCode': '92649', 'addressCountry': 'US' }, 'openingHours': ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'], 'priceRange': '$$$$', 'medicalSpecialty': 'Prosthodontics' };
+import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What is a dental crown and when do I need one?', answer: 'A dental crown is a tooth-shaped cap that fits over the entire visible portion of a tooth, restoring its original shape, size, and function. Crowns are indicated when: a tooth is fractured or cracked, decay is too extensive for a filling, a tooth has undergone root canal treatment (which weakens the structure), a tooth is severely worn, or for cosmetic restoration of a misshapen tooth. Crowns are also used to anchor dental bridges and to cap implant abutments.' },
   { question: 'What materials are dental crowns made from?', answer: 'Modern dental crowns are most commonly made from: (1) IPS e.max lithium disilicate — a glass-ceramic that provides exceptional translucency and shade matching, ideal for front teeth; (2) Monolithic zirconia — extremely strong, appropriate for back teeth with heavy bite forces; (3) PFM (porcelain-fused-to-metal) — an older standard, still used in some cases; (4) Full-cast metal — gold alloys, used in some posterior situations. Dr. Favian Cheong selects the optimal material based on the tooth position, bite forces, adjacent tooth shade, and gum tissue characteristics.' },
@@ -62,6 +62,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
         ))}
       </div>
 
+      <h2 class="section-subheading mt-10 mb-4">Cost of Dental Crowns in Huntington Beach</h2>
+      <p class="text-neutral-mid leading-relaxed mb-4">
+        Dental crowns at Huntington Beach Prosthodontics range from <strong>$1,200–$2,200 per crown</strong>, depending on material selection (e.max, zirconia, or PFM), tooth position, and case complexity. This includes tooth preparation, digital scan, temporary crown, and final crown placement.
+      </p>
+      <p class="text-neutral-mid leading-relaxed mb-6">
+        Most insurance plans cover a portion of crown costs when medically necessary. We verify your benefits before treatment and provide a clear out-of-pocket estimate. Flexible financing is available. See our <a href="/financing" class="text-brand-blue hover:underline">financing and insurance page</a>.
+      </p>
       <a href="/schedule" class="btn-primary">Schedule Your Crown Evaluation</a>
     </div>
   </section>

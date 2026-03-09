@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import { localBusinessSchema as localBusiness } from '../../config/site';
+
+const city = 'Seal Beach';
+const distance = '5 miles';
+const driveTime = '10 minutes';
+
+const faqs = [
+  {
+    question: 'Do you serve patients from Seal Beach?',
+    answer: 'Yes. Patients from Seal Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 5 miles and 10 minutes from Seal Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+  },
+  {
+    question: 'What procedures do Seal Beach patients most commonly come to you for?',
+    answer: 'Dental implants and All-on-4 full-arch restorations are our most requested procedures from patients across Orange County. We also see patients from Seal Beach for porcelain veneers, smile makeovers, implant-supported dentures, and complex restorative cases that require a prosthodontist.',
+  },
+  {
+    question: 'Why would I travel to Huntington Beach instead of seeing a dentist in Seal Beach?',
+    answer: 'Prosthodontics is a dental specialty requiring three additional years of residency training beyond dental school. Dr. Favian Cheong completed his specialty training at UCSF. For complex procedures — implants, full-arch reconstruction, veneers, or cases involving multiple teeth — a prosthodontist brings a level of planning, materials knowledge, and technical precision that a general dentist typically cannot match. Most of our out-of-area patients tell us the difference in outcome quality made the drive entirely worthwhile.',
+  },
+  {
+    question: 'How do I schedule a consultation from Seal Beach?',
+    answer: 'Call us at (714) 846-1386 or use our online appointment request form. We\'ll confirm your appointment by email or phone. The initial consultation includes a comprehensive exam and 3D imaging where appropriate.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Prosthodontist Near Seal Beach, CA | Dental Implants & Veneers | Dr. Favian Cheong"
+  description="Serving patients from Seal Beach, CA. Certified prosthodontist Dr. Favian Cheong offers dental implants, All-on-4, veneers & smile restoration. 5 miles from Seal Beach."
+  schema={[localBusiness, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-navy py-16 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="text-brand-gold text-sm font-semibold uppercase tracking-wide mb-4">Serving Seal Beach, CA</div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Prosthodontist Near Seal Beach, CA — Specialist Implant &amp; Cosmetic Dentistry
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Seal Beach patients have been choosing Huntington Beach Prosthodontics for specialist-level dental care just {distance} away — about {driveTime} down Pacific Coast Highway. Whether you need dental implants, a full-arch restoration, porcelain veneers, or a complete smile makeover, Dr. Favian Cheong brings the training and precision of a UCLA-educated, specialist-trained prosthodontist.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold text-center">Book Free Consultation</a>
+          <a href="tel:7148461386" class="text-white/90 font-medium text-base py-4 hover:text-white transition-colors text-center">(714) 846-1386</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a Prosthodontist -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Specialist Training</div>
+          <h2 class="section-heading mb-6">Why Seal Beach patients choose a prosthodontist</h2>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            The tight-knit, beachside community of Seal Beach deserves access to the same specialist-level care available in larger cities. A prosthodontist is not a general dentist with additional courses — it is a formally recognized dental specialty requiring a three-year post-doctoral residency after dental school. Fewer than 3% of practicing dentists in the U.S. are prosthodontists.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-5">
+            Dr. Favian Cheong completed his prosthodontic specialty residency at UCSF and the VA San Francisco Medical Center, one of the most competitive programs in the country. His undergraduate work at UC Irvine was followed by his DDS at UCLA — institutions that selected him for their rigor and standard of care.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            For Seal Beach residents facing implant placement, bone loss, multiple missing teeth, or a cosmetic smile transformation, the additional expertise of a prosthodontist translates directly into better outcomes, better-fitting prosthetics, and a more predictable long-term result.
+          </p>
+          <a href="/why-a-prosthodontist" class="btn-primary text-base px-6 py-3">Learn More About Prosthodontics</a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: '4 Years Dental School + 3-Year Specialty Residency', desc: 'Prosthodontists complete the longest post-doctoral training of any restorative dental specialist.' },
+            { title: 'ADA-Recognized Specialty', desc: 'Prosthodontics is one of nine dental specialties formally recognized by the American Dental Association.' },
+            { title: 'UCLA & UCSF Trained', desc: 'Dr. Cheong\'s credentials trace to two of the most respected dental programs in the United States.' },
+            { title: 'ADA-Recognized Specialist', desc: 'Prosthodontics is one of nine dental specialties formally recognized by the American Dental Association. Specialist status requires completing a CODA-accredited 3-year residency beyond dental school.' },
+          ].map(item => (
+            <div class="card p-6">
+              <h3 class="font-semibold text-brand-navy mb-2">{item.title}</h3>
+              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface-2 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">What We Offer</div>
+        <h2 class="section-heading mb-4">Services for Seal Beach patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          From single-tooth replacement to full-mouth reconstruction, every treatment is planned and delivered with specialist-level precision.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Dental Implants', desc: 'Permanent, natural-looking replacement for one or more missing teeth. Designed to last a lifetime with proper care.', href: '/dental-implants' },
+          { title: 'All-on-4 / All-on-6', desc: 'Full-arch tooth replacement on four or six strategically placed implants. Replace an entire arch in a single treatment plan.', href: '/all-on-x/all-on-4' },
+          { title: 'Single Tooth Implants', desc: 'Replace a single missing tooth with a titanium implant and custom porcelain crown that looks and functions like a natural tooth.', href: '/dental-implants/single-tooth' },
+          { title: 'Porcelain Veneers', desc: 'Ultra-thin porcelain shells bonded to the front of teeth to correct chips, gaps, discoloration, or proportion.', href: '/veneers/porcelain' },
+          { title: 'Smile Makeovers', desc: 'A comprehensive plan combining veneers, whitening, bonding, and restorative work to transform your entire smile.', href: '/veneers/smile-makeover' },
+          { title: 'Implant-Supported Dentures', desc: 'Snap-on dentures anchored by implants for superior stability, comfort, and chewing efficiency over conventional dentures.', href: '/implant-restorations/snap-on' },
+          { title: 'Full Mouth Reconstruction', desc: 'Comprehensive rehabilitation of a worn, damaged, or failing dentition — combining implants, crowns, and prosthetics into one coordinated plan.', href: '/all-on-x/full-mouth-reconstruction' },
+          { title: 'Bone Grafting', desc: 'Rebuilding the bone structure necessary to support dental implants after tooth loss or resorption.', href: '/dental-implants/bone-grafting' },
+        ].map(service => (
+          <a href={service.href} class="card p-6 hover:shadow-md transition-shadow group">
+            <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+            <p class="text-neutral-mid text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-brand-blue text-sm font-medium">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Why Patients Trust Us</div>
+        <h2 class="section-heading mb-4">Rated 4.9 stars by 73 patients</h2>
+        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+          Patients from Seal Beach and across Orange County consistently describe outcomes that exceeded their expectations — and a level of care unlike any dental experience they had before.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="card p-8 text-center">
+          <div class="text-4xl font-bold text-brand-gold mb-2">4.9</div>
+          <div class="flex justify-center mb-3">
+            {Array(5).fill(null).map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            ))}
+          </div>
+          <div class="text-neutral-mid text-sm">73 Google Reviews</div>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Favian Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">DDS, MS — Certified Prosthodontic Specialist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">UCLA dental school, UCSF specialty residency, ADA-recognized prosthodontic specialist.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="font-serif text-xl font-bold text-brand-navy mb-2">Dr. Janelle Cheong</div>
+          <div class="text-brand-blue text-sm font-medium mb-3">General Dentist</div>
+          <p class="text-neutral-mid text-sm leading-relaxed">Comprehensive general dentistry alongside specialist prosthodontic care — a complete practice for the whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Here -->
+  <section class="bg-brand-light py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
+          <h2 class="section-heading mb-6">From Seal Beach to Huntington Beach — {driveTime}</h2>
+          <p class="text-neutral-mid leading-relaxed mb-4">
+            From Seal Beach, the most direct route to our office is south on Pacific Coast Highway (PCH). The drive is approximately {distance} and takes around {driveTime} under normal traffic conditions. Our office is located at 16141 Bolsa Chica St., Suite C, in a professional medical building with ample parking.
+          </p>
+          <p class="text-neutral-mid leading-relaxed mb-8">
+            We are open Monday, Wednesday, and Friday 9am–5pm, and Saturday 10am–2pm. Tuesday and Thursday appointments are available by special arrangement.
+          </p>
+          <a
+            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-6 py-3"
+          >
+            Get Directions on Google Maps
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-neutral-border">
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
+          <address class="not-italic text-neutral-mid leading-relaxed mb-6">
+            16141 Bolsa Chica St., Suite C<br />
+            Huntington Beach, CA 92649
+          </address>
+          <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
+          <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
+          <div class="mt-6 pt-6 border-t border-neutral-border">
+            <h3 class="font-serif text-lg font-semibold text-brand-navy mb-3">Hours</h3>
+            <ul class="text-neutral-mid text-sm space-y-1">
+              <li>Mon, Wed, Fri: 9am – 5pm</li>
+              <li>Tue, Thu: By Appointment</li>
+              <li>Sat: 10am – 2pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading={`Common Questions from ${city} Patients`} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Seal Beach patients: start with a free consultation"
+        subheading="Dr. Favian Cheong will personally review your case, walk through your options, and give you an honest treatment plan — no pressure, no obligation. Just expert answers."
+      />
+    </div>
+  </section>
+
+</BaseLayout>
