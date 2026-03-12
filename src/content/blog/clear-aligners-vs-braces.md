@@ -1,7 +1,7 @@
 ---
 title: "Clear Aligners vs. Braces for Adults: Which Is Right for You?"
 description: "Clear aligners vs. braces for adults: compare treatment scope, compliance requirements, cost ranges, and results to find the right fit for you."
-publishDate: 2026-03-08
+publishDate: 2025-01-01
 targetKeyword: "clear aligners vs braces adults"
 category: "prosthodontics"
 author: "Dr. Favian Cheong"

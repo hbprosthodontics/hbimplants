@@ -1,7 +1,7 @@
 ---
 title: "How Long Do Porcelain Veneers Last? What Affects Longevity"
 description: "Porcelain veneers typically last 10–20 years. A Huntington Beach prosthodontist explains what affects longevity and how to protect your investment."
-publishDate: 2025-12-23
+publishDate: 2025-02-10
 targetKeyword: "how long do porcelain veneers last"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

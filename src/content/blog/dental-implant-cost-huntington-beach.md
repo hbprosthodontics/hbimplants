@@ -1,7 +1,7 @@
 ---
 title: "How Much Do Dental Implants Cost in Huntington Beach? (Real Numbers)"
 description: "Real dental implant costs in Huntington Beach: single tooth, All-on-4, bone grafting, insurance coverage, and financing options explained."
-publishDate: 2026-02-03
+publishDate: 2026-02-05
 targetKeyword: "dental implant cost Huntington Beach"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

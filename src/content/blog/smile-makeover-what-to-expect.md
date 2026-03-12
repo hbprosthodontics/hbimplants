@@ -1,7 +1,7 @@
 ---
 title: "What to Expect From a Smile Makeover: A Prosthodontist's Step-by-Step Guide"
 description: "A smile makeover is a sequenced treatment plan, not a single procedure. A prosthodontist explains what to expect from consultation to final results."
-publishDate: 2026-03-08
+publishDate: 2025-03-22
 targetKeyword: "smile makeover what to expect"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

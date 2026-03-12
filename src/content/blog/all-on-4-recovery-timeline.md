@@ -1,7 +1,7 @@
 ---
 title: "All-on-4 Recovery Timeline: What to Expect Week by Week"
 description: "What does All-on-4 recovery look like? A Huntington Beach prosthodontist walks through the full timeline — from surgery day to final teeth."
-publishDate: 2025-10-14
+publishDate: 2025-07-20
 targetKeyword: "All-on-4 recovery timeline"
 category: "all-on-x"
 author: "Dr. Favian Cheong"

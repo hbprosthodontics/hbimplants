@@ -1,7 +1,7 @@
 ---
 title: "How Much Do Porcelain Veneers Cost in Huntington Beach?"
 description: "Porcelain veneer costs in Huntington Beach typically range from $1,200–$2,500 per tooth. A prosthodontist explains what drives price differences."
-publishDate: 2025-12-09
+publishDate: 2025-12-07
 targetKeyword: "porcelain veneers cost Huntington Beach"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

@@ -1,9 +1,12 @@
 ---
+import { site } from '../config/site';
+
 interface Props {
   heading?: string;
   subheading?: string;
   primaryCTA?: string;
   primaryHref?: string;
+  primaryExternal?: boolean;
   phone?: string;
   variant?: 'dark' | 'light' | 'white';
 }
@@ -12,8 +15,9 @@ const {
   heading = 'Ready to Restore Your Smile?',
   subheading = 'Schedule a consultation with Dr. Favian Cheong, your certified prosthodontic specialist in Huntington Beach. We\'ll create a personalized treatment plan just for you.',
   primaryCTA = 'Book Free Consultation',
-  primaryHref = '/schedule',
-  phone = '(714) 846-1386',
+  primaryHref = site.bookingUrl,
+  primaryExternal = true,
+  phone = site.phone,
   variant = 'light',
 } = Astro.props;
 
@@ -50,7 +54,7 @@ const phoneClass = {
     {subheading}
   </p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-    <a href={primaryHref} class={`${variant === 'dark' ? 'btn-secondary border-white text-white hover:bg-white hover:text-charcoal' : 'btn-primary'} text-base px-8 py-4 font-semibold`}>
+    <a href={primaryHref} class={`${variant === 'dark' ? 'btn-secondary border-white text-white hover:bg-white hover:text-charcoal' : 'btn-primary'} text-base px-8 py-4 font-semibold`} target={primaryExternal ? '_blank' : undefined} rel={primaryExternal ? 'noopener noreferrer' : undefined}>
       {primaryCTA}
     </a>
     <a

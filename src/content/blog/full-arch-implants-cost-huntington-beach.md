@@ -1,7 +1,7 @@
 ---
 title: "How Much Does a Full Arch of Implants Cost in Huntington Beach? (All-on-4, All-on-6, Fixed Arch)"
 description: "Full arch implants in Huntington Beach range from $20,000–$40,000+ per arch depending on treatment type. A prosthodontist breaks down what drives the cost."
-publishDate: 2026-03-08
+publishDate: 2025-12-27
 targetKeyword: "full arch implants cost Huntington Beach"
 category: "all-on-x"
 author: "Dr. Favian Cheong"

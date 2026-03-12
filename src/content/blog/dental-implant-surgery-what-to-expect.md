@@ -1,7 +1,7 @@
 ---
 title: "What to Expect From Dental Implant Surgery: A Prosthodontist's Walkthrough"
 description: "What happens during dental implant surgery? A Huntington Beach prosthodontist walks through every stage — prep, procedure, and recovery."
-publishDate: 2025-10-07
+publishDate: 2025-09-18
 targetKeyword: "what to expect dental implant surgery"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

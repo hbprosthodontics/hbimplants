@@ -3,6 +3,7 @@ import { site } from '../config/site';
 import { navLinks } from '../config/navigation';
 
 const phone = site.phone;
+const bookHref = site.bookingUrl;
 ---
 
 <header class="bg-white border-b border-border-light sticky top-0 z-50">
@@ -24,6 +25,8 @@ const phone = site.phone;
             <a
               href={link.href}
               class={`nav-link text-sm py-1.5 flex items-center gap-1.5 ${link.avatar ? 'border border-charcoal/20 rounded-full px-3 hover:border-charcoal/40' : ''}`}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
             >
               {link.avatar && (
                 <img src={link.avatar} alt="" class="w-6 h-6 rounded-full object-cover object-top ring-2 ring-white" />
@@ -40,7 +43,7 @@ const phone = site.phone;
                 {link.dropdown.map((item) => (
                   <a
                     href={item.href}
-                    class="block px-4 py-3 hover:bg-surface-2 first:rounded-t-xl last:rounded-b-xl"
+                    class={`block px-4 py-3 hover:bg-surface-2 first:rounded-t-xl last:rounded-b-xl ${item.dividerBefore ? 'border-t border-border-light mt-1 pt-3' : ''}`}
                   >
                     <div class="text-sm font-medium text-charcoal">{item.label}</div>
                     {item.desc && <div class="text-xs text-mid-gray mt-0.5">{item.desc}</div>}
@@ -57,7 +60,7 @@ const phone = site.phone;
         <a href={`tel:${phone.replace(/\D/g, '')}`} class="text-mid-gray text-sm font-medium hover:text-charcoal transition-colors">
           {phone}
         </a>
-        <a href="/schedule" class="btn-primary text-sm px-5 py-2.5">
+        <a href={bookHref} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-5 py-2.5">
           Book Appointment
         </a>
       </div>
@@ -92,6 +95,8 @@ const phone = site.phone;
           <a
             href={link.href}
             class="block text-charcoal font-medium py-2 hover:text-brand-navy transition-colors"
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
           >
             {link.label}
           </a>
@@ -100,7 +105,7 @@ const phone = site.phone;
               {link.dropdown.map((item) => (
                 <a
                   href={item.href}
-                  class="block text-mid-gray text-sm py-1.5 hover:text-charcoal transition-colors"
+                  class={`block text-mid-gray text-sm py-1.5 hover:text-charcoal transition-colors ${item.dividerBefore ? 'border-t border-border-light mt-2 pt-2' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -113,7 +118,7 @@ const phone = site.phone;
         <a href={`tel:${phone.replace(/\D/g, '')}`} class="block text-center btn-secondary text-sm">
           Call {phone}
         </a>
-        <a href="/schedule" class="block text-center btn-primary text-sm">
+        <a href={bookHref} target="_blank" rel="noopener noreferrer" class="block text-center btn-primary text-sm">
           Book Appointment
         </a>
       </div>

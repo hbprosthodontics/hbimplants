@@ -1,7 +1,7 @@
 ---
 title: "How Much Does All-on-4 Cost in Huntington Beach?"
 description: "All-on-4 in Huntington Beach typically costs $20,000–$35,000 per arch. A prosthodontist explains what's included, what varies, and how to evaluate quotes."
-publishDate: 2026-01-20
+publishDate: 2026-01-16
 targetKeyword: "All-on-4 cost Huntington Beach"
 category: "all-on-x"
 author: "Dr. Favian Cheong"

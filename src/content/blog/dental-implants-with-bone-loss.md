@@ -1,7 +1,7 @@
 ---
 title: "Can I Get Dental Implants With Bone Loss? What Your Options Actually Are"
 description: "Bone loss doesn't always rule out dental implants. A Huntington Beach prosthodontist explains grafting, All-on-4, and what's possible for your situation."
-publishDate: 2025-11-18
+publishDate: 2025-06-30
 targetKeyword: "dental implants with bone loss"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
