@@ -6,6 +6,7 @@ targetKeyword: "how long do porcelain veneers last"
 category: "cosmetic"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["veneers", "cosmetic", "longevity"]
 faqs:
   - question: "How long do porcelain veneers typically last?"
     answer: "Porcelain veneers typically last 10–20 years, and well-maintained veneers on healthy teeth often last longer. The longevity depends on the quality of bonding to enamel, the patient's bite habits (especially grinding), oral hygiene, and avoiding behaviors that chip or stress the veneers. Veneers don't decay, but the underlying tooth and gum health affect the long-term outcome."

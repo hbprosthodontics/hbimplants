@@ -6,6 +6,7 @@ targetKeyword: "veneers vs crowns"
 category: "cosmetic"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["veneers", "crowns", "cosmetic", "comparison"]
 faqs:
   - question: "What is the difference between a veneer and a crown?"
     answer: "A veneer covers only the front surface of a tooth and requires removing a thin layer (0.3–0.7mm) of enamel from the front face. A crown covers the entire tooth and requires reducing all surfaces significantly (1.5–2mm or more). Veneers are primarily cosmetic, preserving more natural tooth structure. Crowns are used when a tooth needs structural protection — after a root canal, for a cracked tooth, or when decay or damage is extensive."

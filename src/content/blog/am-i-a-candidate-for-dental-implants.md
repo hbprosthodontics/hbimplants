@@ -6,6 +6,7 @@ targetKeyword: "am I a candidate for dental implants"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "candidacy", "bone-grafting"]
 faqs:
   - question: "Who is a good candidate for dental implants?"
     answer: "Most healthy adults with one or more missing teeth are good candidates. The key requirements are adequate jawbone volume to anchor the implant, healthy gum tissue, and no uncontrolled systemic health conditions. Many patients who initially seem like poor candidates — due to bone loss or health conditions — can still receive implants after appropriate preparation."

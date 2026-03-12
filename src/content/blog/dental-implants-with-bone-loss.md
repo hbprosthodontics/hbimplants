@@ -6,6 +6,7 @@ targetKeyword: "dental implants with bone loss"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "bone-grafting", "all-on-4", "candidacy"]
 faqs:
   - question: "Can I get dental implants if I have bone loss?"
     answer: "Often yes. Bone loss is common in patients who have been missing teeth for extended periods, and it is frequently addressable. Bone grafting can rebuild lost volume before implant placement. In full-arch cases, All-on-4 techniques use angled implants to reach areas where bone is still present, often avoiding grafting entirely."

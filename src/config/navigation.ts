@@ -48,6 +48,7 @@ export const navLinks: NavLink[] = [
     dropdown: [
       { label: 'About Us', href: '/about', desc: 'Meet Dr. Cheong & our practice' },
       { label: 'Why a Prosthodontist', href: '/why-a-prosthodontist', desc: 'How specialist care is different' },
+      { label: 'Common Questions', href: '/faq', desc: 'Implants, insurance & getting started' },
     ],
   },
   {
@@ -61,7 +62,6 @@ export const navLinks: NavLink[] = [
     external: true,
     dropdown: [
       { label: 'Financing & Insurance', href: '/financing', desc: 'Payment plans, insurance & cost guides' },
-      { label: 'Common Questions', href: '/faq', desc: 'Implants, insurance & getting started' },
       { label: 'Free Consultation', href: '/dental-implants/consultation', desc: 'No-cost exam & treatment plan' },
       { label: 'Patient Blog', href: '/blog', desc: 'Education & treatment guides' },
     ],

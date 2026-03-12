@@ -6,6 +6,7 @@ targetKeyword: "smile makeover what to expect"
 category: "cosmetic"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["veneers", "smile-makeover", "cosmetic"]
 ---
 
 When patients come in asking for a smile makeover, the first thing I tell them is that it isn't a procedure — it's a plan. A smile makeover is a coordinated sequence of treatments designed to address multiple aspects of your smile simultaneously: color, shape, proportion, alignment, and in many cases, structural function. How many steps are involved, how long it takes, and what it costs depends entirely on what your smile needs and what your goals are.

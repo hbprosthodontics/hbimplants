@@ -6,6 +6,7 @@ targetKeyword: "All-on-4 cost Huntington Beach"
 category: "all-on-x"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["all-on-4", "cost", "dentures", "huntington-beach"]
 faqs:
   - question: "How much does All-on-4 cost in Huntington Beach?"
     answer: "All-on-4 in Huntington Beach and the greater Orange County area typically ranges from $20,000 to $35,000 per arch. Full-mouth treatment (both arches) ranges from $40,000 to $70,000. The variation reflects differences in what's included — extractions, bone preparation, the quality of the final prosthesis, and whether the temporary and final prostheses are included in the quoted price."

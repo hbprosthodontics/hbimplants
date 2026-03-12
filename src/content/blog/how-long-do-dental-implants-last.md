@@ -6,6 +6,7 @@ targetKeyword: "how long do dental implants last"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "longevity", "crowns"]
 ---
 
 When patients ask me how long dental implants last, I tell them the honest answer has two parts — because a dental implant is actually two things: the titanium post buried in your jawbone, and the crown (or bridge or denture) attached to it. These two components have very different lifespans, and understanding the distinction matters before you invest in treatment.

@@ -6,6 +6,7 @@ targetKeyword: "veneers vs composite bonding"
 category: "cosmetic"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["veneers", "cosmetic", "bonding", "comparison"]
 faqs:
   - question: "What is the difference between veneers and composite bonding?"
     answer: "Porcelain veneers are thin ceramic shells fabricated in a dental laboratory and bonded to the front surface of teeth. Composite bonding applies tooth-colored resin directly to the tooth in a single chairside appointment. Veneers last longer (10–20 years), are more stain-resistant, and look more natural, but cost more. Composite bonding costs significantly less ($300–$600 per tooth) but stains more easily, chips more readily, and typically lasts 5–7 years before replacement or touch-up."
