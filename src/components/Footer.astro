@@ -1,5 +1,6 @@
 ---
 import { site, address as addr, hours } from '../config/site';
+import { serviceCategories } from '../config/services';
 
 const currentYear = new Date().getFullYear();
 const phone = site.phone;
@@ -57,61 +58,52 @@ const googleReviewLink = site.googleReviewLink;
         </div>
       </div>
 
-      <!-- Treatments -->
+      <!-- Services (from config — matches nav) -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Dental Implants</h3>
-        <ul class="space-y-2 text-sm text-mid-gray mb-5">
-          <li><a href="/dental-implants" class="hover:text-charcoal transition-colors">Dental Implants</a></li>
-          <li><a href="/dental-implants/single-tooth" class="hover:text-charcoal transition-colors">Single Tooth Implant</a></li>
-          <li><a href="/all-on-x/all-on-4" class="hover:text-charcoal transition-colors">All-on-4 Implants</a></li>
-          <li><a href="/all-on-x/all-on-6" class="hover:text-charcoal transition-colors">All-on-6 Implants</a></li>
-          <li><a href="/all-on-x/full-arch" class="hover:text-charcoal transition-colors">Full Arch Implants</a></li>
-          <li><a href="/dental-implants/bone-grafting" class="hover:text-charcoal transition-colors">Bone Grafting</a></li>
-        </ul>
-        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Smile Restoration</h3>
-        <ul class="space-y-2 text-sm text-mid-gray">
-          <li><a href="/veneers/porcelain" class="hover:text-charcoal transition-colors">Porcelain Veneers</a></li>
-          <li><a href="/veneers/smile-makeover" class="hover:text-charcoal transition-colors">Smile Makeover</a></li>
-          <li><a href="/cosmetic-dentistry" class="hover:text-charcoal transition-colors">Cosmetic Dentistry</a></li>
-          <li><a href="/clear-aligners" class="hover:text-charcoal transition-colors">Clear Aligners</a></li>
-        </ul>
-      </div>
-
-      <!-- About & Resources -->
-      <div>
-        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Crowns & Dentures</h3>
-        <ul class="space-y-2 text-sm text-mid-gray mb-5">
-          <li><a href="/dentures" class="hover:text-charcoal transition-colors">Dentures</a></li>
-          <li><a href="/implant-restorations/snap-on" class="hover:text-charcoal transition-colors">Snap-on Dentures</a></li>
-          <li><a href="/implant-restorations/crowns" class="hover:text-charcoal transition-colors">Implant Crowns</a></li>
-          <li><a href="/implant-restorations/bridges" class="hover:text-charcoal transition-colors">Implant Bridges</a></li>
-          <li><a href="/general-dentistry" class="hover:text-charcoal transition-colors">General Dentistry</a></li>
-        </ul>
-        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">About & Resources</h3>
-        <ul class="space-y-2 text-sm text-mid-gray">
+        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Services</h3>
+        <ul class="space-y-2 text-sm text-mid-gray mb-4">
           <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
-          <li><a href="/about" class="hover:text-charcoal transition-colors">About Us</a></li>
-          <li><a href="/blog" class="hover:text-charcoal transition-colors">Patient Blog</a></li>
+        </ul>
+        {serviceCategories.map((cat) => (
+          <div class="mb-5 last:mb-4">
+            <h4 class="font-serif text-sm font-semibold mb-2 text-charcoal">
+              <a href={cat.href} class="hover:text-brand-teal transition-colors">{cat.heading}</a>
+            </h4>
+            <ul class="space-y-1.5 text-sm text-mid-gray">
+              {cat.services.map((s) => (
+                <li><a href={s.href} class="hover:text-charcoal transition-colors">{s.name}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <ul class="space-y-2 text-sm text-mid-gray">
           <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
-          <li><a href="/faq" class="hover:text-charcoal transition-colors">FAQ</a></li>
-          <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Consultation</a></li>
         </ul>
       </div>
 
-      <!-- Quick Links -->
+      <!-- About -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-4 text-charcoal">Quick Links</h3>
+        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">About</h3>
+        <ul class="space-y-2 text-sm text-mid-gray">
+          <li><a href="/about" class="hover:text-charcoal transition-colors">About Us</a></li>
+          <li><a href="/why-a-prosthodontist" class="hover:text-charcoal transition-colors">Why a Prosthodontist</a></li>
+          <li><a href="/financing" class="hover:text-charcoal transition-colors">Financing</a></li>
+          <li><a href="/blog" class="hover:text-charcoal transition-colors">Patient Blog</a></li>
+          <li><a href="/faq" class="hover:text-charcoal transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Get Started -->
+      <div>
+        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Get Started</h3>
         <ul class="space-y-2 text-sm text-mid-gray">
           <li>
-            <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-navy transition-colors">
+            <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-teal transition-colors">
               → Book Appointment
             </a>
           </li>
-          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors">Call Us: {phone}</a></li>
           <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Consultation</a></li>
-          <li><a href="/faq" class="hover:text-charcoal transition-colors">Patient FAQ</a></li>
-          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
-          <li><a href="/about" class="hover:text-charcoal transition-colors">About Our Practice</a></li>
+          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors">Call {phone}</a></li>
         </ul>
       </div>
     </div>

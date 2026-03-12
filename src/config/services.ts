@@ -18,7 +18,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     heading: 'Dental Implants',
     href: '/dental-implants',
-    desc: 'Single-tooth implants, bone grafting, and surgical placement — the permanent gold standard for tooth replacement.',
+    desc: 'Replace missing teeth permanently.',
     services: [
       { name: 'Single Tooth Implant', href: '/dental-implants/single-tooth', desc: 'Replace one missing tooth permanently' },
       { name: 'All-on-4 Implants', href: '/all-on-x/all-on-4', desc: 'Full arch on just 4 implants' },
@@ -33,7 +33,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     heading: 'Smile Restoration',
     href: '/veneers',
-    desc: 'Veneers, smile makeovers, and cosmetic care — transform the color, shape, and symmetry of your smile.',
+    desc: 'Transform the look of your smile.',
     services: [
       { name: 'Porcelain Veneers', href: '/veneers/porcelain', desc: 'Transform shape, color & symmetry' },
       { name: 'Smile Makeover', href: '/veneers/smile-makeover', desc: 'Complete aesthetic transformation' },
@@ -46,7 +46,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     heading: 'Crowns & Dentures',
     href: '/restorative-dentistry',
-    desc: 'Modern dentures, implant restorations, and crowns — restore function and appearance.',
+    desc: 'Repair damaged teeth, replace missing ones.',
     services: [
       { name: 'Dental Crowns', href: '/restorative-dentistry/crowns', desc: 'Restore damaged or weakened teeth' },
       { name: 'Dental Bridges', href: '/restorative-dentistry/bridges', desc: 'Fixed prosthetic for missing teeth' },
