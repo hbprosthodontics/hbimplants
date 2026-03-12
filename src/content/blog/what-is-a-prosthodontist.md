@@ -1,7 +1,7 @@
 ---
 title: "What Is a Prosthodontist? (And When You Need One Instead of a General Dentist)"
 description: "What is a prosthodontist? Learn how prosthodontic training differs from general dentistry and when seeing a specialist actually matters."
-publishDate: 2026-02-25
+publishDate: 2025-01-08
 targetKeyword: "what is a prosthodontist"
 category: "prosthodontics"
 author: "Dr. Favian Cheong"
