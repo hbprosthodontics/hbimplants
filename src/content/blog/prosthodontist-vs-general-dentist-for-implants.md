@@ -1,7 +1,7 @@
 ---
 title: "Prosthodontist vs. General Dentist for Dental Implants: What's the Difference?"
 description: "Should you see a prosthodontist or general dentist for dental implants? Here's what the difference actually means for your treatment outcome."
-publishDate: 2025-12-02
+publishDate: 2025-08-29
 targetKeyword: "prosthodontist vs general dentist for implants"
 category: "prosthodontics"
 author: "Dr. Favian Cheong"

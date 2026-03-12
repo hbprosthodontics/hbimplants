@@ -1,7 +1,7 @@
 ---
 title: "Dental Implants vs. Dentures: An Honest Comparison for Huntington Beach Patients"
 description: "Dental implants vs. dentures in Huntington Beach: an honest comparison of cost, stability, bone preservation, and long-term outcomes from a prosthodontist."
-publishDate: 2025-01-29
+publishDate: 2025-10-28
 targetKeyword: "dental implants vs dentures Huntington Beach"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

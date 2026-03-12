@@ -1,7 +1,7 @@
 ---
 title: "All-on-4 vs. All-on-6 Implants: Which Full-Arch Solution Is Right for You?"
 description: "Compare All-on-4 vs All-on-6 implants: bone requirements, stability, cost, and how to choose the right full-arch solution for your anatomy."
-publishDate: 2026-03-03
+publishDate: 2026-03-11
 targetKeyword: "All-on-4 vs All-on-6"
 category: "all-on-x"
 author: "Dr. Favian Cheong"

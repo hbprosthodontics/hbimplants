@@ -1,7 +1,7 @@
 ---
 title: "Veneers vs. Composite Bonding: Which Is Right for Your Smile?"
 description: "Porcelain veneers and composite bonding both improve smile appearance, but they differ in cost, longevity, and the right use cases. Here's the comparison."
-publishDate: 2026-01-06
+publishDate: 2025-05-01
 targetKeyword: "veneers vs composite bonding"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

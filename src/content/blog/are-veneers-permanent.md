@@ -1,7 +1,7 @@
 ---
 title: "Are Veneers Permanent? What You Need to Know Before Committing"
 description: "Veneers require removing enamel that never grows back — making the commitment permanent. A prosthodontist gives you the honest picture before you decide."
-publishDate: 2026-03-08
+publishDate: 2025-01-21
 targetKeyword: "are veneers permanent"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

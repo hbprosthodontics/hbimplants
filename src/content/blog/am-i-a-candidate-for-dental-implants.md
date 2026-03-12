@@ -1,7 +1,7 @@
 ---
 title: "Am I a Good Candidate for Dental Implants? What Actually Determines Eligibility"
 description: "Who qualifies for dental implants? A Huntington Beach prosthodontist explains the real criteria — bone, health, age, and what can be worked around."
-publishDate: 2025-11-04
+publishDate: 2025-10-08
 targetKeyword: "am I a candidate for dental implants"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

@@ -1,51 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABlock from '../components/CTABlock.astro';
-
 import { localBusinessSchema as localBusiness } from '../config/site';
-
-const categories = [
-  {
-    heading: 'Dental Implants',
-    href: '/dental-implants',
-    services: [
-      { name: 'Single Tooth Implant', href: '/dental-implants/single-tooth', desc: 'Permanently replace one missing tooth with a titanium implant and natural-looking crown.' },
-      { name: 'All-on-4 Implants', href: '/all-on-x/all-on-4', desc: 'Replace a full arch of teeth using just 4 implants — often in a single day.' },
-      { name: 'All-on-6 Implants', href: '/all-on-x/all-on-6', desc: 'Maximum stability for full-arch tooth replacement using 6 strategically placed implants.' },
-      { name: 'Full Arch Implants', href: '/all-on-x/full-arch', desc: 'Comprehensive full-arch replacement for upper, lower, or both jaws.' },
-      { name: 'Full Mouth Reconstruction', href: '/all-on-x/full-mouth-reconstruction', desc: 'Complete rehabilitation of all teeth for patients with extensive damage or wear.' },
-      { name: 'Bone Grafting', href: '/dental-implants/bone-grafting', desc: 'Rebuild bone volume to create a solid foundation for dental implant placement.' },
-      { name: 'Implant Placement', href: '/dental-implants/implant-placement', desc: 'Precision surgical placement of the implant post into the jawbone.' },
-      { name: 'Free Implant Consultation', href: '/dental-implants/consultation', desc: 'No-cost evaluation with 3D imaging, treatment plan, and itemized cost estimate.' },
-    ],
-  },
-  {
-    heading: 'Smile Restoration',
-    href: '/veneers',
-    services: [
-      { name: 'Porcelain Veneers', href: '/veneers/porcelain', desc: 'Ultra-thin ceramic shells bonded to teeth to transform color, shape, and symmetry.' },
-      { name: 'Smile Makeover', href: '/veneers/smile-makeover', desc: 'Complete aesthetic redesign combining multiple cosmetic treatments for a total transformation.' },
-      { name: 'Cosmetic Dentistry', href: '/cosmetic-dentistry', desc: 'Full range of aesthetic treatments to enhance the appearance of your smile.' },
-      { name: 'Teeth Whitening', href: '/cosmetic-dentistry/whitening', desc: 'Professional-grade whitening for dramatically brighter teeth in a single appointment.' },
-      { name: 'Composite Bonding', href: '/cosmetic-dentistry/bonding', desc: 'Tooth-colored resin to repair chips, close gaps, and correct discoloration.' },
-      { name: 'Clear Aligners', href: '/clear-aligners', desc: 'Discreet orthodontic treatment to straighten teeth without metal brackets or wires.' },
-    ],
-  },
-  {
-    heading: 'Crowns & Dentures',
-    href: '/restorative-dentistry',
-    services: [
-      { name: 'Dental Crowns', href: '/restorative-dentistry/crowns', desc: 'Restore a damaged, weakened, or heavily filled tooth with a custom-fitted porcelain crown.' },
-      { name: 'Dental Bridges', href: '/restorative-dentistry/bridges', desc: 'Fixed prosthetic anchored to neighboring teeth to replace one or more missing teeth.' },
-      { name: 'Full Dentures', href: '/dentures/full', desc: 'Complete removable replacement for an entire arch of missing teeth.' },
-      { name: 'Partial Dentures', href: '/dentures/partial', desc: 'Removable prosthetic to replace multiple missing teeth when some natural teeth remain.' },
-      { name: 'Snap-on Dentures', href: '/implant-restorations/snap-on', desc: 'Implant-supported dentures that snap in for stability and out for easy cleaning.' },
-      { name: 'Implant Crowns', href: '/implant-restorations/crowns', desc: 'Custom crown placed on top of a dental implant post to complete your restoration.' },
-      { name: 'Implant Bridges', href: '/implant-restorations/bridges', desc: 'Fixed bridge anchored to implants — no natural teeth needed as abutments.' },
-      { name: 'General Dentistry', href: '/general-dentistry', desc: 'Routine cleanings, exams, and preventive care for the whole family.' },
-    ],
-  },
-];
+import { serviceCategories } from '../config/services';
 ---
 <BaseLayout
   title="Dental Services Huntington Beach | Prosthodontist HB, CA"
@@ -69,14 +26,14 @@ const categories = [
 
   <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-      {categories.map(cat => (
+      {serviceCategories.map(cat => (
         <div>
           <div class="flex items-baseline gap-4 mb-8">
             <h2 class="section-heading">{cat.heading}</h2>
             <a href={cat.href} class="text-brand-blue text-sm hover:underline">View all →</a>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {cat.services.map(svc => (
+            {cat.services.map((svc) => (
               <a href={svc.href} class="card group hover:border-brand-teal hover:shadow-md transition-all duration-200 block">
                 <div class="font-semibold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">{svc.name}</div>
                 <p class="text-neutral-mid text-sm leading-relaxed mb-3">{svc.desc}</p>

@@ -1,7 +1,7 @@
 ---
 title: "Veneers vs. Crowns: How to Know Which One You Actually Need"
 description: "Veneers and crowns look similar but serve different purposes. A prosthodontist explains when each is appropriate and why the distinction matters."
-publishDate: 2025-12-16
+publishDate: 2025-05-21
 targetKeyword: "veneers vs crowns"
 category: "cosmetic"
 author: "Dr. Favian Cheong"

@@ -1,7 +1,7 @@
 ---
 title: "How Long Do Dental Implants Last? The Honest Answer From a Prosthodontist"
 description: "How long do dental implants last? A Huntington Beach prosthodontist explains the difference between implant post longevity and crown lifespan."
-publishDate: 2025-01-15
+publishDate: 2025-03-02
 targetKeyword: "how long do dental implants last"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

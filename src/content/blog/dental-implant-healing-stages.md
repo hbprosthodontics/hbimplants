@@ -1,7 +1,7 @@
 ---
 title: "Dental Implant Healing Stages: What's Happening Inside Your Jaw"
 description: "From surgery day to final crown, here's exactly what happens during dental implant healing — and what to expect at each stage."
-publishDate: 2025-10-21
+publishDate: 2025-08-09
 targetKeyword: "dental implant healing stages"
 category: "dental-implants"
 author: "Dr. Favian Cheong"

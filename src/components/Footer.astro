@@ -3,6 +3,7 @@ import { site, address as addr, hours } from '../config/site';
 
 const currentYear = new Date().getFullYear();
 const phone = site.phone;
+const bookHref = site.bookingUrl;
 const email = site.email;
 const address = addr.street;
 const googleReviewLink = site.googleReviewLink;
@@ -102,7 +103,7 @@ const googleReviewLink = site.googleReviewLink;
         <h3 class="font-serif text-base font-semibold mb-4 text-charcoal">Quick Links</h3>
         <ul class="space-y-2 text-sm text-mid-gray">
           <li>
-            <a href="/schedule" class="font-medium text-charcoal hover:text-brand-navy transition-colors">
+            <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-navy transition-colors">
               → Book Appointment
             </a>
           </li>

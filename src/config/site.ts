@@ -9,6 +9,8 @@ export const site = {
   email: 'hbprosth@gmail.com',
   googleReviewLink: 'https://g.page/r/CU4itT3RNhmQEBM/review',
   googleProfileLink: 'https://g.page/r/CU4itT3RNhmQEBM',
+  /** Direct online booking (Dentrix Ascend) — use for "Book Appointment" CTAs */
+  bookingUrl: 'https://bookit.dentrixascend.com/soe/new/dental?pid=ASC14000000000144&mode=externalLink',
 };
 
 export const doctor = {

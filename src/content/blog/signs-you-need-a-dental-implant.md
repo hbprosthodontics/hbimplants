@@ -1,7 +1,7 @@
 ---
 title: "7 Signs You Need a Dental Implant (Not a Bridge or Denture)"
 description: "How do you know when a dental implant is the right choice? A Huntington Beach prosthodontist walks through the signs that point to implants over alternatives."
-publishDate: 2025-11-11
+publishDate: 2025-06-10
 targetKeyword: "signs you need a dental implant"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
