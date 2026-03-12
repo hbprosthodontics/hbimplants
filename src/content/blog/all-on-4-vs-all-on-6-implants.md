@@ -6,6 +6,7 @@ targetKeyword: "All-on-4 vs All-on-6"
 category: "all-on-x"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["all-on-4", "all-on-6", "comparison", "bone-loss"]
 faqs:
   - question: "What is the main difference between All-on-4 and All-on-6 implants?"
     answer: "All-on-4 uses four implants per arch to support a full set of fixed teeth. All-on-6 uses six implants per arch for additional support points. All-on-6 distributes chewing forces across more implants and is often preferred when more bone is available or when maximum long-term stability is desired."

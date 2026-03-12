@@ -6,6 +6,7 @@ targetKeyword: "All-on-4 recovery timeline"
 category: "all-on-x"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["all-on-4", "recovery", "surgery"]
 faqs:
   - question: "How long is the recovery from All-on-4 surgery?"
     answer: "Most patients feel substantially recovered within 2 weeks of All-on-4 surgery. Full healing and osseointegration takes 3–4 months, after which the final fixed prosthesis is placed. The day-of experience includes receiving temporary teeth, so patients leave with a full functional smile."

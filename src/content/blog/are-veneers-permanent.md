@@ -6,6 +6,7 @@ targetKeyword: "are veneers permanent"
 category: "cosmetic"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["veneers", "cosmetic"]
 ---
 
 When patients ask me whether veneers are permanent, I give them an honest answer that has two parts — because the question actually asks two different things. The veneers themselves are not permanent: they last 10–20 years and eventually need replacement. But the commitment to having veneers is permanent: once enamel is removed from the front of your teeth to make room for a veneer, that enamel does not grow back, and those teeth will always require some form of coverage.

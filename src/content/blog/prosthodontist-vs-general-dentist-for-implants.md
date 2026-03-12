@@ -6,6 +6,7 @@ targetKeyword: "prosthodontist vs general dentist for implants"
 category: "prosthodontics"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["prosthodontics", "dental-implants", "all-on-4", "specialist"]
 faqs:
   - question: "What is the difference between a prosthodontist and a general dentist for implants?"
     answer: "A prosthodontist completes an additional 3-year residency after dental school, specializing in the restoration and replacement of teeth — including complex implant cases, full-arch reconstruction, and cases involving bone loss, multiple missing teeth, or failing dentitions. General dentists can place and restore straightforward single implants. For complex cases — multiple implants, All-on-4, significant bone loss, or previous implant failures — a prosthodontist brings deeper specialized training."

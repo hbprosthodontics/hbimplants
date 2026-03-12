@@ -6,6 +6,7 @@ targetKeyword: "what to expect dental implant surgery"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "surgery", "recovery"]
 faqs:
   - question: "Is dental implant surgery painful?"
     answer: "Implant surgery is performed under local anesthesia, so you feel pressure and movement but no pain during the procedure. Post-operative discomfort is typically mild — manageable with over-the-counter pain relievers. Most patients are surprised by how comfortable the recovery is."

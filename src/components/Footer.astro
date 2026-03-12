@@ -15,8 +15,13 @@ const googleReviewLink = site.googleReviewLink;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- NAP Block -->
       <div class="lg:col-span-1">
-        <div class="font-serif text-xl font-bold mb-1 text-charcoal">Huntington Beach</div>
-        <div class="font-serif text-base font-semibold text-brand-teal mb-4">Prosthodontics</div>
+        <a href="/" class="flex items-center gap-3 mb-4">
+          <img src="/images/logos/hbimplants_logo_color_transparent.png" alt="" class="h-10 w-auto" />
+          <div>
+            <div class="font-serif text-xl font-bold leading-tight text-charcoal">Huntington Beach</div>
+            <div class="font-serif text-base font-semibold text-brand-teal leading-tight">Prosthodontics</div>
+          </div>
+        </a>
         <address class="not-italic text-mid-gray text-sm">
           <div class="space-y-0.5">
             <p>{address}</p>
@@ -58,14 +63,11 @@ const googleReviewLink = site.googleReviewLink;
         </div>
       </div>
 
-      <!-- Services (from config — matches nav) -->
+      <!-- Services: Dental Implants + Smile Restoration -->
       <div>
         <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Services</h3>
-        <ul class="space-y-2 text-sm text-mid-gray mb-4">
-          <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
-        </ul>
-        {serviceCategories.map((cat) => (
-          <div class="mb-5 last:mb-4">
+        {serviceCategories.slice(0, 2).map((cat) => (
+          <div class="mb-5 last:mb-0">
             <h4 class="font-serif text-sm font-semibold mb-2 text-charcoal">
               <a href={cat.href} class="hover:text-brand-teal transition-colors">{cat.heading}</a>
             </h4>
@@ -76,13 +78,20 @@ const googleReviewLink = site.googleReviewLink;
             </ul>
           </div>
         ))}
-        <ul class="space-y-2 text-sm text-mid-gray">
-          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
-        </ul>
       </div>
 
-      <!-- About -->
+      <!-- Crowns & Dentures + About -->
       <div>
+        <div class="mb-5">
+          <h4 class="font-serif text-sm font-semibold mb-2 text-charcoal">
+            <a href={serviceCategories[2].href} class="hover:text-brand-teal transition-colors">{serviceCategories[2].heading}</a>
+          </h4>
+          <ul class="space-y-1.5 text-sm text-mid-gray">
+            {serviceCategories[2].services.map((s) => (
+              <li><a href={s.href} class="hover:text-charcoal transition-colors">{s.name}</a></li>
+            ))}
+          </ul>
+        </div>
         <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">About</h3>
         <ul class="space-y-2 text-sm text-mid-gray">
           <li><a href="/about" class="hover:text-charcoal transition-colors">About Us</a></li>
@@ -93,10 +102,12 @@ const googleReviewLink = site.googleReviewLink;
         </ul>
       </div>
 
-      <!-- Get Started -->
+      <!-- Quick Links -->
       <div>
-        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Get Started</h3>
+        <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Quick Links</h3>
         <ul class="space-y-2 text-sm text-mid-gray">
+          <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
+          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
           <li>
             <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-teal transition-colors">
               → Book Appointment

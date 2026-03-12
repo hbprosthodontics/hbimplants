@@ -6,6 +6,7 @@ targetKeyword: "dental implant cost Huntington Beach"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "cost", "huntington-beach"]
 faqs:
   - question: "How much does a single dental implant cost in Huntington Beach?"
     answer: "A single dental implant in Huntington Beach typically costs between $3,500 and $6,000, which includes the implant post, abutment, and final crown. If bone grafting is needed first, add $500–$3,000 depending on the extent of bone loss."

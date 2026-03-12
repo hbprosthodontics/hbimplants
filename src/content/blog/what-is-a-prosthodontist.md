@@ -6,6 +6,7 @@ targetKeyword: "what is a prosthodontist"
 category: "prosthodontics"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["prosthodontics", "specialist", "implants", "veneers"]
 faqs:
   - question: "What is a prosthodontist?"
     answer: "A prosthodontist is a dental specialist who has completed an accredited three-year post-doctoral residency program specifically focused on the restoration and replacement of teeth. Prosthodontics is one of nine dental specialties recognized by the American Dental Association."

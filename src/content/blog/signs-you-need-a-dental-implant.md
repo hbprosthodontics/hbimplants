@@ -6,6 +6,7 @@ targetKeyword: "signs you need a dental implant"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "candidacy", "bridges"]
 faqs:
   - question: "How do I know if I need a dental implant?"
     answer: "You likely need a dental implant if you have a tooth that cannot be saved (due to fracture below the gumline, severe decay, failed root canal, or advanced bone loss from infection), or if you have a missing tooth space where bone preservation and long-term function are priorities. An implant is the only tooth replacement that preserves jawbone and functions like a natural tooth root."

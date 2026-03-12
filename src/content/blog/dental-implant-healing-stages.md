@@ -6,6 +6,7 @@ targetKeyword: "dental implant healing stages"
 category: "dental-implants"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["dental-implants", "recovery", "healing", "surgery"]
 faqs:
   - question: "How long does it take for a dental implant to heal completely?"
     answer: "Complete healing from implant placement to final crown typically takes 4–6 months. This includes an initial soft tissue healing phase of 1–2 weeks, followed by 3–4 months of osseointegration — the process by which the titanium post bonds with jawbone. The final crown is placed after imaging confirms full integration."

@@ -8,6 +8,9 @@ const sortedPosts = allPosts.sort((a, b) =>
   b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 
+// Collect all unique tags, sorted alphabetically
+const allTags = [...new Set(sortedPosts.flatMap((p) => p.data.tags || []))].sort();
+
 import { localBusinessSchema as localBusiness } from '../../config/site';
 ---
 
@@ -36,35 +39,67 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
           <p>Blog posts coming soon. Check back shortly.</p>
         </div>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedPosts.map((post) => (
-            <a href={`/blog/${post.slug}`} class="card hover:shadow-lg hover:border-brand-blue transition-all duration-200 group">
-              {post.data.featuredImage && (
-                <div class="aspect-video bg-surface-2 rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={post.data.featuredImage}
-                    alt={post.data.featuredImageAlt || post.data.title}
-                    width="400"
-                    height="225"
-                    loading="lazy"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+        <>
+          <div class="flex flex-wrap gap-2 mb-10" id="blog-tags">
+            <button
+              type="button"
+              data-tag=""
+              class="blog-tag active px-4 py-2 rounded-full text-sm font-medium transition-colors bg-charcoal text-white hover:bg-brand-teal"
+            >
+              All
+            </button>
+            {allTags.map((tag) => (
+              <button
+                type="button"
+                data-tag={tag}
+                class="blog-tag px-4 py-2 rounded-full text-sm font-medium transition-colors bg-surface-2 text-mid-gray hover:bg-border-light hover:text-charcoal"
+              >
+                {tag.replace(/-/g, ' ')}
+              </button>
+            ))}
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+            {sortedPosts.map((post) => (
+              <a
+                href={`/blog/${post.slug}`}
+                class="blog-card card hover:shadow-lg hover:border-brand-blue transition-all duration-200 group"
+                data-tags={(post.data.tags || []).join(' ')}
+              >
+                {post.data.featuredImage && (
+                  <div class="aspect-video bg-surface-2 rounded-lg overflow-hidden mb-4">
+                    <img
+                      src={post.data.featuredImage}
+                      alt={post.data.featuredImageAlt || post.data.title}
+                      width="400"
+                      height="225"
+                      loading="lazy"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-wrap gap-2 mb-2">
+                  {post.data.tags?.slice(0, 3).map((t: string) => (
+                    <span class="text-[10px] rounded px-2 py-0.5 bg-surface-2 text-mid-gray">{t.replace(/-/g, ' ')}</span>
+                  ))}
                 </div>
-              )}
-              <div class="text-xs text-brand-blue font-semibold uppercase tracking-wide mb-2">
-                {post.data.category.replace('-', ' ')}
-              </div>
-              <h2 class="font-serif text-lg font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors leading-tight">
-                {post.data.title}
-              </h2>
-              <p class="text-neutral-mid text-sm leading-relaxed mb-4">{post.data.description}</p>
-              <div class="flex items-center justify-between text-xs text-neutral-mid">
-                <span>{post.data.author}</span>
-                <span>{post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-              </div>
-            </a>
-          ))}
-        </div>
+                <div class="text-xs text-brand-blue font-semibold uppercase tracking-wide mb-2">
+                  {post.data.category.replace('-', ' ')}
+                </div>
+                <h2 class="font-serif text-lg font-semibold text-brand-navy mb-2 group-hover:text-brand-blue transition-colors leading-tight">
+                  {post.data.title}
+                </h2>
+                <p class="text-neutral-mid text-sm leading-relaxed mb-4">{post.data.description}</p>
+                <div class="flex items-center justify-between text-xs text-neutral-mid">
+                  <span>{post.data.author}</span>
+                  <span>{post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <p id="blog-no-results" class="hidden text-center py-16 text-mid-gray">
+            No posts match this filter. Try a different tag.
+          </p>
+        </>
       )}
     </div>
   </section>
@@ -75,3 +110,28 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.blog-tag').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-tag') || '';
+      document.querySelectorAll('.blog-tag').forEach((b) => {
+        b.classList.remove('active', 'bg-charcoal', 'text-white');
+        b.classList.add('bg-surface-2', 'text-mid-gray');
+      });
+      btn.classList.add('active', 'bg-charcoal', 'text-white');
+      btn.classList.remove('bg-surface-2', 'text-mid-gray');
+
+      const cards = document.querySelectorAll('.blog-card');
+      const noResults = document.getElementById('blog-no-results');
+      let visible = 0;
+      cards.forEach((card) => {
+        const tags = (card.getAttribute('data-tags') || '').split(' ').filter(Boolean);
+        const show = !tag || tags.includes(tag);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (noResults) noResults.classList.toggle('hidden', visible > 0);
+    });
+  });
+</script>

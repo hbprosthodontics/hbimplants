@@ -6,6 +6,7 @@ targetKeyword: "full arch implants cost Huntington Beach"
 category: "all-on-x"
 author: "Dr. Favian Cheong"
 draft: false
+tags: ["all-on-4", "all-on-6", "cost", "full-arch", "huntington-beach"]
 ---
 
 Full arch implant treatment is one of the most significant dental investments a person can make. Patients researching it encounter price ranges that span tens of thousands of dollars — sometimes for what sounds like the same procedure — and it's genuinely confusing to understand why. The variation is real, and it reflects real differences in what's being provided.

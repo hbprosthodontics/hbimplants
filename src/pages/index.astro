@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
 import { localBusinessSchema, site, address, doctor } from '../config/site';
 
 const bookHref = site.bookingUrl;
@@ -416,6 +417,13 @@ const faqSchema = {
           Book Appointment
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock />
     </div>
   </section>
 </BaseLayout>
