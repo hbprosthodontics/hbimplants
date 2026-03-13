@@ -34,32 +34,37 @@ const headingClass = {
 }[variant];
 
 const subClass = {
-  dark: 'text-neutral-400',
+  dark: 'text-white/80',
   light: 'text-mid-gray',
   white: 'text-mid-gray',
 }[variant];
 
 const phoneClass = {
-  dark: 'text-neutral-400 hover:text-white',
+  dark: 'text-white/80 hover:text-white',
   light: 'text-mid-gray hover:text-charcoal',
   white: 'text-mid-gray hover:text-charcoal',
 }[variant];
+
+const useBeachBg = variant === 'light';
 ---
 
-<section class={`${bgClass} rounded-2xl p-8 md:p-12 text-center`}>
-  <h2 class={`font-serif text-2xl md:text-3xl font-bold mb-4 ${headingClass}`}>
+<section
+  class={`relative overflow-hidden rounded-2xl p-8 md:p-12 text-center ${useBeachBg ? 'text-charcoal' : bgClass}`}
+  style={useBeachBg ? 'background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(/images/heroes/beach-abstract-cta.png) center/cover no-repeat' : undefined}
+>
+  <h2 class={`font-serif text-2xl md:text-3xl font-bold mb-4 ${useBeachBg ? 'text-charcoal' : headingClass}`}>
     {heading}
   </h2>
-  <p class={`max-w-2xl mx-auto mb-8 leading-relaxed ${subClass}`}>
+  <p class={`max-w-2xl mx-auto mb-8 leading-relaxed ${useBeachBg ? 'text-charcoal/90' : subClass}`}>
     {subheading}
   </p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-    <a href={primaryHref} class={`${variant === 'dark' ? 'btn-secondary border-white text-white hover:bg-white hover:text-charcoal' : 'btn-primary'} text-base px-8 py-4 font-semibold`} target={primaryExternal ? '_blank' : undefined} rel={primaryExternal ? 'noopener noreferrer' : undefined}>
+    <a href={primaryHref} class={`${variant === 'dark' ? 'btn-secondary border-white text-white hover:bg-white hover:text-charcoal' : useBeachBg ? 'btn-primary' : 'btn-primary'} text-base px-8 py-4 font-semibold rounded-full transition-colors inline-block text-center`} target={primaryExternal ? '_blank' : undefined} rel={primaryExternal ? 'noopener noreferrer' : undefined}>
       {primaryCTA}
     </a>
     <a
       href={`tel:${phone.replace(/\D/g, '')}`}
-      class={`font-medium text-base transition-colors ${phoneClass}`}
+      class={`font-medium text-base transition-colors ${useBeachBg ? 'text-charcoal hover:text-charcoal/80' : phoneClass}`}
     >
       Or Call: {phone}
     </a>

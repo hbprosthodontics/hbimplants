@@ -15,8 +15,12 @@ const googleReviewLink = site.googleReviewLink;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- NAP Block -->
       <div class="lg:col-span-1">
-        <a href="/" class="inline-block mb-4">
-          <img src="/images/logos/hbimplants_logo_wordmark.png" alt="Huntington Beach Prosthodontics" class="h-10 w-auto" />
+        <a href="/" class="inline-flex items-center gap-3 mb-4">
+          <img src="/images/branding/logo-black.png" alt="Huntington Beach Prosthodontics" class="h-8 w-auto" />
+          <div>
+            <div class="font-serif text-base font-bold leading-tight text-charcoal">Huntington Beach</div>
+            <div class="font-serif text-xs font-semibold text-brand-teal leading-tight">Prosthodontics</div>
+          </div>
         </a>
         <address class="not-italic text-mid-gray text-sm">
           <div class="space-y-0.5">
@@ -102,15 +106,15 @@ const googleReviewLink = site.googleReviewLink;
       <div>
         <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Quick Links</h3>
         <ul class="space-y-2 text-sm text-mid-gray">
-          <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
-          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
           <li>
             <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-teal transition-colors">
               → Book Appointment
             </a>
           </li>
-          <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Consultation</a></li>
           <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors">Call {phone}</a></li>
+          <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Consultation</a></li>
+          <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
+          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
         </ul>
       </div>
     </div>
