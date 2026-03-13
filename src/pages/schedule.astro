@@ -2,13 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQBlock from '../components/FAQBlock.astro';
 
-import { localBusinessSchema as localBusiness } from '../config/site';
+import { localBusinessSchema as localBusiness, site, address, hours } from '../config/site';
 
 const contactPoint = {
   '@context': 'https://schema.org',
   '@type': 'ContactPoint',
   'contactType': 'customer service',
-  'telephone': '(714) 846-1386',
+  'telephone': site.phone,
   'areaServed': ['Huntington Beach', 'Fountain Valley', 'Costa Mesa', 'Newport Beach', 'Seal Beach'],
   'availableLanguage': 'English',
   'hoursAvailable': [
@@ -19,12 +19,10 @@ const contactPoint = {
   ],
 };
 
-const formspreeEndpoint = import.meta.env.FORMSPREE_ENDPOINT || '#';
-
 const faqs = [
   {
     question: 'Do you accept new patients?',
-    answer: 'Yes — we are actively welcoming new patients. We offer a complimentary consultation for dental implants and major restorative procedures. Call us at (714) 846-1386 or use the form above to request your first appointment.',
+    answer: `Yes — we are actively welcoming new patients. We offer a complimentary consultation for dental implants and major restorative procedures. Call us at ${site.phone} or book online.`,
   },
   {
     question: 'What should I bring to my first appointment?',
@@ -36,11 +34,11 @@ const faqs = [
   },
   {
     question: 'How soon can I get an appointment?',
-    answer: 'We typically see new patients within a few days to a week. For the fastest scheduling, call us directly at (714) 846-1386. If you use the online form, our team will follow up within one business day to confirm your appointment.',
+    answer: `We typically see new patients within a few days to a week. For the fastest scheduling, call us directly at ${site.phone} or book online.`,
   },
   {
     question: 'What if I need to cancel or reschedule?',
-    answer: 'We understand that life happens. Please call us at least 24 hours in advance so we can offer your time slot to another patient who may be waiting. You can reach us at (714) 846-1386 during office hours.',
+    answer: `We understand that life happens. Please call us at least 24 hours in advance so we can offer your time slot to another patient who may be waiting. You can reach us at ${site.phone} during office hours.`,
   },
   {
     question: 'Do you accept dental insurance?',
@@ -51,7 +49,7 @@ const faqs = [
 
 <BaseLayout
   title="Schedule an Appointment | Huntington Beach Prosthodontics"
-  description="Request an appointment with our Huntington Beach prosthodontist. We offer dental implants, veneers, dentures, and smile makeovers. Most insurance accepted."
+  description="Book an appointment with our Huntington Beach prosthodontist. Dental implants, veneers, dentures, and smile makeovers. Most insurance accepted."
   schema={[localBusiness, contactPoint]}
 >
   <!-- Hero -->
@@ -61,224 +59,54 @@ const faqs = [
         Schedule Your Appointment
       </h1>
       <p class="text-mid-gray text-lg max-w-2xl mx-auto">
-        Fill out the form below and our team will contact you within one business day to confirm your appointment. Or call us directly at <a href="tel:(714) 846-1386" class="text-brand-teal font-semibold hover:underline">(714) 846-1386</a>.
+        Book online or call us directly at <a href={`tel:${site.phoneDigits}`} class="text-brand-teal font-semibold hover:underline">{site.phone}</a>.
       </p>
     </div>
   </section>
 
-  <!-- Form -->
+  <!-- Book or Call -->
   <section class="py-12 md:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-2xl shadow-lg border border-neutral-border p-8 md:p-10">
-        <h2 class="font-serif text-2xl font-bold text-brand-navy mb-2">Request an Appointment</h2>
-        <p class="text-neutral-mid text-sm mb-8">All fields marked with * are required.</p>
+        <h2 class="font-serif text-2xl font-bold text-brand-navy mb-2">How would you like to schedule?</h2>
+        <p class="text-neutral-mid mb-8">Choose the option that works best for you.</p>
 
-        <form
-          action={formspreeEndpoint}
-          method="POST"
-          id="appointment-form"
-        >
-          <!-- Name Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label for="firstName" class="block text-sm font-semibold text-brand-navy mb-2">
-                First Name *
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                required
-                autocomplete="given-name"
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark"
-                placeholder="Jane"
-              />
-            </div>
-            <div>
-              <label for="lastName" class="block text-sm font-semibold text-brand-navy mb-2">
-                Last Name *
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                required
-                autocomplete="family-name"
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark"
-                placeholder="Smith"
-              />
-            </div>
-          </div>
-
-          <!-- Contact Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label for="phone" class="block text-sm font-semibold text-brand-navy mb-2">
-                Phone *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                autocomplete="tel"
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark"
-                placeholder="(714) 555-0000"
-              />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-semibold text-brand-navy mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark"
-                placeholder="jane@email.com"
-              />
-            </div>
-          </div>
-
-          <!-- Procedure -->
-          <div class="mb-6">
-            <label for="procedure" class="block text-sm font-semibold text-brand-navy mb-2">
-              Procedure of Interest *
-            </label>
-            <select
-              id="procedure"
-              name="procedure"
-              required
-              class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark bg-white"
-            >
-              <option value="">Select a procedure...</option>
-              <option value="dental-implants">Dental Implants</option>
-              <option value="all-on-x">All-on-X / Full Arch</option>
-              <option value="veneers">Veneers</option>
-              <option value="dentures">Dentures</option>
-              <option value="implant-restorations">Implant Restorations</option>
-              <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
-              <option value="restorative-dentistry">Restorative Dentistry</option>
-              <option value="clear-aligners">Clear Aligners</option>
-              <option value="general-other">General / Other</option>
-            </select>
-          </div>
-
-          <!-- Preferred Day + Time -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label for="preferredDay" class="block text-sm font-semibold text-brand-navy mb-2">
-                Preferred Day *
-              </label>
-              <select
-                id="preferredDay"
-                name="preferredDay"
-                required
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark bg-white"
-              >
-                <option value="">Select a day...</option>
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="no-preference">No Preference</option>
-              </select>
-            </div>
-            <div>
-              <label for="preferredTime" class="block text-sm font-semibold text-brand-navy mb-2">
-                Preferred Time *
-              </label>
-              <select
-                id="preferredTime"
-                name="preferredTime"
-                required
-                class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark bg-white"
-              >
-                <option value="">Select a time...</option>
-                <option value="morning">Morning (8am–12pm)</option>
-                <option value="afternoon">Afternoon (12pm–5pm)</option>
-                <option value="no-preference">No Preference</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- How did you hear -->
-          <div class="mb-6">
-            <label for="referralSource" class="block text-sm font-semibold text-brand-navy mb-2">
-              How Did You Hear About Us?
-            </label>
-            <select
-              id="referralSource"
-              name="referralSource"
-              class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark bg-white"
-            >
-              <option value="">Select one...</option>
-              <option value="google-search">Google Search</option>
-              <option value="google-maps">Google Maps</option>
-              <option value="doctor-referral">Referral from Doctor</option>
-              <option value="friend-family">Friend / Family</option>
-              <option value="social-media">Social Media</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <!-- Notes -->
-          <div class="mb-8">
-            <label for="notes" class="block text-sm font-semibold text-brand-navy mb-2">
-              Additional Notes
-            </label>
-            <textarea
-              id="notes"
-              name="notes"
-              rows="4"
-              class="w-full px-4 py-3 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-neutral-dark resize-none"
-              placeholder="Tell us more about your situation, concerns, or any specific questions you have..."
-            ></textarea>
-          </div>
-
-          <!-- Cloudflare Turnstile -->
-          <div class="mb-6">
-            <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-theme="light"></div>
-          </div>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            class="w-full btn-accent text-base py-4 font-semibold"
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a
+            href={site.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-center text-base py-4 font-semibold flex-1"
           >
-            Request My Appointment
-          </button>
+            Book Online
+          </a>
+          <a
+            href={`tel:${site.phoneDigits}`}
+            class="btn-secondary text-center text-base py-4 font-semibold flex-1"
+          >
+            Call {site.phone}
+          </a>
+        </div>
 
-          <p class="text-xs text-neutral-mid text-center mt-4">
-            By submitting this form you agree to be contacted by our office regarding your appointment request. We will never share your information.
-          </p>
-        </form>
+        <p class="text-sm text-neutral-mid text-center">
+          Online booking opens in a new tab. For the fastest scheduling, call us during office hours.
+        </p>
       </div>
 
       <!-- Contact Info -->
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="text-center p-4 bg-surface-2 rounded-xl">
           <div class="font-semibold text-brand-navy mb-1">Phone</div>
-          <a href="tel:(714) 846-1386" class="text-brand-blue text-sm">(714) 846-1386</a>
+          <a href={`tel:${site.phoneDigits}`} class="text-brand-teal text-sm hover:underline">{site.phone}</a>
         </div>
         <div class="text-center p-4 bg-surface-2 rounded-xl">
           <div class="font-semibold text-brand-navy mb-1">Address</div>
-          <div class="text-neutral-mid text-sm">16141 Bolsa Chica St., Suite C<br />Huntington Beach, CA</div>
+          <div class="text-neutral-mid text-sm">{address.street}<br />{address.city}, {address.state}</div>
         </div>
         <div class="text-center p-4 bg-surface-2 rounded-xl">
           <div class="font-semibold text-brand-navy mb-1">Hours</div>
           <div class="text-neutral-mid text-sm">
-            Mon: 9am – 5pm<br />
-            Tue: By Appointment<br />
-            Wed: 9am – 5pm<br />
-            Thu: By Appointment<br />
-            Fri: 9am – 5pm<br />
-            Sat: 10am – 2pm<br />
-            Sun: Closed
+            {hours.display.map((h) => `${h.day}: ${h.time}`).join(' · ')}
           </div>
         </div>
       </div>
@@ -315,5 +143,4 @@ const faqs = [
     </div>
   </section>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </BaseLayout>
