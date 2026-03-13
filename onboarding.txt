@@ -1,0 +1,112 @@
+# Dental Practice Website Build — Onboarding Checklist
+
+Use this checklist to gather everything needed before and during your website build. Most items are optional — we can launch with placeholders and fill in later. The only must-haves are in **Required**.
+
+---
+
+## Required (Must Have to Start)
+
+- [ ] **Practice name** — Legal name + display name if different (e.g., "HB Prosthodontics")
+- [ ] **Address** — Street, suite, city, state, ZIP
+- [ ] **Phone** — Main patient-facing line (+ secondary/after-hours if applicable)
+- [ ] **Email** — Patient-facing email (+ separate inbox for form submissions if preferred)
+- [ ] **Hours** — Each day of the week (include "Closed" days)
+- [ ] **Domain** — Current domain, or note if you need a new one
+
+---
+
+## Business Info & Consistency
+
+*Accurate NAP (name, address, phone) across all directories improves local SEO.*
+
+- [ ] **Business name** — Same spelling everywhere (website, Google, Yelp, Healthgrades, Zocdoc, etc.)
+- [ ] **Phone numbers** — Main line + any secondary numbers
+- [ ] **Address** — Exact format you want displayed
+- [ ] **Hours** — Current and accurate
+
+---
+
+## Doctor & Team
+
+*Bullet points and rough notes are fine — we'll write the bios.*
+
+- [ ] **For each doctor:** Full name, credentials (DDS, DMD, MS), title
+- [ ] **For each doctor:** Dental school + graduation year
+- [ ] **For each doctor:** Specialty residency / post-doctoral training
+- [ ] **For each doctor:** Board certifications, memberships (ACP, ADA, CDA)
+- [ ] **For each doctor:** Awards, publications, recognition
+- [ ] **For each doctor:** Personal details — hobbies, family, interests (builds trust)
+- [ ] **Support staff** (optional): Names, roles, notable details
+
+---
+
+## Services & Offerings
+
+- [ ] **Full service list** — All treatments you offer
+- [ ] **Unique offerings to highlight** — Free consultations? Patient intake form? Special protocols?
+- [ ] **Pricing policies** — Insurance accepted, payment options, financing
+- [ ] **Top procedures to prioritize** — What do you most want to rank for and convert?
+
+---
+
+## Call to Action (CTA)
+
+*What should visitors do when they land on your site?*
+
+- [ ] **Primary CTA** — Book a consultation / Fill out patient intake form / Call you / Other? Do you want a 'contact form' (sent to email) or just phone number + online booking? Does Dentrix offer submission forms?
+- [ ] **Secondary actions** — Any other conversions to optimize for?
+
+---
+
+## Photos & Visual Assets
+
+*Phone photos are fine for launch — we can swap in professional shots later.*
+
+- [ ] **Before & after photos** — By treatment type, labeled, patient consent documented
+- [ ] **Office photos** — Exterior/signage, reception, treatment rooms, technology (CBCT, scanner, etc.)
+- [ ] **Team headshots** — Each provider (professional preferred but not required at launch)
+- [ ] **Logo & brand** — Logo file (any format), color + reversed/white versions if you have them
+- [ ] **About us video** (optional) — If you have one to feature
+
+---
+
+## Accounts & Logins
+
+*We need minimal access — just enough to set things up. You keep full ownership.*
+
+- [ ] **Google account login** — Covers Business Profile, Analytics, Search Console
+- [ ] **Social media handles** — Facebook, Instagram, etc. (for footer and consistency)
+- [ ] **Directory logins** — Yelp, Healthgrades, Zocdoc (for NAP consistency)
+- [ ] **Domain account login** — If you have an existing domain (GoDaddy, etc.)
+- [ ] **Current website login** — If migrating from PatientPop, Wix, WordPress, etc.
+
+---
+
+## Goals & Differentiators
+
+- [ ] **Ideal patient** — Demographics, procedure type, insurance status
+- [ ] **Your differentiators** — Why choose you over a general dentist or competitor?
+- [ ] **Geographic focus** — Cities and neighborhoods you serve
+- [ ] **Accepting new patients?** — Yes / With restrictions / Referral only
+
+---
+
+## Billing & Payment (If Applicable)
+
+- [ ] **Credit card / payment info** — For domain registration (~$12–15/year), optional add-ons (logo design, etc.), or Formspree if exceeding free tier (50 submissions/month)
+
+---
+
+## Optional but High-Impact
+
+- [ ] **Patient case studies** — 1–2 transformation stories with consent (implants, All-on-4, smile makeovers)
+- [ ] **Written testimonials** — Beyond Google reviews (first name + city)
+- [ ] **Video testimonials** — File or YouTube link
+- [ ] **Referral form** — If you have one: what it does, where it goes, what you want it to capture
+
+---
+
+## Reference
+
+Full details: `marketing/Dental-Practice-Website-Build-Intake.html`  
+Internal playbook: `marketing/playbook.md` (Section 4 — Customer Onboarding)
