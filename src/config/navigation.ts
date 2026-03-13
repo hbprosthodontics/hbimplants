@@ -42,7 +42,7 @@ const servicesGroups: NavDropdownGroup[] = [
 
 export const navLinks: NavLink[] = [
   {
-    label: 'About',
+    label: 'About Us',
     href: '/about',
     avatar: '/images/team/dr-favian-cheong.webp',
     dropdown: [
@@ -63,7 +63,7 @@ export const navLinks: NavLink[] = [
     dropdown: [
       { label: 'Financing & Insurance', href: '/financing', desc: 'Payment plans, insurance & cost guides' },
       { label: 'Free Consultation', href: '/dental-implants/consultation', desc: 'No-cost exam & treatment plan' },
-      { label: 'Patient Blog', href: '/blog', desc: 'Education & treatment guides' },
+      { label: 'Blog', href: '/blog', desc: 'Education & treatment guides' },
     ],
   },
 ];

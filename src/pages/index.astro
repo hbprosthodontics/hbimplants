@@ -306,42 +306,19 @@ const faqSchema = {
   <!-- Why Choose a Prosthodontist -->
   <section class="bg-surface-2 py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">The Difference</div>
-          <h2 class="section-heading mb-6">Why Choose a Prosthodontist?</h2>
-          <p class="text-mid-gray leading-relaxed mb-6">
-            <strong class="text-charcoal">A prosthodontist is a dental specialist</strong> who focuses exclusively on restoring and replacing teeth — implants, veneers, dentures, and full-mouth rehabilitation. Prosthodontists complete 3 additional years of residency training dedicated entirely to this work — beyond what any general dentist receives. <a href="/blog/what-is-a-prosthodontist" class="text-brand-teal font-medium hover:text-charcoal transition-colors">Learn more →</a>
-          </p>
-          <p class="text-mid-gray leading-relaxed mb-6">
-            At Huntington Beach Prosthodontics, Dr. Favian Cheong brings that expertise to every case. Whether you need a single implant or a full-arch transformation, you're in the hands of someone who does nothing else, every day.
-          </p>
-          <div class="border-t border-border-light mt-8 mb-8">
-            {[
-              { title: 'Prosthodontic Residency Training', desc: '3 additional years of residency training dedicated entirely to complex tooth restoration.' },
-              { title: 'Comprehensive Treatment Planning', desc: 'Latest 3D cone-beam imaging for precise diagnosis and implant placement.' },
-              { title: 'All Restorations Coordinated In-House', desc: 'From surgical placement to final crown — one doctor oversees everything.' },
-              { title: 'Complex Case Expertise', desc: 'Full-arch reconstruction, bone grafting, and multi-implant cases are our focus.' },
-              { title: 'Aesthetic Excellence', desc: 'Clinical precision combined with an artistic eye for symmetry and natural results.' },
-            ].map((item) => (
-              <div class="py-4 border-b border-border-light flex items-start gap-4">
-                <div class="w-6 h-6 rounded-full border border-charcoal flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                  </svg>
-                </div>
-                <div>
-                  <div class="font-semibold text-charcoal text-sm mb-0.5">{item.title}</div>
-                  <div class="text-mid-gray text-sm">{item.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <a href="/about" class="btn-primary">Meet Dr. Favian Cheong</a>
-        </div>
+      <div class="mb-12">
+        <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">The Difference</div>
+        <h2 class="section-heading mb-6">Why Choose a Prosthodontist?</h2>
+        <p class="text-mid-gray leading-relaxed mb-6 max-w-3xl">
+          <strong class="text-charcoal">A prosthodontist is a dental specialist</strong> who focuses exclusively on restoring and replacing teeth — implants, veneers, dentures, and full-mouth rehabilitation. Prosthodontists complete 3 additional years of residency training dedicated entirely to this work — beyond what any general dentist receives. <a href="/blog/what-is-a-prosthodontist" class="text-brand-teal font-medium hover:text-charcoal transition-colors">Learn more →</a>
+        </p>
+        <p class="text-mid-gray leading-relaxed max-w-3xl">
+          At Huntington Beach Prosthodontics, Dr. Favian Cheong brings that expertise to every case. Whether you need a single implant or a full-arch transformation, you're in the hands of someone who does nothing else, every day.
+        </p>
+      </div>
 
-        <div class="bg-surface-2 rounded-2xl p-8 border border-border-light">
-          <h3 class="font-serif text-xl font-bold text-charcoal mb-6">Prosthodontist vs. General Dentist</h3>
+      <div class="bg-surface-2 rounded-2xl p-8 border border-border-light max-w-2xl mb-12">
+        <h3 class="font-serif text-xl font-bold text-charcoal mb-6">Prosthodontist vs. General Dentist</h3>
           <div class="space-y-4">
             {[
               { area: 'Advanced Training', pros: '3+ additional years', gen: 'No specialty training' },
@@ -362,9 +339,32 @@ const faqSchema = {
               </div>
             ))}
           </div>
-          <div class="mt-6">
-            <a href={bookHref} target="_blank" rel="noopener noreferrer" class="btn-primary w-full block text-center">Schedule Free Consultation</a>
-          </div>
+      </div>
+
+      <div class="border-t border-border-light mt-12 pt-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {[
+            { title: 'Prosthodontic Residency Training', desc: '3 additional years of residency training dedicated entirely to complex tooth restoration.' },
+            { title: 'Comprehensive Treatment Planning', desc: 'Latest 3D cone-beam imaging for precise diagnosis and implant placement.' },
+            { title: 'All Restorations Coordinated In-House', desc: 'From surgical placement to final crown — one doctor oversees everything.' },
+            { title: 'Complex Case Expertise', desc: 'Full-arch reconstruction, bone grafting, and multi-implant cases are our focus.' },
+            { title: 'Aesthetic Excellence', desc: 'Clinical precision combined with an artistic eye for symmetry and natural results.' },
+          ].map((item) => (
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full border border-charcoal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-charcoal text-sm mb-0.5">{item.title}</div>
+                <div class="text-mid-gray text-sm">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-10 text-center">
+          <a href="/about" class="btn-primary">Meet Dr. Favian Cheong</a>
         </div>
       </div>
     </div>
