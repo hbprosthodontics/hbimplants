@@ -34,12 +34,12 @@ export const hours = {
     { day: 'Mon', time: '9am – 5pm' },
     { day: 'Tue', time: 'By Appointment' },
     { day: 'Wed', time: '9am – 5pm' },
-    { day: 'Thu', time: 'By Appointment' },
+    { day: 'Thu', time: '9am – 5pm' },
     { day: 'Fri', time: '9am – 5pm' },
-    { day: 'Sat', time: '10am – 2pm' },
+    { day: 'Sat', time: 'Closed' },
     { day: 'Sun', time: 'Closed' },
   ],
-  schema: ['Mo 09:00-17:00', 'We 09:00-17:00', 'Fr 09:00-17:00', 'Sa 10:00-14:00'],
+  schema: ['Mo 09:00-17:00', 'We 09:00-17:00', 'Th 09:00-17:00', 'Fr 09:00-17:00'],
 };
 
 // Base LocalBusiness schema — used on every page.
