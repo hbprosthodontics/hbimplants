@@ -6,7 +6,7 @@ import FAQBlock from '../../components/FAQBlock.astro';
 import { localBusinessSchema as localBusiness } from '../../config/site';
 const faqs = [
   { question: 'What happens at my dental implant consultation?', answer: 'Your consultation includes a review of your medical and dental history, an oral examination, a 3D CBCT scan of your jaw (if not done recently), and a detailed discussion of your tooth replacement options. Dr. Favian Cheong will explain your candidacy, any preparatory steps like bone grafting, the full treatment timeline, and the expected investment. You will leave with a clear written treatment plan.' },
-  { question: 'Is the implant consultation free?', answer: 'Yes — initial consultations at Huntington Beach Prosthodontics are complimentary for implant patients. The 3D CBCT scan may have a separate fee depending on your insurance coverage. We confirm any fees with you before the appointment.' },
+  { question: 'What does the implant consultation cost?', answer: 'Consultation fees vary by case. Please call us at (714) 846-1386 for current pricing. The 3D CBCT scan may have a separate fee depending on your insurance coverage. We confirm all fees with you before the appointment.' },
   { question: 'Do I need a referral from my dentist to see a prosthodontist?', answer: 'No referral is needed. You can call or request an appointment directly through our website. Many of our patients self-refer after researching dental implants online. We coordinate with your general dentist after treatment as needed.' },
   { question: 'How do I prepare for my implant consultation?', answer: 'Bring your dental insurance card, a list of current medications (including supplements), and any recent dental X-rays if available. If you have dentures, bring them so we can evaluate fit and aesthetics. If you have specific concerns or questions, write them down so you don\'t forget during your appointment.' },
   { question: 'What if I\'ve been told I can\'t have implants?', answer: 'A surprising number of patients who were told they "can\'t have implants" elsewhere are actually excellent candidates — sometimes with preparatory bone grafting, sometimes with different implant approaches like All-on-4 that use bone at a different angle. 3D CBCT imaging often reveals viable bone that a 2D X-ray missed. Don\'t accept a second-hand determination — come in for a specialist evaluation.' },
@@ -15,20 +15,20 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
 ---
 <BaseLayout
   title="Dental Implant Consultation Huntington Beach, CA"
-  description="Schedule your free dental implant consultation in Huntington Beach. Get a personalized implant plan from Dr. Favian Cheong, certified prosthodontic specialist."
+  description="Schedule your dental implant consultation in Huntington Beach. Get a personalized implant plan from Dr. Favian Cheong, certified prosthodontic specialist."
   schema={[localBusiness, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Free Dental Implant Consultation<br />
+          Dental Implant Consultation<br />
           <span class="text-brand-teal">in Huntington Beach, CA</span>
         </h1>
-        <p class="text-mid-gray text-lg leading-relaxed mb-8">
+        <p class="text-charcoal text-lg leading-relaxed mb-8">
           Get a comprehensive, no-obligation evaluation from Dr. Favian Cheong, certified prosthodontic specialist. You'll leave with a clear treatment plan, timeline, and investment summary — no pressure, no guesswork.
         </p>
-        <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Book Free Consultation</a>
+        <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Book Consultation</a>
       </div>
     </div>
   </section>
@@ -52,7 +52,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
                 </svg>
                 <div>
                   <div class="font-semibold text-brand-navy mb-1">{item.title}</div>
-                  <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+                  <p class="text-charcoal text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -60,7 +60,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
         </div>
         <div class="bg-surface-2 rounded-2xl p-8">
           <h3 class="font-serif text-2xl font-semibold text-brand-navy mb-6">Who Should Schedule a Consultation?</h3>
-          <ul class="space-y-3 text-neutral-mid">
+          <ul class="space-y-3 text-charcoal">
             {[
               'You are missing one or more teeth',
               'You have a tooth that needs extraction',
@@ -79,7 +79,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
             ))}
           </ul>
           <div class="mt-8">
-            <a href="/schedule" class="block text-center btn-primary">Book Free Consultation</a>
+            <a href="/schedule" class="block text-center btn-primary">Book Consultation</a>
           </div>
         </div>
       </div>
@@ -93,6 +93,6 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
   </section>
 
   <section class="pb-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><CTABlock heading="Your Free Consultation Awaits" subheading="No obligation, no pressure — just expert answers to your questions and a clear path forward for your smile." /></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><CTABlock heading="Your Consultation Awaits" subheading="No obligation, no pressure — just expert answers to your questions and a clear path forward for your smile." /></div>
   </section>
 </BaseLayout>

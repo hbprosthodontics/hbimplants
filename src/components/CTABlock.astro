@@ -14,7 +14,7 @@ interface Props {
 const {
   heading = 'Ready to Restore Your Smile?',
   subheading = 'Schedule a consultation with Dr. Favian Cheong, your certified prosthodontic specialist in Huntington Beach. We\'ll create a personalized treatment plan just for you.',
-  primaryCTA = 'Book Free Consultation',
+  primaryCTA = 'Book Consultation',
   primaryHref = site.bookingUrl,
   primaryExternal = true,
   phone = site.phone,
@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 const bgClass = {
-  dark: 'bg-charcoal text-white',
+  dark: 'bg-brand-navy text-white',
   light: 'bg-surface-2 text-charcoal',
   white: 'bg-white text-charcoal border border-border-light',
 }[variant];
@@ -35,14 +35,14 @@ const headingClass = {
 
 const subClass = {
   dark: 'text-white/80',
-  light: 'text-mid-gray',
-  white: 'text-mid-gray',
+  light: 'text-charcoal',
+  white: 'text-charcoal',
 }[variant];
 
 const phoneClass = {
   dark: 'text-white/80 hover:text-white',
-  light: 'text-mid-gray hover:text-charcoal',
-  white: 'text-mid-gray hover:text-charcoal',
+  light: 'text-charcoal hover:text-charcoal/80',
+  white: 'text-charcoal hover:text-charcoal/80',
 }[variant];
 
 const useBeachBg = variant === 'light';

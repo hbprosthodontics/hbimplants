@@ -79,8 +79,7 @@ This is a personal decision. What I tell patients is: understand fully what you'
 
 Most patients don't pay for All-on-4 out of pocket. Common financing approaches:
 
-- **CareCredit** — dental-specific financing, often with promotional 0% interest periods of 12–24 months
-- **Proceed Finance** — longer-term financing at fixed rates for larger treatment amounts
+- **[Cherry](https://withcherry.com/)** — dental-specific financing, often with promotional 0% interest periods of 12–24 months, plus longer-term fixed-rate options for larger treatment amounts
 - **In-house payment plans** — some practices offer their own payment arrangements
 
 Dental insurance is typically limited: if your plan includes implant coverage, you may have a $1,500–$3,000 annual maximum that applies to the implant placement. This is meaningful but represents a fraction of the total cost.
@@ -103,7 +102,7 @@ All-on-4 is expensive. It's also, for the right patient, the most functional and
 
 The alternative — dentures that resorb the bone beneath them and loosen over years — is cheaper upfront and more expensive in quality of life over time.
 
-If you're considering All-on-4 and want an honest evaluation of your candidacy and a clear, itemized treatment plan, schedule a complimentary consultation.
+If you're considering All-on-4 and want an honest evaluation of your candidacy and a clear, itemized treatment plan, schedule a consultation.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 
@@ -118,7 +117,7 @@ $20,000–$35,000 per arch is typical for a complete case. Full-mouth treatment 
 Extractions, bone preparation, four implants per arch, IV sedation, temporary prosthesis, and the final full-arch zirconia prosthesis. Beware of quotes that break these out separately after the initial consultation.
 
 **Does insurance cover All-on-4?**
-Partially in some cases — most dental plans cap implant coverage at $1,500–$3,000 annually. Financing through CareCredit or Proceed Finance is available to spread the investment over time.
+Partially in some cases — most dental plans cap implant coverage at $1,500–$3,000 annually. Financing through [Cherry](https://withcherry.com/) is available to spread the investment over time.
 
 **Why is the price so different between providers?**
 Laboratory quality, implant brand, provider experience, and what's included in the quote drive the variation. Lower-price quotes often reflect lower-quality laboratories, generic implants, or unbundled pricing.

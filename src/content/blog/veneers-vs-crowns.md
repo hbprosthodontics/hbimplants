@@ -77,7 +77,7 @@ Yes, and commonly. A smile rehabilitation might involve veneers on the front six
 
 If you're interested in veneers but aren't sure whether they're the right option for your teeth, a clinical examination is the starting point. We look at the health of each tooth, the extent of any existing restorations, your bite relationship, and your aesthetic goals — and give you an honest recommendation about what each tooth actually needs.
 
-We offer complimentary consultations for cosmetic and restorative planning. Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
+We offer consultations for cosmetic and restorative planning. Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 
 ---
 

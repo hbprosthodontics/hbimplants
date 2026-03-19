@@ -101,9 +101,7 @@ Full-arch implant treatment is primarily an out-of-pocket expense for most patie
 
 **Medical insurance.** In some cases, medical insurance covers a portion of implant treatment when tooth loss is attributable to a covered medical condition (certain systemic diseases, accident injury). This is uncommon but worth verifying with your carrier.
 
-**CareCredit.** Dental-specific financing with promotional 0% interest periods of 12–24 months for qualified applicants. Widely accepted at dental practices and effective for managing large treatment costs without immediate full payment.
-
-**Proceed Finance / LendingClub.** Longer-term financing at fixed rates — often 24–84 month terms — for larger treatment amounts. Monthly payments are predictable and manageable for most patients.
+**Cherry.** Dental-specific financing with promotional 0% interest periods and longer-term fixed-rate options — often 24–84 month terms — for larger treatment amounts. Monthly payments are predictable and manageable for most patients. Learn more at [withcherry.com](https://withcherry.com/).
 
 **In-office payment plans.** Some practices offer structured payment plans directly through the practice, often requiring a down payment with installments over the treatment period.
 

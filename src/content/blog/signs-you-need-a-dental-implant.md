@@ -89,9 +89,9 @@ For patients who value permanence and are willing to invest upfront for a soluti
 
 ## What to Do If You're Not Sure
 
-If you have a failing tooth, a recent extraction, or a gap you've been putting off addressing, the best first step is a consultation with a specialist. At our office, the implant consultation is complimentary — it includes a clinical examination, a discussion of your options, and honest guidance on whether an implant, bridge, or another solution makes the most sense for your specific situation.
+If you have a failing tooth, a recent extraction, or a gap you've been putting off addressing, the best first step is a consultation with a specialist. At our office, the implant consultation includes a clinical examination, a discussion of your options, and honest guidance on whether an implant, bridge, or another solution makes the most sense for your specific situation.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 

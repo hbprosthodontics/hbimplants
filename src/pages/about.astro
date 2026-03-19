@@ -128,19 +128,15 @@ const physicians = [
           <div class="inline-block bg-brand-light text-brand-blue text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-4">Certified Prosthodontic Specialist</div>
           <h2 class="section-heading mb-6">Dr. Favian Cheong</h2>
 
-          <p class="text-neutral-mid leading-relaxed mb-4 text-lg">
+          <p class="text-charcoal leading-relaxed mb-4 text-lg">
             Hi! I'm Dr. Favian Cheong — a Southern California native, born and raised in Long Beach, CA. I attended UC Irvine where I received my B.S. in Biological Sciences with a Minor in Psychology and Human Behavior. I then attended UCLA where I received my Doctor of Dental Surgery degree.
           </p>
 
-          <p class="text-neutral-mid leading-relaxed mb-4">
+          <p class="text-charcoal leading-relaxed mb-4">
             After dental school, my goal was to treat patients with a range of needs — from cosmetic and restorative treatment to complex functional issues that go beyond the scope of general dentistry. So I continued my education at UC San Francisco and the Veterans Affairs San Francisco Medical Center, where I was certified as a specialist in prosthodontics — one of nine dental specialties accredited by the American Dental Association.
           </p>
 
-          <p class="text-neutral-mid leading-relaxed mb-4">
-            A prosthodontist is a dentist who has completed three additional years of intensive post-doctoral training in a CODA-accredited graduate prosthodontic program — specifically focused on the restoration and replacement of teeth. This training covers everything from single implant crowns to full-arch rehabilitation, from precision veneers to complete mouth reconstructions.
-          </p>
-
-          <p class="text-neutral-mid leading-relaxed mb-6">
+          <p class="text-charcoal leading-relaxed mb-6">
             With my background in psychology, I understand the functional, psychological, and social importance of a healthy, confident smile. Whether your needs are minor or major, your treatment will be performed with precision and care at the highest level. I actively listen to your goals so I can guide you toward the best options — ones that will last a lifetime.
           </p>
 
@@ -158,7 +154,15 @@ const physicians = [
             ))}
           </div>
 
-          <a href="/schedule" class="btn-primary">Schedule with Dr. Favian Cheong</a>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="/schedule" class="btn-primary">Schedule with Dr. Favian Cheong</a>
+            <a href="https://www.facebook.com/profile.php?id=61578650704763" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-charcoal text-sm font-medium hover:text-brand-teal transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Follow on Facebook
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -172,15 +176,15 @@ const physicians = [
           <div class="inline-block bg-white text-brand-blue text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full mb-4">General Dentist</div>
           <h2 class="section-heading mb-6">Dr. Janelle Cheong</h2>
 
-          <p class="text-neutral-mid leading-relaxed mb-4 text-lg">
+          <p class="text-charcoal leading-relaxed mb-4 text-lg">
             Dr. Janelle Cheong is a Southern California native who spent 10 years at UCLA — earning both her Bachelor of Science in Physiological Science and her Doctor of Dental Surgery degree. After graduating from dental school in 2016, she completed a postgraduate residency in the UCLA Advanced Education in General Dentistry program.
           </p>
 
-          <p class="text-neutral-mid leading-relaxed mb-4">
+          <p class="text-charcoal leading-relaxed mb-4">
             Since her residency, Dr. Janelle has worked in dental offices throughout the Bay Area and Southern California, bringing a wide range of clinical experience to her practice. She is affiliated with the American Dental Association, the California Dental Association, and the Harbor Dental Society. Dr. Janelle strives to create a comfortable experience while delivering quality care across all general dental services — cleanings, examinations, fillings, and crowns.
           </p>
 
-          <p class="text-neutral-mid leading-relaxed mb-6">
+          <p class="text-charcoal leading-relaxed mb-6">
             Outside the office, Dr. Janelle enjoys spending time with her husband and two sons. She's also an avid baker and loves playing soccer and golf.
           </p>
 
@@ -217,7 +221,7 @@ const physicians = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="section-heading mb-4">Our Philosophy of Care</h2>
-        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+        <p class="text-charcoal max-w-2xl mx-auto leading-relaxed">
           We believe every patient deserves a customized treatment plan built around their specific anatomy, goals, and life circumstances — not a one-size-fits-all solution.
         </p>
       </div>
@@ -239,7 +243,7 @@ const physicians = [
         ].map((item) => (
           <div class="bg-surface-2 rounded-xl p-6 text-center">
             <h3 class="font-serif text-xl font-semibold text-brand-navy mb-3">{item.title}</h3>
-            <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            <p class="text-charcoal text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -252,7 +256,7 @@ const physicians = [
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <div class="font-semibold text-brand-navy text-lg mb-1">What makes a prosthodontist different?</div>
-          <p class="text-neutral-mid text-sm">Three extra years of specialty training in implants, full-arch reconstruction, and smile rehabilitation. See how it compares.</p>
+          <p class="text-charcoal text-sm">Three extra years of specialty training in implants, full-arch reconstruction, and smile rehabilitation. See how it compares.</p>
         </div>
         <a href="/why-a-prosthodontist" class="btn-primary whitespace-nowrap flex-shrink-0">Why a Prosthodontist</a>
       </div>
@@ -297,7 +301,7 @@ const physicians = [
                 <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               ))}
             </div>
-            <p class="text-neutral-mid text-sm leading-relaxed mb-5 italic">"{review.quote}"</p>
+            <p class="text-charcoal text-sm leading-relaxed mb-5 italic">"{review.quote}"</p>
             <div>
               <div class="font-semibold text-brand-navy text-sm">{review.name}</div>
               <div class="text-xs text-neutral-mid">{review.detail}</div>

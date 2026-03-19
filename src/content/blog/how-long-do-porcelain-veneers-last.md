@@ -91,7 +91,7 @@ If you're investing in porcelain veneers, a few things make the biggest differen
 
 Veneers placed under these conditions, on appropriate teeth, routinely last 15–20 years and beyond.
 
-If you're considering porcelain veneers and want an honest assessment of whether your situation is appropriate for them, we offer complimentary consultations.
+If you're considering porcelain veneers and want an honest assessment of whether your situation is appropriate for them, we offer consultations.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

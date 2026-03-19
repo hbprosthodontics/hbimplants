@@ -13,11 +13,11 @@ faqs:
   - question: "Does dental insurance cover dental implants?"
     answer: "Most dental insurance plans do not cover the implant post itself, but many cover a portion of the crown (the visible tooth) and may cover related procedures like extractions or bone grafting. Coverage varies significantly by plan. Our team verifies your benefits before treatment begins."
   - question: "What financing options are available for dental implants?"
-    answer: "We offer flexible third-party financing options including CareCredit and Alphaeon Credit, which allow you to start treatment and pay over time — often with low or 0% interest promotional periods. We also work with patients to phase treatment to fit budget timelines."
+    answer: "We offer flexible third-party financing options including Cherry, which allows you to start treatment and pay over time — often with low or 0% interest promotional periods. We also work with patients to phase treatment to fit budget timelines."
   - question: "Why do dental implant costs vary so much between offices?"
     answer: "Cost differences reflect significant variables: the specialist's training and expertise, the quality of materials used, the type of implant system, whether imaging and records are included, and regional cost-of-living differences. Comparing quotes requires verifying what is actually included in each estimate."
-  - question: "Is there a free consultation for dental implants at Huntington Beach Prosthodontics?"
-    answer: "Yes. We offer a complimentary consultation for dental implant cases. This includes a clinical examination and an honest discussion of your options, timelines, and estimated costs — with no obligation to proceed."
+  - question: "Is there a consultation for dental implants at Huntington Beach Prosthodontics?"
+    answer: "Yes. We offer a consultation for dental implant cases. This includes a clinical examination and an honest discussion of your options, timelines, and estimated costs — with no obligation to proceed."
 ---
 
 Cost is the first question almost every patient asks when they come in for a dental implant consultation. I understand why — dental implants are a significant investment, and it's completely reasonable to want to know the number before you commit to anything. What I've found, though, is that most patients have been given incomplete information: a low number that doesn't include everything, or a high number with no explanation of what drives it.
@@ -105,7 +105,7 @@ Our team verifies your insurance benefits before your consultation, reviews your
 
 The reality for most patients is that dental implants represent a cost that doesn't fit neatly into a single payment — and that shouldn't prevent you from getting the treatment you need.
 
-We work with third-party financing partners including CareCredit and Alphaeon Credit, which offer:
+We work with Cherry, a third-party financing partner that offers:
 - **0% interest promotional periods** (typically 6–24 months, depending on the amount financed)
 - **Extended repayment plans** for larger cases
 - **Quick approvals** — many patients are approved at the time of consultation
@@ -132,9 +132,9 @@ An implant placed promptly is almost always the most cost-effective long-term so
 
 The only way to get an accurate, personalized cost estimate is with a proper examination and 3D imaging. Anatomy varies enormously between patients — bone volume, sinus position, nerve location, and existing dental conditions all affect what treatment will involve.
 
-We offer a **complimentary consultation** for implant cases, which includes a clinical examination and an honest discussion of your options, timeline, and total estimated cost. You'll leave with a clear picture of what treatment involves and what it will cost — with no obligation to proceed on the day.
+We offer a **consultation** for implant cases, which includes a clinical examination and an honest discussion of your options, timeline, and total estimated cost. You'll leave with a clear picture of what treatment involves and what it will cost — with no obligation to proceed on the day.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 
@@ -147,10 +147,10 @@ A single implant in Huntington Beach typically costs $3,500–$6,000 all-in (pos
 Most plans don't cover the implant post, but may cover a portion of the crown and related procedures. Coverage varies significantly — our team verifies your benefits before treatment begins.
 
 **What financing is available?**
-We offer CareCredit and Alphaeon Credit with promotional 0% interest periods. We also work with patients to phase larger treatments over time.
+We offer Cherry financing with promotional 0% interest periods. We also work with patients to phase larger treatments over time.
 
 **Why do quotes vary so much?**
 Training level, implant system quality, materials, and what's included in the quote all contribute. Always confirm whether the quoted price is all-in or covers only part of the procedure.
 
-**Is there a free consultation?**
-Yes — we offer a complimentary consultation for implant cases. [Schedule here](/dental-implants/consultation) or call **(714) 846-1386**.
+**Is there a consultation?**
+Yes — we offer a consultation for implant cases. [Schedule here](/dental-implants/consultation) or call **(714) 846-1386**.

@@ -109,9 +109,9 @@ The vast majority of my patients tell me afterward that it was far easier than t
 
 The surgical appointment is calm and quiet. The recovery is manageable. The months of osseointegration are uneventful. And the final result — a permanent, natural-feeling tooth — is worth every step of the process.
 
-If you're considering implants and want to understand exactly what your case would involve, I encourage you to schedule a consultation. The evaluation is complimentary, and you'll leave with a clear, honest picture of your options and timeline.
+If you're considering implants and want to understand exactly what your case would involve, I encourage you to schedule a consultation. You'll leave with a clear, honest picture of your options and timeline.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 

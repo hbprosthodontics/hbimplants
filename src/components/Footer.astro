@@ -22,7 +22,7 @@ const googleReviewLink = site.googleReviewLink;
             <div class="font-serif text-xs font-semibold text-brand-teal leading-tight">Prosthodontics</div>
           </div>
         </a>
-        <address class="not-italic text-mid-gray text-sm">
+        <address class="not-italic text-charcoal text-sm">
           <div class="space-y-0.5">
             <p>{address}</p>
             <p>Huntington Beach, CA 92649</p>
@@ -48,7 +48,7 @@ const googleReviewLink = site.googleReviewLink;
             </div>
           </div>
         </address>
-        <div class="mt-4">
+        <div class="mt-4 flex flex-col gap-2">
           <a
             href={googleReviewLink}
             target="_blank"
@@ -59,6 +59,17 @@ const googleReviewLink = site.googleReviewLink;
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
             Leave a Google Review
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578650704763"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-charcoal text-sm font-medium hover:text-brand-teal transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Follow us on Facebook
           </a>
         </div>
       </div>
@@ -71,9 +82,9 @@ const googleReviewLink = site.googleReviewLink;
             <h4 class="font-serif text-sm font-semibold mb-2 text-charcoal">
               <a href={cat.href} class="hover:text-brand-teal transition-colors">{cat.heading}</a>
             </h4>
-            <ul class="space-y-1.5 text-sm text-mid-gray">
+            <ul class="space-y-1.5 text-sm text-charcoal">
               {cat.services.map((s) => (
-                <li><a href={s.href} class="hover:text-charcoal transition-colors">{s.name}</a></li>
+                <li><a href={s.href} class="hover:text-brand-teal transition-colors">{s.name}</a></li>
               ))}
             </ul>
           </div>
@@ -86,35 +97,35 @@ const googleReviewLink = site.googleReviewLink;
           <h4 class="font-serif text-sm font-semibold mb-2 text-charcoal">
             <a href={serviceCategories[2].href} class="hover:text-brand-teal transition-colors">{serviceCategories[2].heading}</a>
           </h4>
-          <ul class="space-y-1.5 text-sm text-mid-gray">
+          <ul class="space-y-1.5 text-sm text-charcoal">
             {serviceCategories[2].services.map((s) => (
-              <li><a href={s.href} class="hover:text-charcoal transition-colors">{s.name}</a></li>
+              <li><a href={s.href} class="hover:text-brand-teal transition-colors">{s.name}</a></li>
             ))}
           </ul>
         </div>
         <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">About</h3>
-        <ul class="space-y-2 text-sm text-mid-gray">
-          <li><a href="/about" class="hover:text-charcoal transition-colors">About Us</a></li>
-          <li><a href="/why-a-prosthodontist" class="hover:text-charcoal transition-colors">Why a Prosthodontist</a></li>
-          <li><a href="/financing" class="hover:text-charcoal transition-colors">Financing</a></li>
-          <li><a href="/blog" class="hover:text-charcoal transition-colors">Blog</a></li>
-          <li><a href="/faq" class="hover:text-charcoal transition-colors">FAQ</a></li>
+        <ul class="space-y-2 text-sm text-charcoal">
+          <li><a href="/about" class="hover:text-brand-teal transition-colors">About Us</a></li>
+          <li><a href="/why-a-prosthodontist" class="hover:text-brand-teal transition-colors">Why a Prosthodontist</a></li>
+          <li><a href="/financing" class="hover:text-brand-teal transition-colors">Financing</a></li>
+          <li><a href="/blog" class="hover:text-brand-teal transition-colors">Blog</a></li>
+          <li><a href="/faq" class="hover:text-brand-teal transition-colors">FAQ</a></li>
         </ul>
       </div>
 
       <!-- Quick Links -->
       <div>
         <h3 class="font-serif text-base font-semibold mb-3 text-charcoal">Quick Links</h3>
-        <ul class="space-y-2 text-sm text-mid-gray">
+        <ul class="space-y-2 text-sm text-charcoal">
           <li>
             <a href={bookHref} target="_blank" rel="noopener noreferrer" class="font-medium text-charcoal hover:text-brand-teal transition-colors">
               → Book Appointment
             </a>
           </li>
-          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-charcoal transition-colors">Call {phone}</a></li>
-          <li><a href="/dental-implants/consultation" class="hover:text-charcoal transition-colors">Free Consultation</a></li>
-          <li><a href="/services" class="hover:text-charcoal transition-colors">All Services</a></li>
-          <li><a href="/gallery" class="hover:text-charcoal transition-colors">Before & After Gallery</a></li>
+          <li><a href={`tel:${phone.replace(/\D/g, '')}`} class="hover:text-brand-teal transition-colors">Call {phone}</a></li>
+          <li><a href="/dental-implants/consultation" class="hover:text-brand-teal transition-colors">Consultation</a></li>
+          <li><a href="/services" class="hover:text-brand-teal transition-colors">All Services</a></li>
+          <li><a href="/gallery" class="hover:text-brand-teal transition-colors">Before & After Gallery</a></li>
         </ul>
       </div>
     </div>

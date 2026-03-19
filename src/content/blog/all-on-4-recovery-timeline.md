@@ -133,7 +133,7 @@ Every All-on-4 patient I've treated who has gone through the full process — su
 
 The patients who struggle most during recovery are those who didn't have realistic expectations going in. The patients who do best understood that the first two weeks require some real adjustment, and planned for it.
 
-If you're considering All-on-4 and want to understand whether you're a candidate and what your specific timeline would look like, schedule a complimentary consultation.
+If you're considering All-on-4 and want to understand whether you're a candidate and what your specific timeline would look like, schedule a consultation.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

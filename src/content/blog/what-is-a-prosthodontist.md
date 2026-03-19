@@ -114,7 +114,7 @@ The specialty exists for a reason. Three additional years of full-time focused t
 
 If you're dealing with missing teeth, failing teeth, or a smile you've stopped feeling good about, I'd be glad to have an honest conversation about what your options actually are and whether prosthodontic care makes sense for your situation.
 
-Call us at **(714) 846-1386** or [schedule a complimentary consultation](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule a consultation](/dental-implants/consultation).
 
 ---
 

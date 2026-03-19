@@ -6,15 +6,15 @@ import FAQBlock from '../../components/FAQBlock.astro';
 import { localBusinessSchema as localBusiness } from '../../config/site';
 const procedureSchema = {
   '@context': 'https://schema.org', '@type': 'MedicalProcedure',
-  'name': 'Dental Bone Graft for Implants',
-  'description': 'Bone grafting rebuilds jawbone volume lost after tooth extraction, making it possible for patients with insufficient bone to receive dental implants.',
+  'name': 'Socket Preservation for Dental Implants',
+  'description': 'Socket preservation grafts prevent bone loss after tooth extraction, preserving the jawbone for future dental implant placement. Significant bone grafting is coordinated with oral surgeons.',
   'procedureType': 'https://schema.org/TherapeuticProcedure', 'bodyLocation': 'Jaw',
   'followup': 'As recommended by your prosthodontist',
 };
 const faqs = [
-  { question: 'Do I need a bone graft before dental implants?', answer: 'Not always. If you have sufficient bone height and width at the implant site, bone grafting is not needed. A 3D CBCT scan determines this definitively. Patients who had teeth removed years ago, who lost teeth due to gum disease, or who had prior failed implants are most likely to need grafting before implant placement.' },
-  { question: 'Where does the bone graft material come from?', answer: 'Most commonly, we use allograft — processed donor bone from human or bovine sources that has been sterilized and processed for safety. This eliminates the need for a second surgical site. In some cases, autograft (your own bone from another area) provides optimal results. Your prosthodontist will recommend the best graft material for your specific situation.' },
-  { question: 'How long does bone grafting take to heal before implants?', answer: 'After a socket preservation graft (placed at the time of extraction), implants can typically be placed 4–6 months later. A larger lateral (horizontal) or vertical bone graft for significant bone deficiency may require 6–9 months of healing before implant placement is possible. We use CBCT imaging to confirm readiness before scheduling your implant surgery.' },
+  { question: 'Do I need a bone graft before dental implants?', answer: 'Not always. If you have sufficient bone height and width at the implant site, bone grafting is not needed. A 3D CBCT scan determines this definitively. Patients who had teeth removed years ago, who lost teeth due to gum disease, or who had prior failed implants are most likely to need grafting before implant placement. We perform socket preservation; for significant bone grafting (ridge augmentation, sinus lift, block graft), we refer to trusted oral surgeons.' },
+  { question: 'Where does the bone graft material come from?', answer: 'For socket preservation, we typically use allograft — processed donor bone from human or bovine sources that has been sterilized and processed for safety. This eliminates the need for a second surgical site. If you require significant bone grafting (ridge augmentation, sinus lift, or block graft), your oral surgeon will discuss graft material options.' },
+  { question: 'How long does bone grafting take to heal before implants?', answer: 'After a socket preservation graft (placed at the time of extraction), implants can typically be placed 4–6 months later. For significant bone grafting performed by an oral surgeon, healing may require 6–9 months before implant placement. We use CBCT imaging to confirm readiness before scheduling your implant surgery.' },
   { question: 'How painful is a bone graft procedure?', answer: 'The procedure is performed under local anesthesia, so you will not feel pain during the surgery. Post-operative discomfort is similar to a tooth extraction — manageable with prescribed or over-the-counter anti-inflammatories. Swelling typically peaks at 48–72 hours and resolves within 1–2 weeks.' },
   { question: 'What is a socket preservation graft?', answer: 'A socket preservation graft (also called alveolar ridge preservation) is placed immediately into the tooth socket at the time of extraction. It prevents the collapse of the socket walls that otherwise occurs after extraction, preserving bone volume for future implant placement. If you are planning to get an implant after an extraction, requesting socket preservation at the time of extraction is strongly advised.' },
   { question: 'Can bone grow back naturally without a graft?', answer: 'Minimal bone regeneration occurs naturally after tooth loss without intervention. The body resorbs the bone where the root once was, and without grafting, this bone loss continues over time. Bone grafting introduces a scaffold material that the body uses to grow new native bone, effectively reversing or preventing this loss.' },
@@ -22,8 +22,8 @@ const faqs = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': faqs.map(f => ({ '@type': 'Question', 'name': f.question, 'acceptedAnswer': { '@type': 'Answer', 'text': f.answer } })) };
 ---
 <BaseLayout
-  title="Bone Grafting for Dental Implants Huntington Beach"
-  description="Bone grafting for dental implants in Huntington Beach, CA. Rebuild bone density and qualify for implants. Expert care from our prosthodontist. Call (714) 846-1386."
+  title="Socket Preservation & Bone Grafting for Dental Implants Huntington Beach"
+  description="Socket preservation for dental implants in Huntington Beach, CA. We perform socket preservation; we coordinate with oral surgeons for significant bone grafting. Call (714) 846-1386."
   schema={[localBusiness, procedureSchema, faqSchema]}
 >
   <section class="bg-surface-2 py-16 md:py-20">
@@ -34,10 +34,10 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
           Bone Grafting for Dental Implants<br />
           <span class="text-brand-teal">in Huntington Beach, CA</span>
         </h1>
-        <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          Insufficient jawbone doesn't have to disqualify you from dental implants. Bone grafting rebuilds the foundation needed to support implants — turning "you can't have implants" into "you can, with preparation."
+        <p class="text-charcoal text-lg leading-relaxed mb-8">
+          Insufficient jawbone doesn't have to disqualify you from dental implants. We perform socket preservation grafts at the time of extraction to prevent bone loss. For significant bone grafting beyond socket preservation — such as ridge augmentation, sinus lifts, or block grafts — we work closely with trusted oral surgeons who specialize in these procedures.
         </p>
-        <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Get Your Bone Assessment — Free</a>
+        <a href="/schedule" class="btn-accent text-base px-8 py-4 font-semibold">Get Your Bone Assessment</a>
       </div>
     </div>
   </section>
@@ -46,60 +46,33 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', 'mainE
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <h2 class="section-heading mb-6">Why Bone Grafting Is Sometimes Needed for Implants</h2>
-        <p class="text-neutral-mid leading-relaxed mb-4 text-lg">
+        <p class="text-charcoal leading-relaxed mb-4 text-lg">
           Dental implants require a minimum amount of bone to anchor securely. The titanium post needs to be surrounded by bone on all sides for osseointegration — the fusion process that gives implants their exceptional stability and longevity. When bone volume is insufficient, the implant has no stable foundation, leading to failure.
         </p>
-        <p class="text-neutral-mid leading-relaxed mb-4">
+        <p class="text-charcoal leading-relaxed mb-4">
           Bone loss occurs naturally when a tooth is lost and not replaced promptly. The jawbone exists to support tooth roots — when those roots are absent, the body begins resorbing the bone in that area. Within 12 months of extraction, patients can lose up to 25% of bone width and up to 4mm of height. After several years without tooth replacement, this loss becomes significant.
         </p>
-        <p class="text-neutral-mid leading-relaxed mb-6">
-          Other causes of bone loss include periodontal (gum) disease, trauma, previous failed implants, and long-term denture wear (which accelerates bone resorption through pressure on the ridge). Regardless of the cause, bone grafting at Huntington Beach Prosthodontics can rebuild the jawbone to levels that support successful <a href="/dental-implants" class="text-brand-blue hover:underline">dental implant placement</a>.
+        <p class="text-charcoal leading-relaxed mb-6">
+          Other causes of bone loss include periodontal (gum) disease, trauma, previous failed implants, and long-term denture wear (which accelerates bone resorption through pressure on the ridge). At Huntington Beach Prosthodontics, we perform <strong>socket preservation</strong> — the most common type of bone graft, placed at the time of extraction to prevent bone loss. For anything beyond socket preservation (ridge augmentation, sinus lifts, block grafts), we refer patients to trusted oral surgeons and coordinate care for a seamless path to <a href="/dental-implants" class="text-brand-blue hover:underline">dental implant placement</a>.
         </p>
 
-        <h2 class="section-subheading mt-10 mb-6">Types of Bone Grafts for Dental Implants</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {[
-            { type: 'Socket Preservation Graft', desc: 'Placed immediately after tooth extraction to prevent socket collapse. The simplest and most common graft — prevents bone loss rather than rebuilding it. Highly recommended for any patient planning future implant placement.' },
-            { type: 'Ridge Augmentation', desc: 'Rebuilds bone width (horizontal augmentation) or height (vertical augmentation) when significant bone loss has already occurred. Requires 4–9 months of healing before implant placement.' },
-            { type: 'Sinus Lift', desc: 'Used specifically in the upper back jaw, where the sinus cavity often intrudes into the implant space. The sinus membrane is lifted and bone graft material placed beneath it, creating height for implant placement.' },
-            { type: 'Block Graft', desc: 'For large volume bone defects, a block of bone (often from the chin or wisdom tooth area) is secured to the implant site. Provides maximum bone volume but requires a second surgical site.' },
-          ].map(item => (
-            <div class="card">
-              <h3 class="font-serif text-lg font-semibold text-brand-navy mb-2">{item.type}</h3>
-              <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 class="section-subheading mt-10 mb-4">The Bone Graft Procedure: What to Expect</h2>
-        <p class="text-neutral-mid leading-relaxed mb-4">
-          Bone grafting is performed under local anesthesia at our Huntington Beach office. For patients with dental anxiety, sedation options are available. The procedure duration varies by graft type — socket preservation takes 30–45 minutes; sinus lifts or ridge augmentations may take 60–90 minutes.
+        <h2 class="section-subheading mt-10 mb-6">Socket Preservation: What We Offer</h2>
+        <p class="text-charcoal leading-relaxed mb-4">
+          A socket preservation graft (also called alveolar ridge preservation) is placed immediately into the tooth socket at the time of extraction. It prevents the collapse of the socket walls that otherwise occurs after extraction, preserving bone volume for future implant placement. If you are planning to get an implant after an extraction, requesting socket preservation at the time of extraction is strongly advised.
         </p>
-        <p class="text-neutral-mid leading-relaxed mb-4">
+        <p class="text-charcoal leading-relaxed mb-6">
+          If your case requires significant bone grafting — such as ridge augmentation, sinus lifts, or block grafts — we will refer you to an oral surgeon who specializes in these procedures. We work closely with our surgical partners to ensure your treatment plan is coordinated and your implant placement proceeds smoothly once healing is complete.
+        </p>
+
+        <h2 class="section-subheading mt-10 mb-4">The Socket Preservation Procedure: What to Expect</h2>
+        <p class="text-charcoal leading-relaxed mb-4">
+          Socket preservation is performed under local anesthesia at our Huntington Beach office. For patients with dental anxiety, sedation options are available. The procedure typically takes 30–45 minutes and is done at the same visit as your tooth extraction.
+        </p>
+        <p class="text-charcoal leading-relaxed mb-4">
           Following surgery, you'll receive detailed aftercare instructions. Soft foods for 2 weeks, avoiding the surgical site during brushing, and taking prescribed or over-the-counter anti-inflammatories as directed manage post-operative discomfort. Most patients return to work within 2–3 days.
         </p>
-        <p class="text-neutral-mid leading-relaxed mb-6">
+        <p class="text-charcoal leading-relaxed mb-6">
           Healing is monitored with periodic X-rays. We use 3D CBCT imaging to confirm that sufficient bone has grown before scheduling your <a href="/dental-implants/implant-placement" class="text-brand-blue hover:underline">implant placement surgery</a>. Don't let someone else's assessment that you "can't have implants" be the final word — schedule a consultation with our prosthodontist for a definitive evaluation.
-        </p>
-        <h2 class="section-subheading mt-10 mb-4">Cost of Bone Grafting in Huntington Beach</h2>
-        <p class="text-neutral-mid leading-relaxed mb-4">
-          Bone graft costs depend on the graft type and volume required. Approximate ranges in the Huntington Beach area:
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          {[
-            { type: 'Socket Preservation', cost: '$400–$900 per site' },
-            { type: 'Ridge Augmentation (minor)', cost: '$1,500–$3,000' },
-            { type: 'Sinus Lift (lateral)', cost: '$2,500–$5,000 per side' },
-            { type: 'Block Graft (major)', cost: '$3,000–$6,000+' },
-          ].map(item => (
-            <div class="flex justify-between items-center p-3 bg-surface-2 rounded-lg border border-border-light">
-              <span class="text-neutral-mid text-sm font-medium">{item.type}</span>
-              <span class="text-brand-navy font-semibold text-sm">{item.cost}</span>
-            </div>
-          ))}
-        </div>
-        <p class="text-neutral-mid leading-relaxed mb-6">
-          These costs are in addition to the implant fee. Some insurance plans contribute toward bone grafting when it is clinically necessary for implant placement. Flexible financing is available. See our <a href="/financing" class="text-brand-blue hover:underline">financing page</a> for options.
         </p>
         <a href="/dental-implants/consultation" class="btn-primary">Schedule Your Implant & Bone Assessment</a>
       </div>

@@ -97,6 +97,16 @@ Use this checklist to gather everything needed before and during your website bu
 
 ---
 
+## Content Strategy (Ongoing)
+
+*Ideal: 1 piece of content per month.*
+
+- [ ] **1–3 minute iPhone video** — Record yourself talking about a topic (e.g., specific procedure, relevant current topic, something happening in the office)
+- [ ] **Include photos** — Before/afters, showcase, etc. to fuel the article
+- [ ] **AI handles assembly** — We turn the video + photos into a polished blog post
+
+---
+
 ## Optional but High-Impact
 
 - [ ] **Patient case studies** — 1–2 transformation stories with consent (implants, All-on-4, smile makeovers)

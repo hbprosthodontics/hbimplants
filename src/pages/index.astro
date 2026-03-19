@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     question: "How do I know if I'm a candidate for dental implants?",
-    answer: 'Most adults with one or more missing teeth are candidates for dental implants. The key factors are sufficient bone volume in the jaw, healthy gums, and no uncontrolled systemic conditions. During your complimentary consultation, we perform a thorough examination including 3D imaging to evaluate your bone density and determine the optimal implant plan. Even patients with bone loss may qualify after bone grafting.',
+    answer: 'Most adults with one or more missing teeth are candidates for dental implants. The key factors are sufficient bone volume in the jaw, healthy gums, and no uncontrolled systemic conditions. During your consultation, we perform a thorough examination including 3D imaging to evaluate your bone density and determine the optimal implant plan. Even patients with bone loss may qualify after bone grafting.',
   },
   {
     question: 'Do you offer financing for dental implants and other procedures?',
@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     question: 'How do I get started with treatment?',
-    answer: 'The easiest first step is to schedule a consultation — complimentary for implant and major restorative cases. During this visit we take complete digital records, review your dental history, and discuss your goals. You\'ll leave with a clear understanding of your options and a customized treatment plan, with no obligation to proceed.',
+    answer: 'The easiest first step is to schedule a consultation. During this visit we take complete digital records, review your dental history, and discuss your goals. You\'ll leave with a clear understanding of your options and a customized treatment plan, with no obligation to proceed.',
   },
   {
     question: 'How soon can I get an appointment?',
@@ -103,8 +103,8 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Prosthodontist Huntington Beach | Dental Implants & Veneers"
-  description="Huntington Beach Prosthodontics offers dental implants, All-on-X, veneers, and full smile restorations. Certified prosthodontist serving HB, CA. Call today."
+  title="Dentist in Huntington Beach | General Care, Implants & Veneers"
+  description="Huntington Beach Prosthodontics offers everything from routine cleanings to dental implants, All-on-X, veneers, and full smile restorations. General and specialty dental care under one roof in HB, CA."
   schema={[localBusiness, faqSchema]}
 >
   <!-- Hero -->
@@ -117,26 +117,26 @@ const faqSchema = {
           <!-- Badge -->
           <div class="inline-flex items-center gap-1.5 border border-border-light text-mid-gray text-[10px] md:text-xs font-medium px-3 py-1 md:px-4 md:py-1.5 rounded-full mb-5 whitespace-nowrap">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-teal inline-block flex-shrink-0"></span>
-            Certified Prosthodontic Specialist · Huntington Beach, CA
+            General & Specialty Dental Care · Huntington Beach, CA
           </div>
 
           <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight text-charcoal mb-5">
             Restore Your Smile.<br />
             <span class="text-brand-teal">Reclaim Your Confidence.</span>
           </h1>
-          <p class="text-sm md:text-xl text-mid-gray mb-6 leading-relaxed">
-            Implants, veneers, and full smile restorations — performed by a certified prosthodontist, not a generalist.
+          <p class="text-sm md:text-xl text-charcoal mb-6 leading-relaxed">
+            From routine cleanings to implants, veneers, and complete smile restorations — general and specialty dental care, all under one roof.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={bookHref} target="_blank" rel="noopener noreferrer" class="btn-primary text-base px-8 py-3 font-semibold text-center w-full sm:w-auto">
-              Book Free Consultation
+              Book Consultation
             </a>
             <a href="/dental-implants" class="btn-secondary text-base px-8 py-3 font-semibold text-center w-full sm:w-auto">
               Explore Dental Implants
             </a>
           </div>
-          <div class="grid grid-cols-2 md:flex md:flex-wrap items-center gap-x-4 gap-y-3 md:gap-6 mt-6 md:mt-8 text-xs md:text-sm text-mid-gray">
+          <div class="grid grid-cols-2 md:flex md:flex-wrap items-center gap-x-4 gap-y-3 md:gap-6 mt-6 md:mt-8 text-xs md:text-sm text-charcoal">
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-charcoal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.5 2.5 4.5-5"/>
@@ -174,31 +174,31 @@ const faqSchema = {
   </section>
 
   <!-- Who We Are: Doctors intro -->
-  <section class="bg-surface-2 py-16 md:py-20">
+  <section class="bg-brand-navy py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">Who We Are</div>
-          <h2 class="section-heading mb-6">Two UCLA-Trained Doctors</h2>
-          <p class="text-mid-gray leading-relaxed mb-4">
+          <div class="text-xs font-semibold uppercase tracking-widest text-white/50 mb-3">Who We Are</div>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight text-white mb-6">Two UCLA-Trained Doctors</h2>
+          <p class="text-white/70 leading-relaxed mb-4">
             {doctor.name} is a certified prosthodontist — one of nine ADA-recognized dental specialists — who completed his residency at UCSF. Dr. Janelle Cheong provides comprehensive general dental care. Together, they offer advanced and preventive care under one roof.
           </p>
-          <p class="text-mid-gray leading-relaxed mb-6">
+          <p class="text-white/70 leading-relaxed mb-6">
             We build treatment plans around your anatomy, goals, and life circumstances — not a one-size-fits-all approach. Your first visit includes a thorough exam, complete digital records, and an honest discussion of options, timelines, and costs before any commitment.
           </p>
-          <p class="text-charcoal font-semibold mb-8">Our mission is to restore your smile with precision and expertise.</p>
-          <a href="/about" class="btn-primary">Meet Our Doctors</a>
+          <p class="text-white font-semibold mb-8">Our mission is to restore your smile with precision and expertise.</p>
+          <a href="/about" class="inline-block bg-white text-brand-navy font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition-colors text-center">Meet Our Doctors</a>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <a href="/about#dr-favian" class="group">
             <img src="/images/team/dr-favian-cheong.webp" alt="Dr. Favian Cheong" class="rounded-xl w-full aspect-[3/4] object-cover object-top mb-2 group-hover:opacity-95 transition-opacity" />
-            <div class="font-semibold text-charcoal text-sm group-hover:text-brand-teal transition-colors">Dr. Favian Cheong</div>
+            <div class="font-semibold text-white text-sm">Dr. Favian Cheong</div>
             <div class="text-brand-teal text-xs font-medium">Prosthodontist</div>
           </a>
           <a href="/about#dr-janelle" class="group">
             <img src="/images/team/dr-janelle-cheong.webp" alt="Dr. Janelle Cheong" class="rounded-xl w-full aspect-[3/4] object-cover object-top mb-2 group-hover:opacity-95 transition-opacity" />
-            <div class="font-semibold text-charcoal text-sm group-hover:text-brand-teal transition-colors">Dr. Janelle Cheong</div>
-            <div class="text-mid-gray text-xs">General Dentist</div>
+            <div class="font-semibold text-white text-sm">Dr. Janelle Cheong</div>
+            <div class="text-brand-teal text-xs font-medium">General Dentist</div>
           </a>
         </div>
       </div>
@@ -210,18 +210,18 @@ const faqSchema = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-12">
         <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">What We Offer</div>
-        <h2 class="section-heading mb-4 max-w-xl">Full-Spectrum Prosthodontic Care</h2>
-        <p class="text-mid-gray max-w-2xl leading-relaxed">
-          From single tooth implants to complete smile transformations — performed by a certified prosthodontist, not a generalist.
+        <h2 class="section-heading mb-4 max-w-xl">Complete Dental Care, Under One Roof</h2>
+        <p class="text-charcoal max-w-2xl leading-relaxed">
+          Routine checkups and cleanings to dental implants and full smile makeovers — a general dentist and certified prosthodontist working together for your complete dental health.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {serviceCategories.map((cat) => (
-          <a href={cat.href} class="bg-surface-2 rounded-xl p-6 border border-border-light hover:border-charcoal transition-colors group block">
-            <h3 class="font-serif text-lg font-semibold text-charcoal mb-2 group-hover:text-brand-teal transition-colors">{cat.heading}</h3>
-            <p class="text-mid-gray text-sm leading-relaxed mb-4">{cat.desc}</p>
-            <span class="text-sm font-medium text-charcoal group-hover:text-brand-teal transition-colors">Learn more →</span>
+          <a href={cat.href} class="bg-brand-navy rounded-xl p-6 hover:opacity-90 transition-opacity group block">
+            <h3 class="font-serif text-lg font-semibold text-white mb-2">{cat.heading}</h3>
+            <p class="text-white/60 text-sm leading-relaxed mb-4">{cat.desc}</p>
+            <span class="text-sm font-medium text-brand-teal">Learn more →</span>
           </a>
         ))}
       </div>
@@ -259,7 +259,7 @@ const faqSchema = {
                 </svg>
               ))}
             </div>
-            <p class="text-mid-gray leading-relaxed text-sm flex-1 mb-4 italic">"{t.quote}"</p>
+            <p class="text-charcoal leading-relaxed text-sm flex-1 mb-4 italic">"{t.quote}"</p>
             <div>
               <div class="font-semibold text-charcoal text-sm">{t.name}</div>
               <div class="text-xs text-mid-gray">{t.meta}</div>
@@ -271,7 +271,7 @@ const faqSchema = {
         <a href="https://g.page/r/CU4itT3RNhmQEBM/review" target="_blank" rel="noopener noreferrer" class="btn-primary">
           Leave Us a Google Review
         </a>
-        <a href="https://share.google/HnGTXT5RBHoUzW0kE" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-mid-gray hover:text-charcoal transition-colors">
+        <a href="https://share.google/HnGTXT5RBHoUzW0kE" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-charcoal hover:text-brand-teal transition-colors">
           Read all {googleReviewCount} reviews on Google →
         </a>
       </div>
@@ -284,7 +284,7 @@ const faqSchema = {
       <div class="text-center mb-10">
         <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">Real Patient Results</div>
         <h2 class="section-heading">See What's Possible</h2>
-        <p class="text-mid-gray mt-3 max-w-xl mx-auto">Every smile is unique. Browse our patient gallery to see the results we deliver.</p>
+        <p class="text-charcoal mt-3 max-w-xl mx-auto">Every smile is unique. Browse our patient gallery to see the results we deliver.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {[
@@ -304,21 +304,24 @@ const faqSchema = {
   </section>
 
   <!-- Why Choose a Prosthodontist -->
-  <section class="bg-surface-2 py-16 md:py-20">
+  <section class="bg-brand-navy py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">The Difference</div>
-        <h2 class="section-heading mb-6">Why Choose a Prosthodontist?</h2>
-        <p class="text-mid-gray leading-relaxed mb-6 max-w-3xl">
-          <strong class="text-charcoal">A prosthodontist is a dental specialist</strong> who focuses exclusively on restoring and replacing teeth — implants, veneers, dentures, and full-mouth rehabilitation. Prosthodontists complete 3 additional years of residency training dedicated entirely to this work — beyond what any general dentist receives. <a href="/blog/what-is-a-prosthodontist" class="text-brand-teal font-medium hover:text-charcoal transition-colors">Learn more →</a>
-        </p>
-        <p class="text-mid-gray leading-relaxed max-w-3xl">
-          At Huntington Beach Prosthodontics, Dr. Favian Cheong brings that expertise to every case. Whether you need a single implant or a full-arch transformation, you're in the hands of someone who does nothing else, every day.
-        </p>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+        <!-- Left: Text -->
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-widest text-white/50 mb-3">The Difference</div>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight text-white mb-6">Why Choose a Prosthodontist?</h2>
+          <p class="text-white/70 leading-relaxed mb-6">
+            <strong class="text-white">A prosthodontist is a dental specialist</strong> who focuses exclusively on restoring and replacing teeth — implants, veneers, dentures, and full-mouth rehabilitation. Prosthodontists complete 3 additional years of residency training dedicated entirely to this work — beyond what any general dentist receives. <a href="/blog/what-is-a-prosthodontist" class="text-brand-teal font-medium hover:text-white transition-colors">Learn more →</a>
+          </p>
+          <p class="text-white/70 leading-relaxed">
+            At Huntington Beach Prosthodontics, Dr. Favian Cheong brings that expertise to every case. Whether you need a single implant or a full-arch transformation, you're in the hands of someone who does nothing else, every day.
+          </p>
+        </div>
 
-      <div class="bg-surface-2 rounded-2xl p-8 border border-border-light max-w-2xl mb-12">
-        <h3 class="font-serif text-xl font-bold text-charcoal mb-6">Prosthodontist vs. General Dentist</h3>
+        <!-- Right: Comparison Table -->
+        <div class="bg-white/10 rounded-2xl p-8 border border-white/20 self-start">
+        <h3 class="font-serif text-xl font-bold text-white mb-6">Prosthodontist vs. General Dentist</h3>
           <div class="space-y-4">
             {[
               { area: 'Advanced Training', pros: '3+ additional years', gen: 'No specialty training' },
@@ -327,21 +330,22 @@ const faqSchema = {
               { area: 'Full-Mouth Rehab', pros: 'Comprehensive planning', gen: 'Limited scope' },
               { area: 'Cosmetic Precision', pros: 'Specialized training', gen: 'General aesthetics' },
             ].map((row) => (
-              <div class="grid grid-cols-3 gap-2 text-sm border-b border-border-light pb-3 last:border-0">
-                <div class="font-semibold text-charcoal text-xs">{row.area}</div>
-                <div class="text-charcoal font-medium flex items-center gap-1.5 text-xs">
+              <div class="grid grid-cols-3 gap-2 text-sm border-b border-white/10 pb-3 last:border-0">
+                <div class="font-semibold text-white/70 text-xs">{row.area}</div>
+                <div class="text-white font-medium flex items-center gap-1.5 text-xs">
                   <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.5 2.5 4.5-5"/>
                   </svg>
                   {row.pros}
                 </div>
-                <div class="text-mid-gray text-xs">{row.gen}</div>
+                <div class="text-white/40 text-xs">{row.gen}</div>
               </div>
             ))}
           </div>
+        </div>
       </div>
 
-      <div class="border-t border-border-light mt-12 pt-12">
+      <div class="border-t border-white/10 pt-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {[
             { title: 'Prosthodontic Residency Training', desc: '3 additional years of residency training dedicated entirely to complex tooth restoration.' },
@@ -351,20 +355,20 @@ const faqSchema = {
             { title: 'Aesthetic Excellence', desc: 'Clinical precision combined with an artistic eye for symmetry and natural results.' },
           ].map((item) => (
             <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full border border-charcoal flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <div class="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
               <div>
-                <div class="font-semibold text-charcoal text-sm mb-0.5">{item.title}</div>
-                <div class="text-mid-gray text-sm">{item.desc}</div>
+                <div class="font-semibold text-white text-sm mb-0.5">{item.title}</div>
+                <div class="text-white/60 text-sm">{item.desc}</div>
               </div>
             </div>
           ))}
         </div>
         <div class="mt-10 text-center">
-          <a href="/about" class="btn-primary">Meet Dr. Favian Cheong</a>
+          <a href="/about" class="inline-block bg-white text-brand-navy font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition-colors text-center">Meet Dr. Favian Cheong</a>
         </div>
       </div>
     </div>
@@ -383,7 +387,7 @@ const faqSchema = {
       <div class="mb-8">
         <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">Visit Us</div>
         <h2 class="section-heading mb-2">Find Our Office</h2>
-        <p class="text-mid-gray max-w-xl">
+        <p class="text-charcoal max-w-xl">
           {address.full} — serving Huntington Beach, Costa Mesa, Newport Beach, and surrounding communities.
         </p>
       </div>
