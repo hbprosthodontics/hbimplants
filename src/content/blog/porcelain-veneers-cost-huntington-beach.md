@@ -11,7 +11,7 @@ faqs:
   - question: "How much do porcelain veneers cost in Huntington Beach?"
     answer: "Porcelain veneers in Huntington Beach typically range from $1,200 to $2,500 per tooth. The variation reflects differences in laboratory quality, the complexity of the case, the provider's experience, and the number of veneers being placed. A full smile (8–10 veneers) represents a significant investment; individual veneers for single tooth repairs are priced per tooth."
   - question: "Do dental insurance plans cover porcelain veneers?"
-    answer: "In most cases, no. Dental insurance classifies veneers as cosmetic and typically does not cover the cost. Exceptions exist when a veneer is the appropriate restorative treatment for a broken or compromised tooth — in those cases, partial coverage may apply. Financing options (CareCredit, Proceed Finance) are available to spread the cost over time."
+    answer: "In most cases, no. Dental insurance classifies veneers as cosmetic and typically does not cover the cost. Exceptions exist when a veneer is the appropriate restorative treatment for a broken or compromised tooth — in those cases, partial coverage may apply. Financing through Cherry is available to spread the cost over time."
   - question: "How many veneers do I need for a smile makeover?"
     answer: "A full smile makeover typically involves 8–10 veneers — the teeth that show when you smile. Some patients address only the most visible teeth (4–6 veneers). The exact number depends on the width of your smile and your aesthetic goals. Your prosthodontist will review what's visible in your smile and recommend an appropriate range."
   - question: "Are porcelain veneers worth the cost?"
@@ -49,7 +49,7 @@ Not all veneers are priced the same, and the differences in cost reflect real di
 
 Dental insurance almost universally classifies porcelain veneers as cosmetic and does not cover the cost. The exception is when a veneer is the clinically appropriate restoration for a broken or structurally compromised tooth — in those cases, partial insurance coverage may apply.
 
-Most cosmetic dental practices, including ours, offer third-party financing through CareCredit or Proceed Finance. These plans allow patients to spread the cost over 12–60 months, often with promotional low-interest or no-interest periods.
+Most cosmetic dental practices, including ours, offer third-party financing through [Cherry](https://withcherry.com/). These plans allow patients to spread the cost over 12–60 months, often with promotional low-interest or no-interest periods.
 
 ## Porcelain vs. Composite: The Cost Trade-Off
 
@@ -74,9 +74,9 @@ They're not appropriate for patients with active gum disease, significant bite p
 
 The only way to know your actual cost is a consultation that includes a clinical examination and a discussion of your aesthetic goals. At that appointment, we review what concerns you want to address, how many teeth are involved, and what treatment would produce the result you're looking for.
 
-We offer complimentary consultations for cosmetic cases. You'll leave with a specific treatment plan and a precise cost estimate — not a range.
+We offer consultations for cosmetic cases. You'll leave with a specific treatment plan and a precise cost estimate — not a range.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 
@@ -86,7 +86,7 @@ Call us at **(714) 846-1386** or [schedule your free consultation online](/denta
 Typically $1,200–$2,500 per tooth. A full smile (8–10 veneers) ranges from $12,000–$25,000 depending on the laboratory quality and case complexity.
 
 **Does insurance cover veneers?**
-Usually no — veneers are classified as cosmetic. Financing through CareCredit and similar plans is available. Exceptions exist when veneers restore a structurally compromised tooth.
+Usually no — veneers are classified as cosmetic. Financing through [Cherry](https://withcherry.com/) is available. Exceptions exist when veneers restore a structurally compromised tooth.
 
 **How long do porcelain veneers last?**
 10–20 years with proper care. Porcelain is stain-resistant and durable. The longevity depends on oral hygiene, bite habits, and whether a nightguard is used if grinding is a factor.

@@ -14,19 +14,19 @@ const faqs = [
   },
   {
     question: 'What if I have no dental insurance?',
-    answer: 'No insurance is not a barrier to care. Many patients without insurance finance treatment through CareCredit or Proceed Finance, which offer low- or no-interest payment plans. We also offer flexible in-office payment arrangements. The complimentary consultation gives you a clear total cost estimate so you can plan before committing.',
+    answer: 'No insurance is not a barrier to care. Many patients without insurance finance treatment through Cherry, which offers low- or no-interest payment plans. We also offer flexible in-office payment arrangements. The consultation gives you a clear total cost estimate so you can plan before committing.',
   },
   {
-    question: 'How does CareCredit work?',
-    answer: 'CareCredit is a healthcare credit card accepted at dental offices nationwide. Once approved, you can use it to pay for treatment and repay over time — often with 0% promotional interest periods of 6, 12, 18, or 24 months depending on the amount. Applying takes a few minutes online or in our office, and approval decisions are typically instant.',
+    question: 'How does Cherry financing work?',
+    answer: 'Cherry is a patient financing platform that lets you split your treatment cost into manageable monthly payments. Once approved, you can use it to pay for treatment and repay over time — often with 0% promotional interest periods. Applying takes a few minutes online or in our office, and approval decisions are typically instant.',
   },
   {
     question: 'Can I split the cost of treatment across multiple appointments?',
     answer: 'In many cases, yes — particularly for multi-phase treatments like dental implants, where the surgical and restorative phases are naturally separated. We discuss payment timing and options at your consultation so you know exactly when each payment is due and can plan accordingly.',
   },
   {
-    question: 'Is the consultation really free?',
-    answer: 'Yes. The initial consultation for implant and cosmetic cases is complimentary — it includes a clinical examination, a review of your existing records or imaging, and an honest discussion of your options, timeline, and total cost. There is no charge and no obligation to proceed.',
+    question: 'What does the consultation cost?',
+    answer: 'Consultation fees vary by case. Please call us at (714) 846-1386 for current pricing. The consultation includes a clinical examination, a review of your existing records or imaging, and an honest discussion of your options, timeline, and total cost.',
   },
 ];
 
@@ -35,7 +35,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
 
 <BaseLayout
   title="Financing & Insurance | Huntington Beach Prosthodontics"
-  description="Learn how to pay for dental implants, veneers, and prosthodontic care in Huntington Beach. We accept most PPO insurance and offer CareCredit financing."
+  description="Learn how to pay for dental implants, veneers, and prosthodontic care in Huntington Beach. We accept most PPO insurance and offer Cherry financing."
   schema={localBusiness}
 >
 
@@ -48,11 +48,11 @@ import { localBusinessSchema as localBusiness } from '../config/site';
           Quality dental care should be<br />
           <span class="text-brand-teal">within reach.</span>
         </h1>
-        <p class="text-mid-gray text-lg leading-relaxed mb-8">
-          We work with most major PPO dental insurance plans and offer flexible financing through CareCredit and Proceed Finance — so cost doesn't stand between you and the treatment you need.
+        <p class="text-charcoal text-lg leading-relaxed mb-8">
+          We work with most major PPO dental insurance plans and offer flexible financing through Cherry — so cost doesn't stand between you and the treatment you need.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/dental-implants/consultation" class="btn-accent text-base px-6 py-3 text-center">Free Consultation</a>
+          <a href="/dental-implants/consultation" class="btn-accent text-base px-6 py-3 text-center">Consultation</a>
           <a href="tel:7148461386" class="btn-secondary text-base px-6 py-3 text-center">(714) 846-1386</a>
         </div>
       </div>
@@ -66,10 +66,10 @@ import { localBusinessSchema as localBusiness } from '../config/site';
         <div>
           <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Insurance</div>
           <h2 class="section-heading mb-6">We work with your insurance</h2>
-          <p class="text-neutral-mid leading-relaxed mb-4">
+          <p class="text-charcoal leading-relaxed mb-4">
             We accept most major PPO dental insurance plans and will file claims on your behalf for out-of-network plans. Our team verifies your benefits before treatment begins — so you know exactly what's covered and what your out-of-pocket cost will be, with no surprises.
           </p>
-          <p class="text-neutral-mid leading-relaxed mb-8">
+          <p class="text-charcoal leading-relaxed mb-8">
             We do not accept HMO or Denti-Cal plans. If you're unsure whether your plan is accepted, call us and we'll check before you come in.
           </p>
 
@@ -100,7 +100,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
                 </div>
                 <div>
                   <div class="font-semibold text-brand-navy text-sm mb-1">{item.title}</div>
-                  <div class="text-neutral-mid text-sm leading-relaxed">{item.desc}</div>
+                  <div class="text-charcoal text-sm leading-relaxed">{item.desc}</div>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
         <div>
           <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">What's Typically Covered</div>
           <h2 class="section-heading mb-6">Understanding your benefits</h2>
-          <p class="text-neutral-mid leading-relaxed mb-6">
+          <p class="text-charcoal leading-relaxed mb-6">
             Dental insurance is designed primarily for preventive and basic restorative care. Major procedures like implants and cosmetic treatments have more limited coverage. Here's a general guide — your specific plan will differ.
           </p>
 
@@ -146,26 +146,26 @@ import { localBusinessSchema as localBusiness } from '../config/site';
       <div class="text-center mb-12">
         <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Financing Options</div>
         <h2 class="section-heading mb-4">Flexible payment plans available</h2>
-        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+        <p class="text-charcoal max-w-2xl mx-auto leading-relaxed">
           We offer multiple financing options so you can start treatment now and pay over time — often with low or no interest.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- CareCredit -->
+        <!-- Cherry -->
         <div class="bg-white rounded-2xl p-8 border border-neutral-border shadow-sm">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
             </svg>
           </div>
-          <h3 class="font-serif text-xl font-semibold text-brand-navy mb-3">CareCredit</h3>
-          <p class="text-neutral-mid text-sm leading-relaxed mb-5">
-            Healthcare credit card with promotional 0% interest periods of 6–24 months. Apply online in minutes — approval decisions are typically instant.
+          <h3 class="font-serif text-xl font-semibold text-brand-navy mb-3">Cherry</h3>
+          <p class="text-charcoal text-sm leading-relaxed mb-5">
+            Patient financing platform with flexible monthly payment plans. Apply online in minutes — approval decisions are typically instant with no hard credit pull to check your rate.
           </p>
           <ul class="space-y-2 mb-6">
-            {['0% interest promotions available', '6, 12, 18, or 24-month terms', 'Instant online approval', 'Use for any treatment cost'].map((item) => (
-              <li class="flex items-start gap-2 text-sm text-neutral-mid">
+            {['0% interest promotions available', 'Flexible repayment terms', 'Instant online approval', 'Use for any treatment cost'].map((item) => (
+              <li class="flex items-start gap-2 text-sm text-charcoal">
                 <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
@@ -173,31 +173,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
               </li>
             ))}
           </ul>
-          <a href="https://www.carecredit.com/apply/" target="_blank" rel="noopener noreferrer" class="block text-center btn-primary text-sm py-2.5">Apply for CareCredit</a>
-        </div>
-
-        <!-- Proceed Finance -->
-        <div class="bg-white rounded-2xl p-8 border border-neutral-border shadow-sm">
-          <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-          <h3 class="font-serif text-xl font-semibold text-brand-navy mb-3">Proceed Finance</h3>
-          <p class="text-neutral-mid text-sm leading-relaxed mb-5">
-            Longer-term fixed-rate financing for larger treatment amounts. Ideal for All-on-4, full-mouth reconstruction, or cases where you want extended repayment terms.
-          </p>
-          <ul class="space-y-2 mb-6">
-            {['Terms up to 60 months', 'Fixed monthly payments', 'Designed for larger cases', 'Simple application process'].map((item) => (
-              <li class="flex items-start gap-2 text-sm text-neutral-mid">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a href="https://www.proceedfinance.com/" target="_blank" rel="noopener noreferrer" class="block text-center btn-secondary text-sm py-2.5">Learn About Proceed</a>
+          <a href="https://withcherry.com/" target="_blank" rel="noopener noreferrer" class="block text-center btn-primary text-sm py-2.5">Apply with Cherry</a>
         </div>
 
         <!-- In-Office -->
@@ -208,12 +184,12 @@ import { localBusinessSchema as localBusiness } from '../config/site';
             </svg>
           </div>
           <h3 class="font-serif text-xl font-semibold text-brand-navy mb-3">Flexible Arrangements</h3>
-          <p class="text-neutral-mid text-sm leading-relaxed mb-5">
+          <p class="text-charcoal text-sm leading-relaxed mb-5">
             For multi-phase treatments like dental implants, we discuss timing and payment arrangements at your consultation. Many treatments are naturally spread across several appointments.
           </p>
           <ul class="space-y-2 mb-6">
             {['Payment timing tied to treatment phases', 'Clear cost breakdown upfront', 'No hidden fees', 'Discuss options at consultation'].map((item) => (
-              <li class="flex items-start gap-2 text-sm text-neutral-mid">
+              <li class="flex items-start gap-2 text-sm text-charcoal">
                 <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
@@ -233,7 +209,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
       <div class="text-center mb-12">
         <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Cost Guides</div>
         <h2 class="section-heading mb-4">What does treatment cost?</h2>
-        <p class="text-neutral-mid max-w-2xl mx-auto leading-relaxed">
+        <p class="text-charcoal max-w-2xl mx-auto leading-relaxed">
           Our patient education guides explain what different treatments cost in Huntington Beach, why pricing varies, and how to evaluate quotes honestly.
         </p>
       </div>
@@ -269,7 +245,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
             <div class="text-xs text-brand-blue font-semibold uppercase tracking-wide mb-2">Cost Guide</div>
             <h3 class="font-serif text-lg font-semibold text-brand-navy mb-1 group-hover:text-brand-blue transition-colors">{item.title}</h3>
             <div class="text-brand-gold font-bold text-xl mb-3">{item.range}</div>
-            <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            <p class="text-charcoal text-sm leading-relaxed">{item.desc}</p>
             <div class="mt-4 text-brand-blue text-sm font-medium flex items-center gap-1">
               Read full guide
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,8 +265,8 @@ import { localBusinessSchema as localBusiness } from '../config/site';
         {[
           {
             icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
-            title: 'Free Consultation',
-            desc: 'Your first visit is complimentary. Get a full cost estimate before committing to anything.',
+            title: 'Cost Estimate at Your First Visit',
+            desc: 'Get a full cost estimate at your first visit before committing to anything.',
           },
           {
             icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
@@ -310,7 +286,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
               </svg>
             </div>
             <h3 class="font-semibold text-brand-navy mb-1">{item.title}</h3>
-            <p class="text-neutral-mid text-sm leading-relaxed">{item.desc}</p>
+            <p class="text-charcoal text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -329,7 +305,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <CTABlock
         heading="Find out exactly what your care will cost"
-        subheading="Your free consultation includes a full treatment plan and itemized cost breakdown. We verify your insurance benefits before you arrive."
+        subheading="Your consultation includes a full treatment plan and itemized cost breakdown. We verify your insurance benefits before you arrive."
       />
     </div>
   </section>

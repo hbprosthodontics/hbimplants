@@ -22,7 +22,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-block bg-charcoal text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 text-center hover:bg-neutral-800;
+    @apply inline-block bg-brand-navy text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 text-center hover:opacity-90;
   }
 
   .btn-secondary {
@@ -30,7 +30,7 @@
   }
 
   .btn-accent {
-    @apply inline-block bg-brand-teal text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity duration-200 text-center;
+    @apply inline-block bg-brand-navy text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity duration-200 text-center;
   }
 
   .section-heading {

@@ -103,7 +103,7 @@ The healing process isn't something you manage in real time — for the most par
 
 The months of healing are the foundation for decades of function. They're worth doing right.
 
-If you have questions about what healing looks like for your specific case, or if you're considering implants and want to understand the full timeline, schedule a complimentary consultation.
+If you have questions about what healing looks like for your specific case, or if you're considering implants and want to understand the full timeline, schedule a consultation.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

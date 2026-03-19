@@ -27,7 +27,7 @@ export const serviceCategories: ServiceCategory[] = [
       { name: 'Full Mouth Reconstruction', href: '/all-on-x/full-mouth-reconstruction', desc: 'Complete rehabilitation of all teeth' },
       { name: 'Bone Grafting', href: '/dental-implants/bone-grafting', desc: 'Build the foundation for implants' },
       { name: 'Implant Placement', href: '/dental-implants/implant-placement', desc: 'Precision surgical placement' },
-      { name: 'Free Consultation', href: '/dental-implants/consultation', desc: 'No-cost exam & treatment plan' },
+      { name: 'Consultation', href: '/dental-implants/consultation', desc: 'Exam & personalized treatment plan' },
     ],
   },
   {
@@ -50,6 +50,7 @@ export const serviceCategories: ServiceCategory[] = [
     services: [
       { name: 'Dental Crowns', href: '/restorative-dentistry/crowns', desc: 'Restore damaged or weakened teeth' },
       { name: 'Dental Bridges', href: '/restorative-dentistry/bridges', desc: 'Fixed prosthetic for missing teeth' },
+      { name: 'Maryland Bridge', href: '/restorative-dentistry/bridges#maryland-bridge', desc: 'Conservative resin-bonded bridge, no tooth grinding' },
       { name: 'Full Dentures', href: '/dentures/full', desc: 'Complete removable replacement' },
       { name: 'Partial Dentures', href: '/dentures/partial', desc: 'Replace multiple missing teeth' },
       { name: 'Snap-on Dentures', href: '/implant-restorations/snap-on', desc: 'Implant-secured, removable' },

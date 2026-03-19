@@ -76,7 +76,7 @@ The only way to know for certain whether you're a candidate is a proper evaluati
 
 All of this happens at your consultation. We don't guess from a 2D X-ray or a phone call whether you're a candidate. The scan is what tells us.
 
-We offer a **complimentary consultation** for implant cases. The imaging and evaluation are included. You'll leave with an honest assessment of your candidacy, your options, and your timeline — not a sales pitch.
+We offer a **consultation** for implant cases. The imaging and evaluation are included. You'll leave with an honest assessment of your candidacy, your options, and your timeline — not a sales pitch.
 
 ## What If You're Not an Immediate Candidate?
 
@@ -84,7 +84,7 @@ If the evaluation reveals that you're not immediately ready for implants — say
 
 The path may take longer, but for most people, it exists.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 
@@ -100,4 +100,4 @@ Not in the way most people think. There's no upper age limit. The relevant facto
 Often yes — bone grafting can rebuild sufficient volume for implant placement. In full-arch cases, All-on-4 techniques use angulated implants to find bone where it exists.
 
 **How is candidacy determined?**
-With a CBCT 3D scan, clinical examination, and medical history review. We offer complimentary consultations for implant cases.
+With a CBCT 3D scan, clinical examination, and medical history review. We offer consultations for implant cases.

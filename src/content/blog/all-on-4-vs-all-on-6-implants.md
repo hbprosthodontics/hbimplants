@@ -122,7 +122,7 @@ The choice between All-on-4 and All-on-6 is a meaningful clinical decision. But 
 
 If you're exploring full-arch implant options, the most useful thing you can do is schedule a consultation that includes proper 3D imaging. The images tell us what the anatomy will support — and that's the only honest basis for recommending one approach over the other.
 
-We offer [complimentary consultations](/dental-implants/consultation) for full-arch implant cases, including a thorough examination, imaging review, and a detailed discussion of your options, timeline, and cost — with no pressure to decide on the day.
+We offer [consultations](/dental-implants/consultation) for full-arch implant cases, including a thorough examination, imaging review, and a detailed discussion of your options, timeline, and cost — with no pressure to decide on the day.
 
 Call us at **(714) 846-1386** or schedule online.
 

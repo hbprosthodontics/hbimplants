@@ -76,9 +76,9 @@ I'm a prosthodontist, so I have an obvious perspective here. What I try to tell 
 
 For a healthy adult with a single missing tooth and good bone, a general dentist with solid implant experience may serve you perfectly well. For patients with multiple missing teeth, significant bone loss, previous failures, or full-arch needs — the specialized training of a prosthodontist is directly relevant to your outcomes.
 
-If you're not sure which category your case falls into, a consultation is the right starting point. I offer complimentary implant consultations that include a clinical evaluation and honest guidance on what your case involves — and what type of care is appropriate.
+If you're not sure which category your case falls into, a consultation is the right starting point. I offer implant consultations that include a clinical evaluation and honest guidance on what your case involves — and what type of care is appropriate.
 
-Call us at **(714) 846-1386** or [schedule your free consultation online](/dental-implants/consultation).
+Call us at **(714) 846-1386** or [schedule your consultation online](/dental-implants/consultation).
 
 ---
 

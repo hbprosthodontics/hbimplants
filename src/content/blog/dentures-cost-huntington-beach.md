@@ -60,7 +60,7 @@ Many dental insurance plans include denture coverage — typically at 50% up to 
 
 Implant coverage varies widely. Some plans include a fixed dollar amount per implant (often $1,000–$1,500); many don't cover implants at all. Read your specific plan language carefully.
 
-Financing through CareCredit or Proceed Finance is available to spread costs across 12–60 months, often with promotional interest rates.
+Financing through [Cherry](https://withcherry.com/) is available to spread costs across 12–60 months, often with promotional interest rates.
 
 ## The Cost-Over-Time Perspective
 
@@ -76,7 +76,7 @@ Not every patient is a candidate for every option. Fixed implant prosthetics req
 
 What I tell patients is: understand fully what each option provides and what it doesn't before deciding based on cost alone. A conventional denture is cheaper today and comes with real limitations tomorrow. An implant-supported solution costs more today and functions better across the years that follow.
 
-We offer complimentary consultations for denture and implant prosthetic cases. You'll leave with a clear understanding of which options are appropriate for your anatomy and health, and what each would cost.
+We offer consultations for denture and implant prosthetic cases. You'll leave with a clear understanding of which options are appropriate for your anatomy and health, and what each would cost.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

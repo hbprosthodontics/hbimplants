@@ -37,7 +37,7 @@ const categories = [
     faqs: [
       {
         question: 'Am I a candidate for dental implants?',
-        answer: 'Most adults with one or more missing teeth are candidates. The primary requirements are adequate bone volume in the jaw, healthy gums, and no uncontrolled systemic health conditions. Patients with bone loss may still qualify after bone grafting. The best way to know for certain is a complimentary consultation, where we perform 3D cone-beam imaging to evaluate your bone and anatomy in detail.',
+        answer: 'Most adults with one or more missing teeth are candidates. The primary requirements are adequate bone volume in the jaw, healthy gums, and no uncontrolled systemic health conditions. Patients with bone loss may still qualify after bone grafting. The best way to know for certain is a consultation, where we perform 3D cone-beam imaging to evaluate your bone and anatomy in detail.',
       },
       {
         question: 'How long do dental implants last?',
@@ -130,8 +130,8 @@ const categories = [
         answer: 'We offer flexible financing through third-party financing providers, allowing you to start treatment now and pay over time — often with low or 0% interest promotional periods. Options range from 12 to 60-month payment plans. Our treatment coordinator will review all financing options with you before you commit to anything.',
       },
       {
-        question: 'Is the consultation free?',
-        answer: 'Yes — consultations for dental implants and major restorative or cosmetic cases are complimentary. During the consultation we take complete digital records including 3D imaging where appropriate, review your history, and develop a customized treatment plan. You\'ll leave with a full understanding of your options and costs, with no obligation to proceed.',
+        question: 'What does the consultation cost?',
+        answer: 'Consultation fees vary depending on the complexity of your case. Please call us at (714) 846-1386 for current pricing. During the consultation we take complete digital records including 3D imaging where appropriate, review your history, and develop a customized treatment plan. You\'ll leave with a full understanding of your options and costs.',
       },
     ],
   },
@@ -190,7 +190,7 @@ const faqSchema = {
       <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-navy mb-4">
         Frequently Asked Questions
       </h1>
-      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
+      <p class="text-lg text-charcoal max-w-2xl mx-auto">
         Answers to the questions patients ask most — about our practice, treatment options, insurance, and what to expect at your first visit.
       </p>
       <!-- Category jump links -->
@@ -236,7 +236,7 @@ const faqSchema = {
                   </svg>
                 </button>
                 <div
-                  class="hidden px-6 py-4 bg-brand-light text-neutral-mid leading-relaxed"
+                  class="hidden px-6 py-4 bg-brand-light text-charcoal leading-relaxed"
                   data-faq-content={uid}
                 >
                   {faq.answer}
@@ -253,13 +253,13 @@ const faqSchema = {
   <section class="bg-brand-light border-t border-neutral-border py-12">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-serif text-2xl font-bold text-brand-navy mb-3">Still have questions?</h2>
-      <p class="text-neutral-mid mb-6">Call us or schedule a complimentary consultation — we're happy to walk through anything in person.</p>
+      <p class="text-charcoal mb-6">Call us or schedule a consultation — we're happy to walk through anything in person.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="tel:7148461386" class="btn-secondary text-sm px-6 py-3">
           Call (714) 846-1386
         </a>
         <a href="/schedule" class="btn-primary text-sm px-6 py-3">
-          Book Free Consultation
+          Book Consultation
         </a>
       </div>
     </div>

@@ -62,7 +62,7 @@ export const navLinks: NavLink[] = [
     external: true,
     dropdown: [
       { label: 'Financing & Insurance', href: '/financing', desc: 'Payment plans, insurance & cost guides' },
-      { label: 'Free Consultation', href: '/dental-implants/consultation', desc: 'No-cost exam & treatment plan' },
+      { label: 'Consultation', href: '/dental-implants/consultation', desc: 'Exam & personalized treatment plan' },
       { label: 'Blog', href: '/blog', desc: 'Education & treatment guides' },
     ],
   },

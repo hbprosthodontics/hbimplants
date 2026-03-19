@@ -90,7 +90,7 @@ A well-placed implant in properly prepared bone is a long-term investment. A fai
 
 If you've been told you have too much bone loss for implants, or if you're concerned about it, the next step is a proper evaluation. I've treated many patients who came in believing they weren't candidates — and a fair proportion of them were, with the right preparation.
 
-We offer complimentary implant consultations that include a clinical examination and an honest review of what your scan shows. No speculation, no guesswork — just what the imaging actually tells us about your anatomy and what that means for your options.
+We offer implant consultations that include a clinical examination and an honest review of what your scan shows. No speculation, no guesswork — just what the imaging actually tells us about your anatomy and what that means for your options.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

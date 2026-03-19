@@ -81,7 +81,7 @@ The choice between veneers and bonding isn't primarily about which is technicall
 
 I'd rather put composite on someone's single chipped tooth than upsell them to a veneer they don't need. And I'd rather tell a patient who wants a lasting transformation that bonding on six teeth won't give them the outcome they're picturing.
 
-If you're weighing these options and want guidance on what makes clinical and practical sense for your specific situation, come in for a consultation. We offer complimentary cosmetic consultations.
+If you're weighing these options and want guidance on what makes clinical and practical sense for your specific situation, come in for a consultation. We offer cosmetic consultations.
 
 Call us at **(714) 846-1386** or [schedule online](/dental-implants/consultation).
 

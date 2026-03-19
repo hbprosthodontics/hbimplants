@@ -17,7 +17,7 @@ import { serviceCategories } from '../config/services';
           All Dental Services —<br />
           <span class="text-brand-teal">Specialist Care Under One Roof</span>
         </h1>
-        <p class="text-mid-gray text-lg leading-relaxed">
+        <p class="text-charcoal text-lg leading-relaxed">
           From single implants to full-mouth reconstruction, porcelain veneers to routine cleanings — every service delivered by or under the supervision of a certified prosthodontic specialist.
         </p>
       </div>
@@ -36,7 +36,7 @@ import { serviceCategories } from '../config/services';
             {cat.services.map((svc) => (
               <a href={svc.href} class="card group hover:border-brand-teal hover:shadow-md transition-all duration-200 block">
                 <div class="font-semibold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">{svc.name}</div>
-                <p class="text-neutral-mid text-sm leading-relaxed mb-3">{svc.desc}</p>
+                <p class="text-charcoal text-sm leading-relaxed mb-3">{svc.desc}</p>
                 <span class="text-brand-blue text-sm font-medium">Learn more →</span>
               </a>
             ))}
@@ -48,7 +48,7 @@ import { serviceCategories } from '../config/services';
 
   <section class="pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <CTABlock heading="Not sure where to start?" subheading="Book a free consultation — Dr. Favian Cheong will evaluate your needs and recommend the right treatment plan for you." />
+      <CTABlock heading="Not sure where to start?" subheading="Book a consultation — Dr. Favian Cheong will evaluate your needs and recommend the right treatment plan for you." />
     </div>
   </section>
 </BaseLayout>

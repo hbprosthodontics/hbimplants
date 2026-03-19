@@ -26,7 +26,7 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
         <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">
           Blog
         </h1>
-        <p class="text-mid-gray text-lg max-w-2xl mx-auto">
+        <p class="text-charcoal text-lg max-w-2xl mx-auto">
           Expert insight on dental implants, full-arch restorations, veneers, and prosthodontic care.
         </p>
       </div>
@@ -36,7 +36,7 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
   <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {sortedPosts.length === 0 ? (
-        <div class="text-center py-16 text-neutral-mid">
+        <div class="text-center py-16 text-charcoal">
           <p>Blog posts coming soon. Check back shortly.</p>
         </div>
       ) : (
@@ -62,18 +62,20 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
                         />
                       </div>
                     )}
-                    <div class="flex flex-wrap gap-2 mb-2">
-                      <span class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold uppercase bg-brand-teal/15 text-brand-teal border border-brand-teal/20">
+                    <div class="mb-3 min-h-[2.75rem]">
+                      <div class="text-[10px] font-semibold uppercase tracking-wider text-brand-teal mb-1.5">
                         {post.data.category.replace(/-/g, ' ')}
-                      </span>
-                      {post.data.tags?.slice(0, 3).map((t: string) => (
-                        <span class="inline-flex rounded-full px-2.5 py-0.5 text-[10px] font-medium bg-brand-teal/10 text-brand-teal border border-brand-teal/20">{t.replace(/-/g, ' ')}</span>
-                      ))}
+                      </div>
+                      <div class="flex flex-nowrap gap-1.5 overflow-hidden">
+                        {post.data.tags?.slice(0, 3).map((t: string) => (
+                          <span class="inline-flex items-center justify-center shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium bg-brand-teal/10 text-brand-teal border border-brand-teal/20">{t.replace(/-/g, ' ')}</span>
+                        ))}
+                      </div>
                     </div>
                     <h2 class="font-serif text-lg font-semibold text-charcoal mb-2 group-hover:text-brand-teal transition-colors leading-tight">
                       {post.data.title}
                     </h2>
-                    <p class="text-neutral-mid text-sm leading-relaxed mb-4">{post.data.description}</p>
+                    <p class="text-charcoal text-sm leading-relaxed mb-4">{post.data.description}</p>
                     <div class="flex items-center justify-between text-xs text-neutral-mid">
                       <span>{post.data.author}</span>
                       <span>{post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
@@ -81,7 +83,7 @@ import { localBusinessSchema as localBusiness } from '../../config/site';
                   </a>
                 ))}
               </div>
-              <p id="blog-no-results" class="hidden text-center py-16 text-mid-gray">
+              <p id="blog-no-results" class="hidden text-center py-16 text-charcoal">
                 No posts match this filter. Try a different tag.
               </p>
             </div>
