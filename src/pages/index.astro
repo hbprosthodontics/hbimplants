@@ -220,7 +220,7 @@ const faqSchema = {
         {serviceCategories.map((cat) => (
           <a href={cat.href} class="bg-brand-navy rounded-xl p-6 hover:opacity-90 transition-opacity group block">
             <h3 class="font-serif text-lg font-semibold text-white mb-2">{cat.heading}</h3>
-            <p class="text-white/60 text-sm leading-relaxed mb-4">{cat.desc}</p>
+            <p class="text-white/80 text-sm leading-relaxed mb-4">{cat.desc}</p>
             <span class="text-sm font-medium text-brand-teal">Learn more →</span>
           </a>
         ))}
@@ -331,14 +331,14 @@ const faqSchema = {
               { area: 'Cosmetic Precision', pros: 'Specialized training', gen: 'General aesthetics' },
             ].map((row) => (
               <div class="grid grid-cols-3 gap-2 text-sm border-b border-white/10 pb-3 last:border-0">
-                <div class="font-semibold text-white/70 text-xs">{row.area}</div>
+                <div class="font-semibold text-white/85 text-xs">{row.area}</div>
                 <div class="text-white font-medium flex items-center gap-1.5 text-xs">
                   <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.5 2.5 4.5-5"/>
                   </svg>
                   {row.pros}
                 </div>
-                <div class="text-white/40 text-xs">{row.gen}</div>
+                <div class="text-white/65 text-xs">{row.gen}</div>
               </div>
             ))}
           </div>
@@ -362,7 +362,7 @@ const faqSchema = {
               </div>
               <div>
                 <div class="font-semibold text-white text-sm mb-0.5">{item.title}</div>
-                <div class="text-white/60 text-sm">{item.desc}</div>
+                <div class="text-white/80 text-sm">{item.desc}</div>
               </div>
             </div>
           ))}

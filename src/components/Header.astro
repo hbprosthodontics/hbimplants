@@ -72,8 +72,8 @@ const bookHref = site.bookingUrl;
                       </a>
                     )}
                     {group.children.length > 0 && (
-                      <div class="absolute left-full top-0 pl-1 -ml-1">
-                        <div class="w-64 bg-white rounded-xl shadow-lg border border-border-light py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+                      <div class="absolute left-full top-0 -ml-2 z-0 group-hover/sub:z-20">
+                        <div class="w-64 bg-white rounded-xl shadow-lg border border-border-light py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 relative">
                           {group.children.map((child) => (
                             <a href={child.href} class="block px-4 py-2.5 hover:bg-surface-2">
                               <div class="text-sm font-medium text-charcoal">{child.label}</div>
@@ -93,7 +93,7 @@ const bookHref = site.bookingUrl;
 
       <!-- Desktop CTA + Phone -->
       <div class="hidden lg:flex items-center gap-4">
-        <a href={`tel:${phone.replace(/\D/g, '')}`} class="text-mid-gray text-sm font-medium hover:text-charcoal transition-colors">
+        <a href={`tel:${phone.replace(/\D/g, '')}`} class="text-charcoal text-sm font-medium hover:text-brand-teal transition-colors">
           {phone}
         </a>
         <a href={bookHref} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-5 py-2.5">
