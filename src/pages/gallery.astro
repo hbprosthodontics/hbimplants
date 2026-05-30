@@ -1,31 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABlock from '../components/CTABlock.astro';
-import GalleryGrid, { type GalleryImage } from '../components/GalleryGrid.astro';
-
-// ─────────────────────────────────────────────────────────────────────────────
-// ADD YOUR GALLERY IMAGES HERE
-//
-// 1. Copy your photos to: public/images/gallery/
-// 2. Add an entry below for each photo.
-//    - src:       path starting with /images/gallery/
-//    - alt:       describe what's shown (important for SEO & accessibility)
-//    - procedure: category label — becomes a filter button automatically
-//                 e.g. "Dental Implants" | "All-on-4" | "Veneers" | "Smile Makeover"
-//    - caption:   optional short text shown in the lightbox
-//
-// Example:
-//   { src: '/images/gallery/implant-001.jpg', alt: 'Single tooth implant result', procedure: 'Dental Implants', caption: 'Single tooth implant — natural, seamless result' },
-// ─────────────────────────────────────────────────────────────────────────────
-const galleryImages: GalleryImage[] = [
-  { src: '/images/gallery/35c233_4d53b085a2b74aba85fb77c285d3e4d2~mv2.avif', alt: 'Patient smile restoration result' },
-  { src: '/images/gallery/edc2a9_63f959b1683a47f9b5fb4916473d5811~mv2.avif', alt: 'Prosthodontic treatment result' },
-  { src: '/images/gallery/edc2a9_6a7fa9255fa54effae65db782655fae5~mv2.avif', alt: 'Patient dental restoration outcome' },
-  { src: '/images/gallery/edc2a9_8263132f76fb43e0aa24b5ddb546dde5~mv2.avif', alt: 'Full smile makeover result' },
-  { src: '/images/gallery/edc2a9_bf872454f2f4482a8b3ebd4a4e1cf8b1~mv2.avif', alt: 'Cosmetic dentistry patient result' },
-  { src: '/images/gallery/edc2a9_d6d0537233e44b318c487d8f31e1d46b~mv2.avif', alt: 'Implant restoration patient result' },
-  { src: '/images/gallery/edc2a9_f4b39cbd01d24b449cba3be2c75552f4~mv2.avif', alt: 'Patient smile improvement result' },
-];
+import GalleryCases from '../components/GalleryCases.astro';
+import { galleryCases } from '../data/gallery-cases';
 
 const imageGallery = {
   '@context': 'https://schema.org',
@@ -45,7 +22,7 @@ import { localBusinessSchema as localBusiness } from '../config/site';
 
 <BaseLayout
   title="Gallery | Huntington Beach Prosthodontics"
-  description="View real patient result photos from Huntington Beach Prosthodontics. Dental implants, veneers, full arch restorations, and smile makeovers."
+  description="View real before and after patient results from Huntington Beach Prosthodontics. Dental implants, veneers, full arch restorations, and smile makeovers."
   schema={[localBusiness, imageGallery]}
 >
   <section class="bg-surface-2 py-16 md:py-20">
@@ -54,15 +31,15 @@ import { localBusinessSchema as localBusiness } from '../config/site';
         Patient Gallery
       </h1>
       <p class="text-charcoal text-lg max-w-2xl mx-auto">
-        Real results from real patients at Huntington Beach Prosthodontics. All photos shown with patient consent. Individual results may vary.
+        Real before and after results from patients at Huntington Beach Prosthodontics. All photos shown with patient consent. Individual results may vary.
       </p>
     </div>
   </section>
 
   <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {galleryImages.length > 0 ? (
-        <GalleryGrid images={galleryImages} heading="Our Work" />
+      {galleryCases.length > 0 ? (
+        <GalleryCases cases={galleryCases} heading="Our Work" />
       ) : (
         <div class="text-center py-16 bg-surface-2 rounded-2xl">
           <svg class="w-16 h-16 mx-auto mb-4 text-neutral-border" fill="none" stroke="currentColor" viewBox="0 0 24 24">
