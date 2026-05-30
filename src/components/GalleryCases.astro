@@ -176,8 +176,8 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       </button>
     </div>
 
-    <div class="overflow-y-auto min-h-0 flex flex-col">
-      <div id="case-lb-images" class="bg-neutral-100"></div>
+    <div id="case-lb-body" class="overflow-y-auto min-h-0 flex flex-col transition-opacity duration-200 ease-out">
+      <div id="case-lb-images" class="case-lb-images" aria-live="polite"></div>
       <div class="px-4 sm:px-5 py-2.5 border-t border-neutral-border bg-white shrink-0 space-y-0.5">
         <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
         <p id="case-lb-title" class="font-serif text-sm sm:text-base font-semibold text-brand-navy leading-snug"></p>
@@ -186,11 +186,88 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
   </div>
 </div>
 
+<style>
+  .case-lb-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #f3f4f6;
+    min-height: 12rem;
+  }
+  @media (min-width: 640px) {
+    .case-lb-images {
+      grid-template-columns: 1fr 1fr;
+    }
+    .case-lb-images.is-composite {
+      grid-template-columns: 1fr;
+    }
+  }
+  .case-lb-images.is-composite .case-lb-cell {
+    grid-column: 1 / -1;
+  }
+  .case-lb-cell {
+    position: relative;
+    background-color: #e5e7eb;
+    line-height: 0;
+  }
+  .case-lb-cell + .case-lb-cell {
+    border-top: 1px solid #e5e7eb;
+  }
+  @media (min-width: 640px) {
+    .case-lb-cell + .case-lb-cell {
+      border-top: none;
+      border-left: 1px solid #e5e7eb;
+    }
+    .case-lb-images.is-composite .case-lb-cell + .case-lb-cell {
+      border-left: none;
+    }
+  }
+  .case-lb-cell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(72vh, 680px);
+    object-fit: contain;
+  }
+  #case-lb-body.is-fading {
+    opacity: 0;
+  }
+  .case-lb-label {
+    position: absolute;
+    bottom: 6px;
+    z-index: 10;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .case-lb-label--before {
+    left: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+  }
+  .case-lb-label--after {
+    right: 6px;
+    background: rgba(201, 168, 76, 0.95);
+    color: #1b3828;
+  }
+  .case-lb-label--composite {
+    left: 6px;
+    background: rgba(27, 56, 40, 0.9);
+    color: #fff;
+    border-radius: 9999px;
+    padding: 4px 10px;
+  }
+</style>
+
 <script define:vars={{ cases: sortedCases }}>
   (() => {
     const grid = document.getElementById('case-grid');
     const lightbox = document.getElementById('case-lightbox');
     const lbImages = document.getElementById('case-lb-images');
+    const lbBody = document.getElementById('case-lb-body');
     const lbTitle = document.getElementById('case-lb-title');
     const lbTag = document.getElementById('case-lb-tag');
     const lbCounter = document.getElementById('case-lb-counter');
@@ -200,11 +277,13 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
     const emptyMsg = document.getElementById('case-empty');
     const filterBtns = document.querySelectorAll('.case-filter-btn');
 
-    if (!grid || !lightbox || !lbImages) return;
+    if (!grid || !lightbox || !lbImages || !lbBody) return;
 
     const allCards = Array.from(grid.querySelectorAll('.case-card'));
     let visibleIndices = allCards.map((_, i) => i);
     let currentPos = 0;
+    let isTransitioning = false;
+    const FADE_MS = 200;
 
     function applyFilter(filter) {
       visibleIndices = [];
@@ -225,28 +304,6 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       });
     });
 
-    const imgClass = 'block w-full h-auto max-h-[min(72vh,680px)] object-contain';
-
-    function overlayLabel(role) {
-      if (role === 'before') {
-        return '<span class="absolute bottom-1.5 left-1.5 z-10 bg-black/60 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">Before</span>';
-      }
-      if (role === 'after') {
-        return '<span class="absolute bottom-1.5 right-1.5 z-10 bg-brand-gold/95 text-brand-navy text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">After</span>';
-      }
-      return '<span class="absolute bottom-1.5 left-1.5 z-10 bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">Before &amp; After</span>';
-    }
-
-    function imageCell(img) {
-      const style = imgStyle(img);
-      return `
-        <div class="relative bg-neutral-200 leading-none">
-          ${overlayLabel(img.role)}
-          <img src="${img.src}" alt="${img.alt}" decoding="sync" class="${imgClass}" style="${style}" />
-        </div>
-      `;
-    }
-
     function imgStyle(img) {
       return img.objectPosition ? `object-position:${img.objectPosition}` : '';
     }
@@ -256,20 +313,100 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       return [item.before, item.after].filter(Boolean);
     }
 
-    function renderLightboxImages(item) {
-      const imgs = lightboxImages(item);
+    function preloadImages(imgs) {
+      return Promise.all(
+        imgs.map(
+          (img) =>
+            new Promise((resolve) => {
+              const el = new Image();
+              el.onload = () => resolve();
+              el.onerror = () => resolve();
+              el.src = img.src;
+            }),
+        ),
+      );
+    }
 
-      if (item.display === 'composite' && imgs.length === 1) {
-        lbImages.className = 'bg-neutral-100';
-        lbImages.innerHTML = imageCell(imgs[0]);
+    function preloadAdjacent() {
+      [-1, 1].forEach((offset) => {
+        const pos = currentPos + offset;
+        if (pos < 0 || pos >= visibleIndices.length) return;
+        preloadImages(lightboxImages(cases[visibleIndices[pos]]));
+      });
+    }
+
+    function addOverlayLabel(cell, role) {
+      const label = document.createElement('span');
+      if (role === 'before') {
+        label.className = 'case-lb-label case-lb-label--before';
+        label.textContent = 'Before';
+      } else if (role === 'after') {
+        label.className = 'case-lb-label case-lb-label--after';
+        label.textContent = 'After';
+      } else {
+        label.className = 'case-lb-label case-lb-label--composite';
+        label.textContent = 'Before & After';
+      }
+      cell.appendChild(label);
+    }
+
+    function buildImageCell(img) {
+      const cell = document.createElement('div');
+      cell.className = 'case-lb-cell';
+      addOverlayLabel(cell, img.role);
+      const image = document.createElement('img');
+      image.src = img.src;
+      image.alt = img.alt;
+      image.decoding = 'async';
+      const pos = imgStyle(img);
+      if (pos) image.style.cssText = pos;
+      cell.appendChild(image);
+      return cell;
+    }
+
+    function renderLightboxImages(item, imgs) {
+      lbImages.replaceChildren();
+      lbImages.classList.toggle('is-composite', item.display === 'composite');
+      if (imgs.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'col-span-full p-8 text-center text-sm text-neutral-mid';
+        empty.textContent = 'Images unavailable for this case.';
+        lbImages.appendChild(empty);
         return;
       }
+      imgs.forEach((img) => lbImages.appendChild(buildImageCell(img)));
+    }
 
-      lbImages.className = imgs.length === 1
-        ? 'bg-neutral-100'
-        : 'grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-neutral-border bg-neutral-100';
+    function updateCaption(item) {
+      if (lbTitle) lbTitle.textContent = item.caption || '';
+      if (lbTag) lbTag.textContent = item.procedure;
+      if (lbCounter) lbCounter.textContent = `${currentPos + 1} / ${visibleIndices.length}`;
+      if (lbPrev) lbPrev.disabled = currentPos === 0;
+      if (lbNext) lbNext.disabled = currentPos === visibleIndices.length - 1;
+    }
 
-      lbImages.innerHTML = imgs.map((img) => imageCell(img)).join('');
+    async function showCase(animate = false) {
+      const globalIndex = visibleIndices[currentPos];
+      const item = cases[globalIndex];
+      if (!item) return;
+
+      const imgs = lightboxImages(item);
+      if (animate && !lightbox.classList.contains('hidden')) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        lbBody.classList.add('is-fading');
+        await new Promise((r) => setTimeout(r, FADE_MS));
+        await preloadImages(imgs);
+        renderLightboxImages(item, imgs);
+        updateCaption(item);
+        lbBody.classList.remove('is-fading');
+        isTransitioning = false;
+      } else {
+        await preloadImages(imgs);
+        renderLightboxImages(item, imgs);
+        updateCaption(item);
+      }
+      preloadAdjacent();
     }
 
     function setLightboxOpen(open) {
@@ -283,24 +420,22 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       const pos = visibleIndices.indexOf(globalIndex);
       if (pos === -1) return;
       currentPos = pos;
-      showCase();
       setLightboxOpen(true);
+      showCase(false);
       lbClose?.focus();
     }
 
     function closeLightbox() {
       setLightboxOpen(false);
+      lbBody.classList.remove('is-fading');
+      isTransitioning = false;
     }
 
-    function showCase() {
-      const globalIndex = visibleIndices[currentPos];
-      const item = cases[globalIndex];
-      renderLightboxImages(item);
-      if (lbTitle) lbTitle.textContent = item.caption || '';
-      if (lbTag) lbTag.textContent = item.procedure;
-      if (lbCounter) lbCounter.textContent = `${currentPos + 1} / ${visibleIndices.length}`;
-      if (lbPrev) (lbPrev).disabled = currentPos === 0;
-      if (lbNext) (lbNext).disabled = currentPos === visibleIndices.length - 1;
+    function goToCase(delta) {
+      const next = currentPos + delta;
+      if (next < 0 || next >= visibleIndices.length) return;
+      currentPos = next;
+      showCase(true);
     }
 
     allCards.forEach((el, i) => {
@@ -324,18 +459,14 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       if (e.target === lightbox) closeLightbox();
     });
 
-    lbPrev?.addEventListener('click', () => {
-      if (currentPos > 0) { currentPos--; showCase(); }
-    });
-    lbNext?.addEventListener('click', () => {
-      if (currentPos < visibleIndices.length - 1) { currentPos++; showCase(); }
-    });
+    lbPrev?.addEventListener('click', () => goToCase(-1));
+    lbNext?.addEventListener('click', () => goToCase(1));
 
     document.addEventListener('keydown', (e) => {
       if (lightbox.classList.contains('hidden')) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft' && currentPos > 0) { currentPos--; showCase(); }
-      if (e.key === 'ArrowRight' && currentPos < visibleIndices.length - 1) { currentPos++; showCase(); }
+      if (e.key === 'ArrowLeft') goToCase(-1);
+      if (e.key === 'ArrowRight') goToCase(1);
     });
   })();
 </script>
