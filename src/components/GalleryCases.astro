@@ -138,9 +138,9 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 >
   <div
     id="case-lb-panel"
-    class="relative w-full max-w-7xl h-[min(96vh,920px)] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+    class="relative flex flex-col w-full max-w-[min(96vw,1200px)] max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
   >
-    <div class="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 border-b border-neutral-border shrink-0">
+    <div class="flex items-center justify-between gap-3 px-4 sm:px-5 py-2 border-b border-neutral-border shrink-0">
       <div class="flex items-center gap-1">
         <button
           type="button"
@@ -176,11 +176,12 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       </button>
     </div>
 
-    <div id="case-lb-images" class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-border bg-neutral-50"></div>
-
-    <div class="px-5 sm:px-6 py-3.5 border-t border-neutral-border shrink-0 space-y-1">
-      <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
-      <p id="case-lb-title" class="font-serif text-base sm:text-lg font-semibold text-brand-navy leading-snug"></p>
+    <div class="overflow-y-auto min-h-0 flex flex-col">
+      <div id="case-lb-images" class="bg-neutral-100"></div>
+      <div class="px-4 sm:px-5 py-2.5 border-t border-neutral-border bg-white shrink-0 space-y-0.5">
+        <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
+        <p id="case-lb-title" class="font-serif text-sm sm:text-base font-semibold text-brand-navy leading-snug"></p>
+      </div>
     </div>
   </div>
 </div>
@@ -224,14 +225,26 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       });
     });
 
+    const imgClass = 'block w-full h-auto max-h-[min(72vh,680px)] object-contain';
+
     function overlayLabel(role) {
       if (role === 'before') {
-        return '<span class="absolute bottom-2 left-2 z-10 bg-black/55 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">Before</span>';
+        return '<span class="absolute bottom-1.5 left-1.5 z-10 bg-black/60 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">Before</span>';
       }
       if (role === 'after') {
-        return '<span class="absolute bottom-2 right-2 z-10 bg-brand-gold/95 text-brand-navy text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">After</span>';
+        return '<span class="absolute bottom-1.5 right-1.5 z-10 bg-brand-gold/95 text-brand-navy text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">After</span>';
       }
-      return '<span class="absolute bottom-2 left-2 z-10 bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">Before &amp; After</span>';
+      return '<span class="absolute bottom-1.5 left-1.5 z-10 bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">Before &amp; After</span>';
+    }
+
+    function imageCell(img) {
+      const style = imgStyle(img);
+      return `
+        <div class="relative bg-neutral-200 leading-none">
+          ${overlayLabel(img.role)}
+          <img src="${img.src}" alt="${img.alt}" decoding="sync" class="${imgClass}" style="${style}" />
+        </div>
+      `;
     }
 
     function imgStyle(img) {
@@ -245,41 +258,18 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 
     function renderLightboxImages(item) {
       const imgs = lightboxImages(item);
-      const fragment = document.createDocumentFragment();
 
       if (item.display === 'composite' && imgs.length === 1) {
-        const col = document.createElement('div');
-        col.className = 'md:col-span-2 flex flex-col min-h-0 h-full';
-        const style = imgStyle(imgs[0]);
-        col.innerHTML = `
-          <div class="relative flex-1 min-h-0 flex items-center justify-center p-3 sm:p-4">
-            ${overlayLabel(imgs[0].role)}
-            <img src="${imgs[0].src}" alt="${imgs[0].alt}" decoding="sync" class="max-h-full max-w-full w-auto h-auto object-contain" style="${style}" />
-          </div>
-        `;
-        fragment.appendChild(col);
-        lbImages.replaceChildren(fragment);
+        lbImages.className = 'bg-neutral-100';
+        lbImages.innerHTML = imageCell(imgs[0]);
         return;
       }
 
       lbImages.className = imgs.length === 1
-        ? 'flex-1 min-h-0 flex flex-col bg-neutral-50'
-        : 'flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-border bg-neutral-50';
+        ? 'bg-neutral-100'
+        : 'grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-neutral-border bg-neutral-100';
 
-      imgs.forEach((img) => {
-        const col = document.createElement('div');
-        col.className = 'flex flex-col min-h-0 h-full';
-        const style = imgStyle(img);
-        col.innerHTML = `
-          <div class="relative flex-1 min-h-0 flex items-center justify-center p-3 sm:p-4">
-            ${overlayLabel(img.role)}
-            <img src="${img.src}" alt="${img.alt}" decoding="sync" class="max-h-full max-w-full w-auto h-auto object-contain" style="${style}" />
-          </div>
-        `;
-        fragment.appendChild(col);
-      });
-
-      lbImages.replaceChildren(fragment);
+      lbImages.innerHTML = imgs.map((img) => imageCell(img)).join('');
     }
 
     function setLightboxOpen(open) {
