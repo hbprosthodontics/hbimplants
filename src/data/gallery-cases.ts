@@ -137,11 +137,11 @@ export const galleryCases: GalleryCase[] = [
     procedure: 'Dentures',
     caption: 'Custom Complete Denture Smile Restoration',
     display: 'pair',
-    before: { src: '/images/gallery/DSC_0796.png', role: 'before', alt: 'Before — Custom Complete Denture Smile Restoration' },
-    after: { src: '/images/gallery/DSC_0539.png', role: 'after', alt: 'After — Custom Complete Denture Smile Restoration' },
+    before: { src: '/images/gallery/DSC_0796.JPG', role: 'before', alt: 'Before — Custom Complete Denture Smile Restoration' },
+    after: { src: '/images/gallery/DSC_0539.JPG', role: 'after', alt: 'After — Custom Complete Denture Smile Restoration' },
     images: [
-      { src: '/images/gallery/DSC_0796.png', role: 'before', alt: 'Before — Custom Complete Denture Smile Restoration' },
-      { src: '/images/gallery/DSC_0539.png', role: 'after', alt: 'After — Custom Complete Denture Smile Restoration' }
+      { src: '/images/gallery/DSC_0796.JPG', role: 'before', alt: 'Before — Custom Complete Denture Smile Restoration' },
+      { src: '/images/gallery/DSC_0539.JPG', role: 'after', alt: 'After — Custom Complete Denture Smile Restoration' }
     ],
   },
   {
