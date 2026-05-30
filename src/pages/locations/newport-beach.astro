@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
-import { localBusinessSchema as localBusiness } from '../../config/site';
+import { localBusinessSchema as localBusiness, address } from '../../config/site';
 
 const city = 'Newport Beach';
 const distance = '7 miles';
@@ -11,7 +11,7 @@ const driveTime = '13 minutes';
 const faqs = [
   {
     question: 'Do you serve patients from Newport Beach?',
-    answer: 'Yes. Patients from Newport Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 7 miles and 13 minutes from Newport Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+    answer: `Yes. Patients from Newport Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We're located at ${address.full} — about 7 miles and 13 minutes from Newport Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.`,
   },
   {
     question: 'What procedures do Newport Beach patients most commonly come to you for?',
@@ -171,13 +171,13 @@ const faqSchema = {
           <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
           <h2 class="section-heading mb-6">From Newport Beach to Huntington Beach — {driveTime}</h2>
           <p class="text-charcoal leading-relaxed mb-4">
-            From Newport Beach, head north on Pacific Coast Highway (PCH). The drive to our office at 16141 Bolsa Chica St., Suite C is approximately {distance} and takes about {driveTime} under typical conditions. The route along PCH is one of the most straightforward in Orange County — no freeway required. We have on-site parking and easy street access from Bolsa Chica Street.
+            From Newport Beach, head north on Pacific Coast Highway (PCH). The drive to our office at {address.full} is approximately {distance} and takes about {driveTime} under typical conditions. The route along PCH is one of the most straightforward in Orange County — no freeway required. We have on-site parking and easy street access from Bolsa Chica Street.
           </p>
           <p class="text-charcoal leading-relaxed mb-8">
             We are open Monday, Wednesday, Thursday, and Friday 9am–5pm. Tuesday is closed. Saturday is by appointment only. Sunday is closed.
           </p>
           <a
-            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            href={address.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary text-base px-6 py-3"
@@ -188,8 +188,8 @@ const faqSchema = {
         <div class="bg-white rounded-2xl p-8 border border-neutral-border">
           <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
           <address class="not-italic text-charcoal leading-relaxed mb-6">
-            16141 Bolsa Chica St., Suite C<br />
-            Huntington Beach, CA 92649
+            {address.street}<br />
+            {address.city}, {address.state} {address.zip}
           </address>
           <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
           <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>

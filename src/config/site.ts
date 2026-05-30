@@ -21,12 +21,15 @@ export const doctor = {
 };
 
 export const address = {
-  street: '16141 Bolsa Chica St., Suite C',
+  street: '16141 Bolsa Chica St # C',
   city: 'Huntington Beach',
   state: 'CA',
   zip: '92649',
   country: 'US',
-  full: '16141 Bolsa Chica St., Suite C, Huntington Beach, CA 92649',
+  full: '16141 Bolsa Chica St # C, Huntington Beach, CA 92649',
+  mapsQuery: '16141+Bolsa+Chica+St+%23+C,+Huntington+Beach,+CA+92649',
+  mapsUrl: 'https://maps.google.com/?q=16141+Bolsa+Chica+St+%23+C+Huntington+Beach+CA+92649',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=16141+Bolsa+Chica+St+%23+C,+Huntington+Beach,+CA+92649&output=embed',
 };
 
 export const hours = {

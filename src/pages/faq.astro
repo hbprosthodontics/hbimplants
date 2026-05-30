@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABlock from '../components/CTABlock.astro';
 
-import { localBusinessSchema as localBusiness } from '../config/site';
+import { localBusinessSchema as localBusiness, address } from '../config/site';
 
 const categories = [
   {
@@ -157,7 +157,7 @@ const categories = [
       },
       {
         question: 'Where are you located?',
-        answer: 'We are located at 16141 Bolsa Chica St., Suite C, Huntington Beach, CA 92649. We serve patients from Huntington Beach, Fountain Valley, Costa Mesa, Newport Beach, Seal Beach, and surrounding communities throughout Orange County.',
+        answer: `We are located at ${address.full}. We serve patients from Huntington Beach, Fountain Valley, Costa Mesa, Newport Beach, Seal Beach, and surrounding communities throughout Orange County.`,
       },
     ],
   },

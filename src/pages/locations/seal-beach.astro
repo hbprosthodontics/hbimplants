@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
-import { localBusinessSchema as localBusiness } from '../../config/site';
+import { localBusinessSchema as localBusiness, address } from '../../config/site';
 
 const city = 'Seal Beach';
 const distance = '5 miles';
@@ -11,7 +11,7 @@ const driveTime = '10 minutes';
 const faqs = [
   {
     question: 'Do you serve patients from Seal Beach?',
-    answer: 'Yes. Patients from Seal Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We\'re located at 16141 Bolsa Chica St., Suite C — about 5 miles and 10 minutes from Seal Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.',
+    answer: `Yes. Patients from Seal Beach regularly travel to our Huntington Beach office for specialist implant and cosmetic care. We're located at ${address.full} — about 5 miles and 10 minutes from Seal Beach. Most patients find the drive straightforward and worth it for specialist-level prosthodontic care.`,
   },
   {
     question: 'What procedures do Seal Beach patients most commonly come to you for?',
@@ -171,13 +171,13 @@ const faqSchema = {
           <div class="text-brand-blue text-sm font-semibold uppercase tracking-wide mb-3">Getting Here</div>
           <h2 class="section-heading mb-6">From Seal Beach to Huntington Beach — {driveTime}</h2>
           <p class="text-charcoal leading-relaxed mb-4">
-            From Seal Beach, the most direct route to our office is south on Pacific Coast Highway (PCH). The drive is approximately {distance} and takes around {driveTime} under normal traffic conditions. Our office is located at 16141 Bolsa Chica St., Suite C, in a professional medical building with ample parking.
+            From Seal Beach, the most direct route to our office is south on Pacific Coast Highway (PCH). The drive is approximately {distance} and takes around {driveTime} under normal traffic conditions. Our office is located at {address.full}, in a professional medical building with ample parking.
           </p>
           <p class="text-charcoal leading-relaxed mb-8">
             We are open Monday, Wednesday, Thursday, and Friday 9am–5pm. Tuesday is closed. Saturday is by appointment only. Sunday is closed.
           </p>
           <a
-            href="https://maps.google.com/?q=16141+Bolsa+Chica+St+Suite+C+Huntington+Beach+CA+92649"
+            href={address.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary text-base px-6 py-3"
@@ -188,8 +188,8 @@ const faqSchema = {
         <div class="bg-white rounded-2xl p-8 border border-neutral-border">
           <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Office Address</h3>
           <address class="not-italic text-charcoal leading-relaxed mb-6">
-            16141 Bolsa Chica St., Suite C<br />
-            Huntington Beach, CA 92649
+            {address.street}<br />
+            {address.city}, {address.state} {address.zip}
           </address>
           <h3 class="font-serif text-lg font-semibold text-brand-navy mb-4">Phone</h3>
           <a href="tel:7148461386" class="text-brand-blue font-medium text-lg hover:underline">(714) 846-1386</a>
