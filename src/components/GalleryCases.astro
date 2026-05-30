@@ -130,7 +130,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 <!-- Lightbox -->
 <div
   id="case-lightbox"
-  class="fixed inset-0 z-50 hidden bg-black/70 items-center justify-center p-3 sm:p-5"
+  class="fixed inset-0 z-50 hidden bg-black/70 items-center justify-center p-2 sm:p-4"
   role="dialog"
   aria-modal="true"
   aria-label="Case lightbox"
@@ -138,9 +138,9 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 >
   <div
     id="case-lb-panel"
-    class="relative flex flex-col w-full max-w-[min(96vw,1200px)] max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden min-h-0"
+    class="relative flex flex-col w-full max-w-[min(98vw,1400px)] max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden min-h-0"
   >
-    <div class="flex items-center justify-between gap-3 px-4 sm:px-5 py-2 border-b border-neutral-border shrink-0">
+    <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-3 border-b border-neutral-border shrink-0">
       <div class="flex items-center gap-1">
         <button
           type="button"
@@ -178,7 +178,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 
     <div id="case-lb-body" class="flex-1 min-h-0 overflow-y-auto flex flex-col transition-opacity duration-200 ease-out">
       <div id="case-lb-images" class="case-lb-images" aria-live="polite"></div>
-      <div class="px-4 sm:px-5 py-2.5 border-t border-neutral-border bg-white shrink-0 space-y-0.5">
+      <div class="px-5 sm:px-6 py-4 sm:py-5 border-t border-neutral-border bg-white shrink-0 space-y-1">
         <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
         <p id="case-lb-title" class="font-serif text-sm sm:text-base font-semibold text-brand-navy leading-snug"></p>
       </div>
@@ -213,14 +213,18 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
   }
   .case-lb-images :global(.case-lb-cell) {
     position: relative;
+    background-color: #e5e7eb;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .case-lb-images :global(.case-lb-cell--pair) {
+    line-height: 0;
+  }
+  .case-lb-images :global(.case-lb-cell--fit) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e5e7eb;
-    line-height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    max-height: min(calc(92vh - 7.5rem), 720px);
+    max-height: min(calc(92vh - 7rem), 820px);
   }
   .case-lb-images :global(.case-lb-cell + .case-lb-cell) {
     border-top: 1px solid #e5e7eb;
@@ -234,49 +238,21 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       border-left: none;
     }
   }
-  .case-lb-images :global(.case-lb-cell img) {
+  .case-lb-images :global(.case-lb-cell--pair img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(calc(92vh - 7rem), 820px);
+    object-fit: cover;
+    object-position: center;
+  }
+  .case-lb-images :global(.case-lb-cell--fit img) {
     display: block;
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: min(calc(92vh - 7.5rem), 720px);
+    max-height: min(calc(92vh - 7rem), 820px);
     object-fit: contain;
-  }
-  .case-lb-images.is-single :global(.case-lb-cell img),
-  .case-lb-images.is-composite :global(.case-lb-cell img) {
-    max-width: min(100%, 1100px);
-    margin: 0 auto;
-  }
-  .case-lb-images :global(.case-lb-label) {
-    position: absolute;
-    bottom: 6px;
-    left: auto;
-    right: auto;
-    z-index: 10;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 2px 8px;
-    border-radius: 4px;
-    pointer-events: none;
-  }
-  .case-lb-images :global(.case-lb-label--before) {
-    left: 6px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-  }
-  .case-lb-images :global(.case-lb-label--after) {
-    right: 6px;
-    background: rgba(201, 168, 76, 0.95);
-    color: #1b3828;
-  }
-  .case-lb-images :global(.case-lb-label--composite) {
-    left: 6px;
-    background: rgba(27, 56, 40, 0.9);
-    color: #fff;
-    border-radius: 9999px;
-    padding: 4px 10px;
   }
 </style>
 
@@ -355,23 +331,26 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 
     function addOverlayLabel(cell, role) {
       const label = document.createElement('span');
+      label.setAttribute('aria-hidden', 'true');
+      const base =
+        'position:absolute;bottom:8px;z-index:10;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:2px 8px;border-radius:4px;pointer-events:none;line-height:1.25;';
       if (role === 'before') {
-        label.className = 'case-lb-label case-lb-label--before';
+        label.style.cssText = base + 'left:8px;background:rgba(0,0,0,0.55);color:#fff;';
         label.textContent = 'Before';
       } else if (role === 'after') {
-        label.className = 'case-lb-label case-lb-label--after';
+        label.style.cssText = base + 'right:8px;background:rgba(201,168,76,0.95);color:#1B3A5C;';
         label.textContent = 'After';
       } else {
-        label.className = 'case-lb-label case-lb-label--composite';
+        label.style.cssText =
+          base + 'left:8px;background:rgba(27,58,92,0.9);color:#fff;border-radius:9999px;padding:4px 10px;';
         label.textContent = 'Before & After';
       }
       cell.appendChild(label);
     }
 
-    function buildImageCell(img) {
+    function buildImageCell(img, fitMode) {
       const cell = document.createElement('div');
-      cell.className = 'case-lb-cell';
-      addOverlayLabel(cell, img.role);
+      cell.className = fitMode ? 'case-lb-cell case-lb-cell--fit' : 'case-lb-cell case-lb-cell--pair';
       const image = document.createElement('img');
       image.src = img.src;
       image.alt = img.alt;
@@ -379,6 +358,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       const pos = imgStyle(img);
       if (pos) image.style.cssText = pos;
       cell.appendChild(image);
+      addOverlayLabel(cell, img.role);
       return cell;
     }
 
@@ -393,7 +373,8 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
         lbImages.appendChild(empty);
         return;
       }
-      imgs.forEach((img) => lbImages.appendChild(buildImageCell(img)));
+      const fitMode = item.display === 'composite' || imgs.length === 1;
+      imgs.forEach((img) => lbImages.appendChild(buildImageCell(img, fitMode)));
     }
 
     function updateCaption(item) {
