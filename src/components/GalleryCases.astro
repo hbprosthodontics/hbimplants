@@ -1,0 +1,351 @@
+---
+import type { GalleryCase } from '../data/gallery-cases';
+
+interface Props {
+  cases: GalleryCase[];
+  heading?: string;
+}
+
+const { cases, heading = 'Our Work' } = Astro.props;
+
+const sortedCases = [...cases].sort((a, b) => {
+  if (a.display !== b.display) return a.display === 'pair' ? -1 : 1;
+  return a.order - b.order;
+});
+
+const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.procedure))).sort()];
+---
+
+<section class="py-12">
+  {heading && (
+    <h2 class="section-subheading text-center mb-2">{heading}</h2>
+  )}
+  <p class="text-center text-neutral-mid mb-8 text-sm">
+    Individual results may vary. Photos shown with patient consent.
+  </p>
+
+  {procedures.length > 2 && (
+    <div class="flex flex-wrap justify-center gap-2 mb-10" id="case-filters">
+      {procedures.map((proc) => (
+        <button
+          type="button"
+          class="case-filter-btn px-4 py-2 rounded-full text-sm font-semibold border transition-colors duration-200 border-gray-300 text-neutral-mid hover:border-brand-navy hover:bg-brand-light hover:text-brand-navy aria-pressed:bg-brand-navy aria-pressed:border-brand-navy aria-pressed:text-white aria-pressed:hover:bg-brand-navy aria-pressed:hover:text-white"
+          data-filter={proc === 'All' ? 'all' : proc}
+          aria-pressed={proc === 'All' ? 'true' : 'false'}
+        >
+          {proc}
+        </button>
+      ))}
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8" id="case-grid">
+    {sortedCases.map((item, index) => (
+      <article
+        class="case-card group cursor-pointer rounded-2xl border border-neutral-border bg-white shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-200 overflow-hidden"
+        data-index={index}
+        data-procedure={item.procedure}
+        tabindex="0"
+        role="button"
+        aria-label={item.caption || `${item.procedure} before and after result`}
+      >
+        {item.display === 'composite' && item.after ? (
+          <div class="relative bg-neutral-100 aspect-[4/3]">
+            <img
+              src={item.after.src}
+              alt={item.after.alt}
+              width="800"
+              height="600"
+              loading="lazy"
+              style={item.after.objectPosition ? `object-position: ${item.after.objectPosition}` : undefined}
+              class="w-full h-full object-contain group-hover:scale-[1.01] transition-transform duration-300"
+            />
+            <span class="absolute bottom-2 left-2 bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">
+              Before &amp; After
+            </span>
+          </div>
+        ) : (
+          <div class="grid grid-cols-2 divide-x divide-neutral-border bg-neutral-100">
+            <div class="relative min-h-0">
+              <span class="absolute bottom-2 left-2 z-10 bg-black/55 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">
+                Before
+              </span>
+              <div class="aspect-square overflow-hidden bg-neutral-200">
+                {item.before ? (
+                  <img
+                    src={item.before.src}
+                    alt={item.before.alt}
+                    width="400"
+                    height="400"
+                    loading="lazy"
+                    class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-300"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-neutral-mid text-xs bg-neutral-200">—</div>
+                )}
+              </div>
+            </div>
+            <div class="relative min-h-0">
+              <span class="absolute bottom-2 right-2 z-10 bg-brand-gold/95 text-brand-navy text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">
+                After
+              </span>
+              <div class="aspect-square overflow-hidden bg-neutral-200">
+                {item.after ? (
+                  <img
+                    src={item.after.src}
+                    alt={item.after.alt}
+                    width="400"
+                    height="400"
+                    loading="lazy"
+                    class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-300"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-neutral-mid text-xs bg-neutral-200">—</div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+
+        <div class="px-4 py-4 border-t border-neutral-border bg-surface-2/60 space-y-1.5">
+          <span class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue">
+            {item.procedure}
+          </span>
+          {item.caption ? (
+            <h3 class="font-serif text-base font-semibold text-brand-navy leading-snug">{item.caption}</h3>
+          ) : (
+            <h3 class="font-serif text-base font-semibold text-brand-navy/50 leading-snug italic">Untitled case</h3>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <p class="text-center text-neutral-mid text-xs mt-8" id="case-empty" style="display:none;">
+    No cases in this category yet.
+  </p>
+</section>
+
+<!-- Lightbox -->
+<div
+  id="case-lightbox"
+  class="fixed inset-0 z-50 hidden bg-black/70 items-center justify-center p-3 sm:p-5"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Case lightbox"
+  aria-hidden="true"
+>
+  <div
+    id="case-lb-panel"
+    class="relative w-full max-w-7xl h-[min(96vh,920px)] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+  >
+    <div class="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 border-b border-neutral-border shrink-0">
+      <div class="flex items-center gap-1">
+        <button
+          type="button"
+          id="case-lb-prev"
+          class="p-2 rounded-lg text-brand-navy hover:bg-brand-light transition-colors disabled:opacity-30 disabled:pointer-events-none"
+          aria-label="Previous case"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="case-lb-next"
+          class="p-2 rounded-lg text-brand-navy hover:bg-brand-light transition-colors disabled:opacity-30 disabled:pointer-events-none"
+          aria-label="Next case"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+      <p id="case-lb-counter" class="text-xs text-neutral-mid font-medium tabular-nums"></p>
+      <button
+        type="button"
+        id="case-lb-close"
+        class="p-2 rounded-lg text-brand-navy hover:bg-brand-light transition-colors"
+        aria-label="Close lightbox"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="case-lb-images" class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-border bg-neutral-50"></div>
+
+    <div class="px-5 sm:px-6 py-3.5 border-t border-neutral-border shrink-0 space-y-1">
+      <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
+      <p id="case-lb-title" class="font-serif text-base sm:text-lg font-semibold text-brand-navy leading-snug"></p>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ cases: sortedCases }}>
+  (() => {
+    const grid = document.getElementById('case-grid');
+    const lightbox = document.getElementById('case-lightbox');
+    const lbImages = document.getElementById('case-lb-images');
+    const lbTitle = document.getElementById('case-lb-title');
+    const lbTag = document.getElementById('case-lb-tag');
+    const lbCounter = document.getElementById('case-lb-counter');
+    const lbClose = document.getElementById('case-lb-close');
+    const lbPrev = document.getElementById('case-lb-prev');
+    const lbNext = document.getElementById('case-lb-next');
+    const emptyMsg = document.getElementById('case-empty');
+    const filterBtns = document.querySelectorAll('.case-filter-btn');
+
+    if (!grid || !lightbox || !lbImages) return;
+
+    const allCards = Array.from(grid.querySelectorAll('.case-card'));
+    let visibleIndices = allCards.map((_, i) => i);
+    let currentPos = 0;
+
+    function applyFilter(filter) {
+      visibleIndices = [];
+      allCards.forEach((el, i) => {
+        const proc = el.dataset.procedure ?? '';
+        const visible = filter === 'all' || proc === filter;
+        el.style.display = visible ? '' : 'none';
+        if (visible) visibleIndices.push(i);
+      });
+      if (emptyMsg) emptyMsg.style.display = visibleIndices.length === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        applyFilter(btn.dataset.filter ?? 'all');
+      });
+    });
+
+    function overlayLabel(role) {
+      if (role === 'before') {
+        return '<span class="absolute bottom-2 left-2 z-10 bg-black/55 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">Before</span>';
+      }
+      if (role === 'after') {
+        return '<span class="absolute bottom-2 right-2 z-10 bg-brand-gold/95 text-brand-navy text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">After</span>';
+      }
+      return '<span class="absolute bottom-2 left-2 z-10 bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">Before &amp; After</span>';
+    }
+
+    function imgStyle(img) {
+      return img.objectPosition ? `object-position:${img.objectPosition}` : '';
+    }
+
+    function lightboxImages(item) {
+      if (item.display === 'composite' && item.after) return [item.after];
+      return [item.before, item.after].filter(Boolean);
+    }
+
+    function renderLightboxImages(item) {
+      const imgs = lightboxImages(item);
+      const fragment = document.createDocumentFragment();
+
+      if (item.display === 'composite' && imgs.length === 1) {
+        const col = document.createElement('div');
+        col.className = 'md:col-span-2 flex flex-col min-h-0 h-full';
+        const style = imgStyle(imgs[0]);
+        col.innerHTML = `
+          <div class="relative flex-1 min-h-0 flex items-center justify-center p-3 sm:p-4">
+            ${overlayLabel(imgs[0].role)}
+            <img src="${imgs[0].src}" alt="${imgs[0].alt}" decoding="sync" class="max-h-full max-w-full w-auto h-auto object-contain" style="${style}" />
+          </div>
+        `;
+        fragment.appendChild(col);
+        lbImages.replaceChildren(fragment);
+        return;
+      }
+
+      lbImages.className = imgs.length === 1
+        ? 'flex-1 min-h-0 flex flex-col bg-neutral-50'
+        : 'flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-border bg-neutral-50';
+
+      imgs.forEach((img) => {
+        const col = document.createElement('div');
+        col.className = 'flex flex-col min-h-0 h-full';
+        const style = imgStyle(img);
+        col.innerHTML = `
+          <div class="relative flex-1 min-h-0 flex items-center justify-center p-3 sm:p-4">
+            ${overlayLabel(img.role)}
+            <img src="${img.src}" alt="${img.alt}" decoding="sync" class="max-h-full max-w-full w-auto h-auto object-contain" style="${style}" />
+          </div>
+        `;
+        fragment.appendChild(col);
+      });
+
+      lbImages.replaceChildren(fragment);
+    }
+
+    function setLightboxOpen(open) {
+      lightbox.classList.toggle('hidden', !open);
+      lightbox.classList.toggle('flex', open);
+      lightbox.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    function openLightbox(globalIndex) {
+      const pos = visibleIndices.indexOf(globalIndex);
+      if (pos === -1) return;
+      currentPos = pos;
+      showCase();
+      setLightboxOpen(true);
+      lbClose?.focus();
+    }
+
+    function closeLightbox() {
+      setLightboxOpen(false);
+    }
+
+    function showCase() {
+      const globalIndex = visibleIndices[currentPos];
+      const item = cases[globalIndex];
+      renderLightboxImages(item);
+      if (lbTitle) lbTitle.textContent = item.caption || '';
+      if (lbTag) lbTag.textContent = item.procedure;
+      if (lbCounter) lbCounter.textContent = `${currentPos + 1} / ${visibleIndices.length}`;
+      if (lbPrev) (lbPrev).disabled = currentPos === 0;
+      if (lbNext) (lbNext).disabled = currentPos === visibleIndices.length - 1;
+    }
+
+    allCards.forEach((el, i) => {
+      el.addEventListener('mouseenter', () => {
+        lightboxImages(cases[i]).forEach((img) => {
+          const preload = new Image();
+          preload.src = img.src;
+        });
+      });
+      el.addEventListener('click', () => openLightbox(i));
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(i);
+        }
+      });
+    });
+
+    lbClose?.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lbPrev?.addEventListener('click', () => {
+      if (currentPos > 0) { currentPos--; showCase(); }
+    });
+    lbNext?.addEventListener('click', () => {
+      if (currentPos < visibleIndices.length - 1) { currentPos++; showCase(); }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft' && currentPos > 0) { currentPos--; showCase(); }
+      if (e.key === 'ArrowRight' && currentPos < visibleIndices.length - 1) { currentPos++; showCase(); }
+    });
+  })();
+</script>

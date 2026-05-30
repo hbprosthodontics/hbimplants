@@ -6,6 +6,18 @@ import { localBusinessSchema, site, address, doctor } from '../config/site';
 
 const bookHref = site.bookingUrl;
 import { serviceCategories } from '../config/services';
+import { galleryCases } from '../data/gallery-cases';
+
+const serviceShowcaseIds = [
+  'case-19', // Dental Implants — Maxillary Full Arch Restoration
+  'case-18', // Smile Restoration — Porcelain Veneer Smile Makeover
+  'case-2',  // Crowns & Dentures — Cracked Front Crown Replacement
+];
+
+const serviceShowcase = serviceCategories.map((cat, i) => ({
+  ...cat,
+  case: galleryCases.find((c) => c.id === serviceShowcaseIds[i]),
+}));
 
 // Fetch real Google reviews at build time
 const PLACES_API_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
@@ -208,28 +220,74 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Services Overview -->
+  <!-- Services & Patient Results -->
   <section class="bg-white py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
+      <div class="mb-12 max-w-2xl">
         <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">What We Offer</div>
-        <h2 class="section-heading mb-4 max-w-xl">Complete Dental Care, Under One Roof</h2>
-        <p class="text-charcoal max-w-2xl leading-relaxed">
-          Routine checkups and cleanings to dental implants and full smile makeovers — a general dentist and certified prosthodontist working together for your complete dental health.
+        <h2 class="section-heading mb-4">Complete Dental Care, Under One Roof</h2>
+        <p class="text-charcoal leading-relaxed">
+          From routine checkups to implants and full smile makeovers — a general dentist and certified prosthodontist working together. See real before and after results from our Huntington Beach patients.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {serviceCategories.map((cat) => (
-          <a href={cat.href} class="bg-brand-navy rounded-xl p-6 hover:opacity-90 transition-opacity group block">
-            <h3 class="font-serif text-lg font-semibold text-white mb-2">{cat.heading}</h3>
-            <p class="text-white/80 text-sm leading-relaxed mb-4">{cat.desc}</p>
-            <span class="text-sm font-medium text-brand-teal">Learn more →</span>
-          </a>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {serviceShowcase.map(({ heading, href, desc, case: galleryCase }) => (
+          <article class="flex flex-col rounded-2xl border border-border-light bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-brand-teal/25 transition-all duration-300">
+            <div class="p-5 pb-4">
+              <a href={href} class="group/title block">
+                <h3 class="font-serif text-xl font-semibold text-charcoal group-hover/title:text-brand-teal transition-colors">
+                  {heading}
+                </h3>
+                <p class="text-sm text-mid-gray leading-relaxed mt-1.5">{desc}</p>
+                <span class="inline-block text-sm font-semibold text-brand-teal group-hover/title:text-charcoal transition-colors mt-3">
+                  Learn more →
+                </span>
+              </a>
+            </div>
+            {galleryCase?.before && galleryCase.after && (
+              <a href="/gallery" class="group/photos block bg-surface-2" aria-label={`View ${heading} results in gallery`}>
+                <div class="grid grid-cols-2 divide-x divide-white/30">
+                  <div class="relative">
+                    <span class="absolute bottom-2 left-2 z-10 bg-black/55 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">
+                      Before
+                    </span>
+                    <div class="aspect-[5/4] overflow-hidden">
+                      <img
+                        src={galleryCase.before.src}
+                        alt={galleryCase.before.alt}
+                        width="400"
+                        height="320"
+                        loading="lazy"
+                        class="w-full h-full object-cover object-center group-hover/photos:scale-[1.02] transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                  <div class="relative">
+                    <span class="absolute bottom-2 right-2 z-10 bg-brand-teal text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded pointer-events-none">
+                      After
+                    </span>
+                    <div class="aspect-[5/4] overflow-hidden">
+                      <img
+                        src={galleryCase.after.src}
+                        alt={galleryCase.after.alt}
+                        width="400"
+                        height="320"
+                        loading="lazy"
+                        class="w-full h-full object-cover object-center group-hover/photos:scale-[1.02] transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            )}
+          </article>
         ))}
       </div>
-      <div class="mt-8 text-center">
-        <a href="/services" class="btn-secondary">See All Services</a>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/services" class="btn-secondary text-center">See All Services</a>
+        <a href="/gallery" class="btn-primary text-center">View Full Gallery</a>
       </div>
     </div>
   </section>
@@ -277,31 +335,6 @@ const faqSchema = {
         <a href="https://share.google/HnGTXT5RBHoUzW0kE" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-charcoal hover:text-brand-teal transition-colors">
           Read all {googleReviewCount} reviews on Google →
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Teaser -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <div class="text-xs font-semibold uppercase tracking-widest text-mid-gray mb-3">Real Patient Results</div>
-        <h2 class="section-heading">See What's Possible</h2>
-        <p class="text-charcoal mt-3 max-w-xl mx-auto">Every smile is unique. Browse our patient gallery to see the results we deliver.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        {[
-          { src: '/images/gallery/edc2a9_63f959b1683a47f9b5fb4916473d5811~mv2.avif', alt: 'Before and after dental implant restoration at Huntington Beach Prosthodontics' },
-          { src: '/images/gallery/edc2a9_bf872454f2f4482a8b3ebd4a4e1cf8b1~mv2.avif', alt: 'Porcelain veneer smile makeover showing natural tooth color and symmetry' },
-          { src: '/images/gallery/edc2a9_f4b39cbd01d24b449cba3be2c75552f4~mv2.avif', alt: 'Full mouth reconstruction result with implant-supported crowns and bridges' },
-        ].map((img) => (
-          <a href="/gallery" class="block overflow-hidden rounded-xl aspect-[4/3] bg-surface-2">
-            <img src={img.src} alt={img.alt} width="640" height="480" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-          </a>
-        ))}
-      </div>
-      <div class="text-center">
-        <a href="/gallery" class="btn-primary">View Full Gallery &rarr;</a>
       </div>
     </div>
   </section>
