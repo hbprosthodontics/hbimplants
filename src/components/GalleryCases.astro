@@ -138,7 +138,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
 >
   <div
     id="case-lb-panel"
-    class="relative flex flex-col w-full max-w-[min(96vw,1200px)] max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
+    class="relative flex flex-col w-full max-w-[min(96vw,1200px)] max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden min-h-0"
   >
     <div class="flex items-center justify-between gap-3 px-4 sm:px-5 py-2 border-b border-neutral-border shrink-0">
       <div class="flex items-center gap-1">
@@ -176,7 +176,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
       </button>
     </div>
 
-    <div id="case-lb-body" class="overflow-y-auto min-h-0 flex flex-col transition-opacity duration-200 ease-out">
+    <div id="case-lb-body" class="flex-1 min-h-0 overflow-y-auto flex flex-col transition-opacity duration-200 ease-out">
       <div id="case-lb-images" class="case-lb-images" aria-live="polite"></div>
       <div class="px-4 sm:px-5 py-2.5 border-t border-neutral-border bg-white shrink-0 space-y-0.5">
         <span id="case-lb-tag" class="block text-[11px] font-semibold uppercase tracking-wide text-brand-blue"></span>
@@ -194,23 +194,33 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
     display: grid;
     grid-template-columns: 1fr;
     background-color: #f3f4f6;
-    min-height: 12rem;
+    min-height: 8rem;
+    max-width: 100%;
+    overflow: hidden;
   }
   @media (min-width: 640px) {
     .case-lb-images {
       grid-template-columns: 1fr 1fr;
     }
+    .case-lb-images.is-single,
     .case-lb-images.is-composite {
       grid-template-columns: 1fr;
     }
   }
+  .case-lb-images.is-single :global(.case-lb-cell),
   .case-lb-images.is-composite :global(.case-lb-cell) {
     grid-column: 1 / -1;
   }
   .case-lb-images :global(.case-lb-cell) {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #e5e7eb;
     line-height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: min(calc(92vh - 7.5rem), 720px);
   }
   .case-lb-images :global(.case-lb-cell + .case-lb-cell) {
     border-top: 1px solid #e5e7eb;
@@ -226,14 +236,22 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
   }
   .case-lb-images :global(.case-lb-cell img) {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: min(72vh, 680px);
+    max-width: 100%;
+    max-height: min(calc(92vh - 7.5rem), 720px);
     object-fit: contain;
+  }
+  .case-lb-images.is-single :global(.case-lb-cell img),
+  .case-lb-images.is-composite :global(.case-lb-cell img) {
+    max-width: min(100%, 1100px);
+    margin: 0 auto;
   }
   .case-lb-images :global(.case-lb-label) {
     position: absolute;
     bottom: 6px;
+    left: auto;
+    right: auto;
     z-index: 10;
     font-size: 10px;
     font-weight: 700;
@@ -367,6 +385,7 @@ const procedures = ['All', ...Array.from(new Set(sortedCases.map((c) => c.proced
     function renderLightboxImages(item, imgs) {
       lbImages.replaceChildren();
       lbImages.classList.toggle('is-composite', item.display === 'composite');
+      lbImages.classList.toggle('is-single', imgs.length === 1);
       if (imgs.length === 0) {
         const empty = document.createElement('p');
         empty.className = 'col-span-full p-8 text-center text-sm text-neutral-mid';
