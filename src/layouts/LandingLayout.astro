@@ -9,6 +9,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
+const openaiAdsPixelId = import.meta.env.PUBLIC_OPENAI_ADS_PIXEL_ID;
+const openaiAdsDebug = import.meta.env.DEV === true;
 ---
 
 <!DOCTYPE html>
@@ -55,6 +57,30 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
           window.gtag('config', ga4Id);
         </script>
       </>
+    )}
+
+    <!-- OpenAI Ads Measurement Pixel (ChatGPT Ads) -->
+    {openaiAdsPixelId && (
+      <script define:vars={{ openaiAdsPixelId, openaiAdsDebug }}>
+        (function (w, d, s, u) {
+          if (w.oaiq) return;
+          var q = function () {
+            q.q.push(arguments);
+          };
+          q.q = [];
+          w.oaiq = q;
+          var js = d.createElement(s);
+          js.async = true;
+          js.src = u;
+          var f = d.getElementsByTagName(s)[0];
+          f.parentNode.insertBefore(js, f);
+        })(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
+
+        window.oaiq('init', {
+          pixelId: openaiAdsPixelId,
+          debug: openaiAdsDebug,
+        });
+      </script>
     )}
   </head>
   <body class="bg-white">
@@ -140,12 +166,32 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
     <script>
       document.addEventListener('click', (e) => {
         const tel = (e.target as Element).closest('a[href^="tel:"]');
-        if (tel && typeof window.gtag === 'function') {
-          window.gtag('event', 'phone_click', { event_category: 'contact' });
+        if (tel) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'phone_click', { event_category: 'contact' });
+          }
+          if (typeof window.oaiq === 'function') {
+            window.oaiq(
+              'measure',
+              'custom',
+              { type: 'custom' },
+              { custom_event_name: 'phone_click' }
+            );
+          }
         }
         const booking = (e.target as Element).closest('[data-track="booking"]');
-        if (booking && typeof window.gtag === 'function') {
-          window.gtag('event', 'booking_click', { event_category: 'conversion' });
+        if (booking) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'booking_click', { event_category: 'conversion' });
+          }
+          if (typeof window.oaiq === 'function') {
+            window.oaiq(
+              'measure',
+              'custom',
+              { type: 'custom' },
+              { custom_event_name: 'booking_click' }
+            );
+          }
         }
       });
     </script>

@@ -95,9 +95,13 @@ src/pages/
 ## Automation Scripts (`/scripts/`)
 Require additional .env variables — see `.env.example`:
 - `gsc-report.js` — Google Search Console top queries/pages
+- `gbp.js` — Unified GBP CLI (`npm run gbp -- login|status|reviews|reply|post|locations`)
 - `gbp-post.js` — Create Google Business Profile post
 - `gbp-reviews.js` — Fetch GBP reviews
 - `gbp-respond.js` — Reply to a GBP review
+- Setup: `docs/gbp-setup-walkthrough.md` · CLI: `docs/gbp-cli.md` · Offboarding: `docs/gbp-offboarding.md`
+- `chatgpt-ads.js` — OpenAI Ads CLI (`npm run chatgpt-ads -- status|campaigns|tree|insights|conversions|capi-validate`)
+- Setup: `docs/openai-ads/` · Learnings: `docs/openai-ads/learnings.md` · Campaign SoT: `_References/hb_prosthodontics_chatgpt_ads_implementation_plan_v2.md`
 - `ga4-report.js` — GA4 sessions, conversions, top pages
 - `site-audit.js` — Crawl site, check SEO issues
 

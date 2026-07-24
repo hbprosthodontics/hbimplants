@@ -8,6 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "optimize:images": "node scripts/optimize-images.js",
+    "gbp": "node scripts/gbp.js",
+    "gbp:login": "node scripts/gbp.js login",
+    "gbp:status": "node scripts/gbp.js status",
+    "chatgpt-ads": "node scripts/chatgpt-ads.js",
     "astro": "astro"
   },
   "dependencies": {

@@ -42,4 +42,10 @@ import { site } from '../config/site';
       event_category: 'professional_referral',
     });
   }
+
+  if (typeof oaiq === 'function') {
+    oaiq('measure', 'lead_created', {
+      type: 'customer_action',
+    });
+  }
 </script>

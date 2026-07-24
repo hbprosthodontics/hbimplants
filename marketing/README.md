@@ -1,6 +1,6 @@
 # Marketing Strategy Folder
 
-Internal strategy documents for HB Prosthodontics Google Ads and digital marketing.
+Internal strategy documents for HB Prosthodontics Google Ads, ChatGPT Ads, and digital marketing.
 
 ## Files
 
@@ -8,6 +8,7 @@ Internal strategy documents for HB Prosthodontics Google Ads and digital marketi
 |---|---|
 | `personas.md` | 5 detailed patient personas — drives all ad copy, landing page messaging, and keyword targeting |
 | `keywords.md` | Keyword database with persona, intent, match type, landing page, and priority for each keyword. Includes negatives and bidding roadmap. |
+| _(ops)_ [`docs/openai-ads/`](../docs/openai-ads/) | OpenAI Ads ops (keys, CLI, API). Campaign SoT: `_References/hb_prosthodontics_chatgpt_ads_implementation_plan_v2.md` |
 | `performance/template.md` | Monthly report template — copy and rename to `YYYY-MM.md` each month |
 | `performance/YYYY-MM.md` | Completed monthly reports (add one per month) |
 

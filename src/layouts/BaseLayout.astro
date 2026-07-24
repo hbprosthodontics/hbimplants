@@ -31,6 +31,8 @@ const {
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = new URL(ogImage, Astro.site).href;
 const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
+const openaiAdsPixelId = import.meta.env.PUBLIC_OPENAI_ADS_PIXEL_ID;
+const openaiAdsDebug = import.meta.env.DEV === true;
 
 const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 
@@ -143,6 +145,30 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
         </script>
       </>
     )}
+
+    <!-- OpenAI Ads Measurement Pixel (ChatGPT Ads) -->
+    {openaiAdsPixelId && (
+      <script define:vars={{ openaiAdsPixelId, openaiAdsDebug }}>
+        (function (w, d, s, u) {
+          if (w.oaiq) return;
+          var q = function () {
+            q.q.push(arguments);
+          };
+          q.q = [];
+          w.oaiq = q;
+          var js = d.createElement(s);
+          js.async = true;
+          js.src = u;
+          var f = d.getElementsByTagName(s)[0];
+          f.parentNode.insertBefore(js, f);
+        })(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
+
+        window.oaiq('init', {
+          pixelId: openaiAdsPixelId,
+          debug: openaiAdsDebug,
+        });
+      </script>
+    )}
   </head>
   <body class="bg-white">
     <Header />
@@ -166,6 +192,14 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
               event_label: href.replace('tel:', ''),
             });
           }
+          if (typeof window.oaiq === 'function') {
+            window.oaiq(
+              'measure',
+              'custom',
+              { type: 'custom' },
+              { custom_event_name: 'phone_click' }
+            );
+          }
         }
 
         // Booking intent — clicks to Dentrix Ascend booking page
@@ -175,6 +209,14 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
               event_category: 'booking',
               event_label: 'dentrix_ascend',
             });
+          }
+          if (typeof window.oaiq === 'function') {
+            window.oaiq(
+              'measure',
+              'custom',
+              { type: 'custom' },
+              { custom_event_name: 'booking_click' }
+            );
           }
         }
       });

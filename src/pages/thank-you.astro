@@ -60,4 +60,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       'event_category': 'appointment_request',
     });
   }
+
+  // OpenAI Ads — primary conversion for ChatGPT Ads optimization
+  if (typeof oaiq === 'function') {
+    oaiq('measure', 'lead_created', {
+      type: 'customer_action',
+    });
+  }
 </script>
