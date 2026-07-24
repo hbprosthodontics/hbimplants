@@ -37,15 +37,13 @@ import { site } from '../config/site';
 </BaseLayout>
 
 <script>
+  import { trackOpenAiLeadCreated } from '../scripts/track-openai-lead.js';
+
   if (typeof gtag !== 'undefined') {
     gtag('event', 'conversion', {
       event_category: 'professional_referral',
     });
   }
 
-  if (typeof oaiq === 'function') {
-    oaiq('measure', 'lead_created', {
-      type: 'customer_action',
-    });
-  }
+  trackOpenAiLeadCreated();
 </script>

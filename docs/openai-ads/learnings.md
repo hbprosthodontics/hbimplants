@@ -112,6 +112,23 @@ Campaign `budget.lifetime_spend_limit_micros` and bids use micros (`$1 = 1_000_0
 
 ---
 
+## 14. CAPI needs Cloudflare Pages runtime secrets
+
+GitHub `secrets.*` feed the **Astro build**. The Pages Function `functions/api/openai-conversion.js` reads `env` at **request time**. Set on the Pages project:
+
+- `OPENAI_ADS_CONVERSIONS_API_KEY`
+- `PUBLIC_OPENAI_ADS_PIXEL_ID`
+
+Otherwise thank-you still fires the pixel, but `/api/openai-conversion` returns `503`.
+
+---
+
+## 15. Hybrid pixel + CAPI must share `event_id`
+
+`trackOpenAiLeadCreated()` generates one UUID, passes it to `oaiq(..., { event_id })` and to the Function as `event_id` → CAPI `id`. Skipping this double-counts conversions in Ads Manager.
+
+---
+
 ## Fast path for a new OpenAI Ads client repo
 
 1. Copy env var names + CLI pattern from this repo.  
@@ -119,8 +136,8 @@ Campaign `budget.lifetime_spend_limit_micros` and bids use micros (`$1 = 1_000_0
 3. Create/list pixel → save `cds_` + `pixel_id`.  
 4. API-create `lead_created` (or vertical-appropriate standard event).  
 5. Conversion keys → `capi-validate`.  
-6. Wire pixel in layouts; fire standard event on thank-you.  
-7. GitHub secret for `PUBLIC_…` pixel.  
+6. Wire pixel in layouts; fire standard event on thank-you (dual-send via `/api/openai-conversion`).  
+7. GitHub secret for `PUBLIC_…` pixel **and** Pages runtime secrets for CAPI.  
 8. Finish billing before expecting delivery.  
 9. Skim this file before any “why is my key failing?” rabbit hole.
 

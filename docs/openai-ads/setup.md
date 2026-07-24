@@ -89,6 +89,22 @@ npm run dev
 
 CSP later: `script-src https://bzrcdn.openai.com`; `connect-src` + `img-src https://bzr.openai.com`.
 
+Also confirm Network → `/api/openai-conversion` returns `{ ok: true }` after deploy (needs Pages runtime secrets below).
+
+---
+
+## 7. Cloudflare Pages runtime secrets (CAPI Function)
+
+The thank-you dual-send calls `POST /api/openai-conversion` (`functions/api/openai-conversion.js`). Set on the **Pages project** (Production), not only GitHub:
+
+| Variable | Notes |
+|---|---|
+| `OPENAI_ADS_CONVERSIONS_API_KEY` | Secret — same value as local `.env` |
+| `PUBLIC_OPENAI_ADS_PIXEL_ID` | Same pixel id as the build secret |
+
+Workers & Pages → `hbimplants` → Settings → Environment variables  
+Or: `npx wrangler pages secret put OPENAI_ADS_CONVERSIONS_API_KEY --project-name=hbimplants`
+
 ---
 
 ## Done when
@@ -97,7 +113,8 @@ CSP later: `script-src https://bzrcdn.openai.com`; `connect-src` + `img-src http
 - [ ] `conversions` shows pixel + `lead_created`  
 - [ ] `capi-validate` OK  
 - [ ] GitHub secret `PUBLIC_OPENAI_ADS_PIXEL_ID` set  
+- [ ] Pages env: `OPENAI_ADS_CONVERSIONS_API_KEY` + `PUBLIC_OPENAI_ADS_PIXEL_ID`  
 - [ ] Billing finished (if banner present)  
-- [ ] Production page source includes `oaiq` / pixel ID  
+- [ ] Production: page has pixel; `/thank-you` hits `/api/openai-conversion` → `ok: true`  
 
 Next: [conversions.md](./conversions.md) for event map · [learnings.md](./learnings.md) before API work.

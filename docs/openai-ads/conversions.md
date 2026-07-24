@@ -54,7 +54,30 @@ oaiq("measure", "custom", { type: "custom" }, { custom_event_name: "phone_click"
 |---|---|---|
 | Reliability | Good; blocked by some browsers / ITP | Better; recommended by OpenAI |
 | Key | Pixel ID only | `OPENAI_ADS_CONVERSIONS_API_KEY` |
-| Today | Implemented | Key validated; **sender not wired yet** |
+| Today | Implemented | Relay at `POST /api/openai-conversion` |
+
+Thank-you pages call `trackOpenAiLeadCreated()` (`src/scripts/track-openai-lead.js`):
+
+1. Generate `event_id` (UUID)
+2. Pixel `measure` with `{ event_id }`
+3. `fetch('/api/openai-conversion')` with the same id (+ `__obref` cookie when present)
+
+Pages Function: `functions/api/openai-conversion.js`  
+Forwards to `https://bzr.openai.com/v1/events?pid=…` and attaches `CF-Connecting-IP` / `User-Agent` for matching.
+
+### Cloudflare runtime secrets (required)
+
+GitHub secrets are for **build**. Functions need **Pages** env vars (Production):
+
+| Variable | Type |
+|---|---|
+| `OPENAI_ADS_CONVERSIONS_API_KEY` | Secret |
+| `PUBLIC_OPENAI_ADS_PIXEL_ID` | Plain or secret |
+
+Dashboard: Workers & Pages → `hbimplants` → Settings → Environment variables  
+Or: `npx wrangler pages secret put OPENAI_ADS_CONVERSIONS_API_KEY --project-name=hbimplants`
+
+Without these, the endpoint returns `503 conversions_not_configured` (pixel still works).
 
 When both fire for the same conversion, reuse one ID:
 

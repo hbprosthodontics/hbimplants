@@ -51,6 +51,8 @@ npm run chatgpt-ads -- tree
 |---|---|
 | `scripts/chatgpt-ads.js` | CLI |
 | `scripts/lib/chatgpt-ads-client.js` | Advertiser API client |
+| `functions/api/openai-conversion.js` | Pages Function → Conversions API relay |
+| `src/scripts/track-openai-lead.js` | Thank-you dual-send (pixel + CAPI) |
 | `src/layouts/BaseLayout.astro` | Sitewide pixel + click events |
 | `src/layouts/LandingLayout.astro` | LP pixel + click events |
 | `src/pages/thank-you.astro` | `lead_created` (appointment) |
